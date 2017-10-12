@@ -130,9 +130,116 @@
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <p><b>Cross-browser</b> refers to the ability of a website, web application, HTML construct or client-side script to function in environments that provide its required features and to bow out or degrade gracefully when features are absent or lacking.</p>
+                <p><b>Cross-browser</b> means web application works with all versions of all browsers. To claim cross-browser compatibility, the website is nowadays expected to support browsers such as Mozilla Firefox,Google Chrome, Opera, and Safari in addition to Internet Explorer and Netscape. Here are the basic tips to make your website cross browser compatible.</p>
             </div>
-        </div>                
+        </div>  
+        <div class="row">
+                <div class="col-lg-12">
+                    <h3 class="page-header"> Define Valid Doctype</h2>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>   
+            <div class="row">
+                    <div class="col-lg-12">
+                        <p>Your doctype tells the browser what rules you’ll be using in your code. If you don’t specify, the browser has to guess, and different browsers will guess differently. When you design in “strict mode,” Internet Explorer 6 and above will show behavior much closer to that of Firefox, Safari and other modern browsers.</p>
+                        <div class="codeblock">
+                            <code>
+                                    <span>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;</span>
+                                    
+                            </code>
+                        </div>
+                        <p>Otherwise, Internet Explorer runs in a “quirks mode” where it attempts to emulate the behavior of older browsers.</p>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>  
+                <div class="row">
+                        <div class="col-lg-12">
+                            <h3 class="page-header"> CSS Reset</h2>
+                        </div>
+                        <!-- /.col-lg-12 -->
+                    </div> 
+                    <div class="row">
+                            <div class="col-lg-12">
+                                <p>By default, Different browsers behave as per their default css rules. You need to explicitly define css to make same behavior for different browsers. I like Eric’s CSS reset:</p>
+                                <p>http://meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/</p>
+                                        <p>http://meyerweb.com/eric/tools/css/reset/index.html</p>
+                            </div>
+                            <!-- /.col-lg-12 -->
+                        </div> 
+                        <div class="row">
+                                <div class="col-lg-12">
+                                    <h3 class="page-header"> Conditional Comments</h2>
+                                </div>
+                                <!-- /.col-lg-12 -->
+                            </div> 
+                            <div class="row">
+                                    <div class="col-lg-12">
+                                        <p>Try to use conditional comments instead of CSS hacks.</p>
+                                                <p>With conditional comments you can link to separate style sheets for different browsers.</p>
+                                                <div class="codeblock">
+                                                    <code>
+                                                        <span>&lt;link type="text/css" href="style.css" /&gt;</span>
+                                                        <span>&lt;!--[If IE]></span>
+                                                        <span>&lt;link type="text/css" href="IEHacks.css" /&gt;</span>
+                                                        <span>&lt;![endif]--&gt;</span>
+                                                        <span>&lt;!--[if !IE]&gt;</span>
+                                                        <span>&lt;link type="text/css" href="NonIEHacks.css" /&gt;</span>
+                                                        <span>&lt;![endif]--&gt;</span>
+                                                    </code>
+                                                </div>
+                                    </div>
+                                    <!-- /.col-lg-12 -->
+                                </div>
+                                <div class="row">
+                                        <div class="col-lg-12">
+                                            <p>Try to use javascript library like jQuery, YahooUI, MooTools, Dojo abstract away the differences in the DOM, AJAX and JavaScript.</p>
+                                        </div>
+                                        <!-- /.col-lg-12 -->
+                                    </div> 
+                                    <div class="row">
+                                            <div class="col-lg-12">
+                                                <p>Try to use javascript library like jQuery, YahooUI, MooTools, Dojo abstract away the differences in the DOM, AJAX and JavaScript.</p>
+                                            </div>
+                                            <!-- /.col-lg-12 -->
+                                        </div>
+                                        <div class="row">
+                                                <div class="col-lg-12">
+                                                    <p>You can use Css Frameworks like BluePrint, 960 Grid. These are mostly cross browser compatible.</p>
+                                                    <p>See following to know which css framework is suitable for you.</p>
+                                                    <p>http://net.tutsplus.com/tutorials/html-css-techniques/which-css-grid-framework-should-you-use-for-web-design/</p>
+                                                </div>
+                                                <!-- /.col-lg-12 -->
+                                            </div>
+                                            <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <h3 class="page-header">Validate</h2>
+                                                    </div>
+                                                    <!-- /.col-lg-12 -->
+                                                </div>
+                                                <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <p>The W3C Validation Service validates multiple versions of XHTML and HTML, outputting many useful errors and warnings to help users create a perfect website.</p>
+                                                            <p>W3C Validator: http://validator.w3.org/</p>
+                                                            <p>W3C Css Validator: http://jigsaw.w3.org/css-validator/</p>
+                                                        </div>
+                                                        <!-- /.col-lg-12 -->
+                                                    </div>
+                                                    <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <h3 class="page-header"> Testing</h2>
+                                                            </div>
+                                                            <!-- /.col-lg-12 -->
+                                                        </div>
+                                                        <div class="row">
+                                                                <div class="col-lg-12">
+                                                                    <p>I would suggest you to start with firefox and then move to IE. Use Firebug, a firefox addon and <b>IE Developer Toolbar</b> for IE to set layout. To test website on different browser, there are some online and offline utilities like browsershots,
+                                                                        IETester,
+                                                                        browsercam.</p>
+                                                                </div>
+                                                                <!-- /.col-lg-12 -->
+                                                            </div>
+                                      
+
     </div>
 
     <!-- global scripts -->
