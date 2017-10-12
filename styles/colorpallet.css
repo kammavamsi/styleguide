@@ -1,0 +1,98 @@
+
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0px 3px 0px 0px rgba(141, 144, 148, 0.75);
+}
+.panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.panel-footer {
+    padding: 3px 15px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.panel-primary>.panel-heading {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+.panel-green > .panel-heading {
+    border-color: #5cb85c;
+    color: white;
+    background-color: #5cb85c;
+}
+.panel-yellow > .panel-heading {
+    border-color: #f0ad4e;
+    color: white;
+    background-color: #f0ad4e;
+}
+.panel-red > .panel-heading {
+    border-color: #d9534f;
+    color: white;
+    background-color: #d9534f;
+}
+
+.grapefruit>.panel-heading {
+  color: #fff;
+  background-color:#ed5565;
+  border-color:#ed5565;
+}
+.grass>.panel-heading {
+  color: #fff;
+  background-color:#A0D468;
+  border-color:#A0D468;
+}
+.sunflower>.panel-heading {
+  color: #fff;
+  background-color:#fcbb42;
+  border-color:#fcbb42;
+}
+.mint>.panel-heading {
+	color: #fff;
+  background-color:#48cfad;
+  border-color:#48cfad;
+}
+.aqua>.panel-heading {
+	color: #fff;
+  background-color:#3bafda;
+  border-color:#3bafda;
+}
+.lavender>.panel-heading {
+	color: #fff;
+  background-color:#ac92ec;
+  border-color:#ac92ec;
+}
+.pinkrose>.panel-heading {
+	color: #fff;
+  background-color:#d770ad;
+  border-color:#d770ad;
+}
+.bittersweet>.panel-heading {
+	color: #fff;
+  background-color:#fc6e51;
+  border-color:#fc6e51;
+}
+.mediumgray>.panel-heading {
+	color: #fff;
+  background-color:#aab2bd;
+  border-color:#aab2bd;
+}
+.darkgray>.panel-heading {
+	color: #fff;
+  background-color:#434a54;
+  border-color:#434a54;
+}
+.bluegeans>.panel-heading {
+	color: #fff;
+  background-color:#5d9cec;
+  border-color:#5d9cec;
+}
