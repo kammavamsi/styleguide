@@ -27,29 +27,22 @@
 
 <body data-layout="empty-layout" data-palette="palette-0" data-direction="none">
 	<nav class="navbar navbar-fixed-top navbar-1">
-		<a class="navbar-brand" href="Homepage.html" style="color: #00BCD4;font-family: 'Lobster', cursive;font-family: 'Acme', sans-serif;">Componentization 											
+		<a class="navbar-brand" href="Homepage.html" style="color: #00BCD4;font-family: 'Lobster', cursive;font-family: 'Acme', sans-serif;">Componentization
 			<span>Style Guide</span>
-										</a>
-		<ul class="nav navbar-nav pull-right">
-			<li class="nav-item">
-				<a href="#">
-													<i class="zmdi zmdi-power" style="margin-top:10px;"></i>				
-												</a>
-			</li>
-		</ul>
+		</a>
 
 		<ul class="nav navbar-nav pull-right toggle-fullscreen-mode">
 			<li class="nav-item">
 				<a class="nav-link" data-click="toggle-fullscreen-mode">
-													<i class="zmdi zmdi-fullscreen"></i>
-												</a>
+					<i class="zmdi zmdi-fullscreen"></i>
+				</a>
 			</li>
 		</ul>
 		<ul class="nav navbar-nav pull-right toggle-search">
 			<li class="nav-item">
 				<a class="nav-link" data-click="toggle-search">
-													<i class="zmdi zmdi-search"></i>
-												</a>
+					<i class="zmdi zmdi-search"></i>
+				</a>
 			</li>
 		</ul>
 
@@ -75,51 +68,62 @@
 						</li>
 						<li class="horizontal-navigation-dropdown wow fadeIn">
 							<a class="btn btn-primary" href="fontstypo.html">Fonts & Typography</a>
+
 						</li>
 						<li class="horizontal-navigation-dropdown wow fadeIn">
 							<a class="btn btn-primary" href="buttons.html">Buttons</a>
 						</li>
 						<li class="horizontal-navigation-dropdown wow fadeIn">
-							<a class="btn btn-primary" href="iconography.html">Iconography</a>
+							<a class="btn btn-primary">Iconography</a>
+							<div class="horizontal-dropdown-menu" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
+								<a class="btn btn-primary sideline" href="fontawesome.html">Font Awesome </a>
+								<a class="btn btn-primary sideline" href="lonicons.html">Lonicons</a>
+								<a class="btn btn-primary sideline" href="emoji.html">Emoji</a>
+
+							</div>
 						</li>
 						<li class="horizontal-navigation-dropdown wow fadeIn">
-							<a class="btn btn-primary" href="formelements.html">Form Elements</a>
+							<a class="btn btn-primary">Form Elements</a>
+							<div class="horizontal-dropdown-menu" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
+								<a class="btn btn-primary sideline" href="basicforms.html">Basic Forms </a>
+								<a class="btn btn-primary sideline" href="formvalidations.html">Form Validation</a>
+								<a class="btn btn-primary sideline" href="pickers.html">Pickers </a>
+
+							</div>
 						</li>
 						<li class="horizontal-navigation-dropdown wow fadeIn">
 							<a class="btn btn-primary" href="Alerts.html">Alerts</a>
 						</li>
+
 						<li class="horizontal-navigation-dropdown wow fadeIn">
 							<a class="btn btn-primary"> UI Elements </a>
 							<div class="horizontal-dropdown-menu" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
-								<a class="btn btn-primary sideline" data-click="set-layout" data-id="default-sidebar"> Default sidebar </a>
-								<a class="btn btn-primary sideline" data-click="set-layout" data-id="collapsed-sidebar"> Collapsed sidebar </a>
-								<a class="btn btn-primary sideline" data-click="set-layout" data-id="off-canvas"> Off canvas </a>
-								<a class="btn btn-primary sideline" data-click="set-layout" data-id="left-sidebar-over"> Left sidebar over </a>
-								<a class="btn btn-primary sideline" data-click="set-layout" data-id="left-sidebar-under"> Left sidebar under </a>
-								<a class="btn btn-primary sideline" data-click="set-layout" data-id="horizontal-navigation-1"> Horizontal navigation 1 </a>
-								<a class="btn btn-primary sideline" data-click="set-layout" data-id="horizontal-navigation-2"> Horizontal navigation 2 </a>
-								<a class="btn btn-primary sideline" data-click="set-layout" data-id="horizontal-navigation-3"> Horizontal navigation 3 </a>
-								<a class="btn btn-primary sideline" data-click="set-layout" data-id="mega-menu"> Mega menu </a>
+								<a class="btn btn-primary sideline" href="dashboards-analytics.html"> Analytics </a>
+								<a class="btn btn-primary sideline" href="dashboards-e-commerce.html"> e-Commerce </a>
+								<a class="btn btn-primary sideline" href="dashboards-finance.html"> Finance </a>
+								<a class="btn btn-primary sideline" href="dashboards-saas.html"> SAAS </a>
 							</div>
 						</li>
 						<li class="horizontal-navigation-dropdown wow fadeIn">
-								<a class="btn btn-primary" href="angular_introduction.html">Angular</a>
-								<div class="horizontal-dropdown-menu">
-									<a class="btn btn-primary sideline" href="angular_components.html"> Component </a>
-									<a class="btn btn-primary sideline" href="angular_modules.html"> Module </a>
-									<a class="btn btn-primary sideline" href="angular_directives.html"> Directive </a>
-									<a class="btn btn-primary sideline" href="angular_routing.html"> Routing </a>
-									<a class="btn btn-primary sideline" href="angular_httpclient.html"> Http Client </a>
-									<a class="btn btn-primary sideline" href="angular_dinjection.html"> Dependency Injection </a>
-								</div>
-							</li>
-							<li class="horizontal-navigation-dropdown wow fadeIn">
-									<a class="btn btn-primary" href="crossbrowser.html">Cross Browser</a>
-								</li>
+							<a class="btn btn-primary" href="angular_introduction.html">Angular</a>
+							<div class="horizontal-dropdown-menu">
+								<a class="btn btn-primary sideline" href="angular_components.html"> Component </a>
+								<a class="btn btn-primary sideline" href="angular_modules.html"> Module </a>
+								<a class="btn btn-primary sideline" href="angular_directives.html"> Directive </a>
+								<a class="btn btn-primary sideline" href="angular_routing.html"> Routing </a>
+								<a class="btn btn-primary sideline" href="angular_httpclient.html"> Http Client </a>
+								<a class="btn btn-primary sideline" href="angular_dinjection.html"> Dependency Injection </a>
+							</div>
+						</li>
+						<li class="horizontal-navigation-dropdown wow fadeIn">
+							<a class="btn btn-primary" href="crossbrowser.html">Cross Browser</a>
+						</li>
 					</ul>
 				</div>
+
 			</div>
 		</div>
+	</div>
 	</div>
 
 	<div id="page-wrapper">
@@ -129,34 +133,234 @@
 			</div>
 			<!-- /.col-lg-12 -->
 		</div>
-
-
-		<!-- global scripts -->
-		<script src="bower_components/jquery/dist/jquery.js"></script>
-		<script src="bower_components/tether/dist/js/tether.js"></script>
-		<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-		<script src="bower_components/PACE/pace.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.0.0/lodash.min.js"></script>
-		<script src="scripts/components/jquery-fullscreen/jquery.fullscreen-min.js"></script>
-		<script src="bower_components/jquery-storage-api/jquery.storageapi.min.js"></script>
-		<script src="bower_components/wow/dist/wow.min.js"></script>
-		<script src="scripts/functions.js"></script>
-		<script src="scripts/colors.js"></script>
-		<script src="scripts/left-sidebar.js"></script>
-		<script src="scripts/navbar.js"></script>
-		<script src="scripts/horizontal-navigation-1.js"></script>
-		<script src="scripts/horizontal-navigation-2.js"></script>
-		<script src="scripts/horizontal-navigation-3.js"></script>
-		<script src="scripts/main.js"></script>
-		<script src="bower_components/notifyjs/dist/notify.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
-		<script src="bower_components/chartist/dist/chartist.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.min.js"></script>
-		<script src="bower_components/d3/d3.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
-		<script src="http://bower.batchthemes.com/bower_components/datamaps/dist/datamaps.all.js"></script>
-		<script src="scripts/dashboards.js"></script>
-		<script src="scripts/index.js"></script>
+		<div class="row m-b-20">
+			<div class="col-xs-12 col-xl-6">
+				<h4 class="m-b-20"> Default alerts </h4>
+				<div class="alert alert-primary" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">×</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<strong>primary!</strong> I am a primary alert
+				</div>
+				<div class="alert alert-default" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">×</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<strong>default!</strong> I am a default alert
+				</div>
+				<div class="alert alert-success" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">×</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<strong>success!</strong> I am a success alert
+				</div>
+				<div class="alert alert-info" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">×</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<strong>info!</strong> I am a info alert
+				</div>
+				<div class="alert alert-warning" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">×</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<strong>warning!</strong> I am a warning alert
+				</div>
+				<div class="alert alert-danger" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">×</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<strong>danger!</strong> I am a danger alert
+				</div>
+			</div>
+			<div class="col-xs-12 col-xl-6 animation-delay">
+				<h4 class="m-b-20"> Animated alerts with animate.css </h4>
+				<div class="alert alert-primary animated fadeIn" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">×</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<strong>primary!</strong> I am a primary alert
+				</div>
+				<div class="alert alert-default animated fadeIn" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">×</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<strong>default!</strong> I am a default alert
+				</div>
+				<div class="alert alert-success animated fadeIn" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">×</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<strong>success!</strong> I am a success alert
+				</div>
+				<div class="alert alert-info animated fadeIn" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">×</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<strong>info!</strong> I am a info alert
+				</div>
+				<div class="alert alert-warning animated fadeIn" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">×</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<strong>warning!</strong> I am a warning alert
+				</div>
+				<div class="alert alert-danger animated fadeIn" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">×</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<strong>danger!</strong> I am a danger alert
+				</div>
+			</div>
+		</div>
+		<div class="row m-b-20">
+			<div class="col-xs-12 col-xl-6">
+				<h4> Outlined alerts </h4>
+				<div class="alert alert-primary-outline" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">×</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<strong>primary!</strong> I am a primary alert
+				</div>
+				<div class="alert alert-default-outline" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">×</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<strong>default!</strong> I am a default alert
+				</div>
+				<div class="alert alert-success-outline" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">×</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<strong>success!</strong> I am a success alert
+				</div>
+				<div class="alert alert-info-outline" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">×</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<strong>info!</strong> I am a info alert
+				</div>
+				<div class="alert alert-warning-outline" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">×</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<strong>warning!</strong> I am a warning alert
+				</div>
+				<div class="alert alert-danger-outline" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">×</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<strong>danger!</strong> I am a danger alert
+				</div>
+			</div>
+			<div class="col-xs-12 col-xl-6 animation-delay">
+				<h4> Animated outlined alerts with animate.css </h4>
+				<div class="alert alert-primary-outline animated fadeIn" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">×</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<strong>primary!</strong> I am a primary alert
+				</div>
+				<div class="alert alert-default-outline animated fadeIn" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">×</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<strong>default!</strong> I am a default alert
+				</div>
+				<div class="alert alert-success-outline animated fadeIn" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">×</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<strong>success!</strong> I am a success alert
+				</div>
+				<div class="alert alert-info-outline animated fadeIn" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">×</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<strong>info!</strong> I am a info alert
+				</div>
+				<div class="alert alert-warning-outline animated fadeIn" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">×</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<strong>warning!</strong> I am a warning alert
+				</div>
+				<div class="alert alert-danger-outline animated fadeIn" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">×</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<strong>danger!</strong> I am a danger alert
+				</div>
+			</div>
+		</div>
+		<div class="row m-b-20">
+			<div class="col-xs-12">
+				<h4>Notify.js</h4>
+				<p>Notify.js is a jQuery plugin to provide simple yet fully customisable notifications. The javascript code snippets in
+					this documentation with the green edge are runnable by clicking them. For more information click
+					<a href="https://notifyjs.com/" target="_blank">here</a>.
+				</p>
+			</div>
+		</div>
+		<div class="row m-b-40">
+			<div class="col-xs-12">
+				<button class="btn btn-success btn-notify" data-action="success">Notify me!</button>
+				<button class="btn btn-info btn-notify" data-action="info">Notify me!</button>
+				<button class="btn btn-warning btn-notify" data-action="warn">Notify me!</button>
+				<button class="btn btn-danger btn-notify" data-action="error">Notify me!</button>
+			</div>
+		</div>
+	</div>
+	<!-- global scripts -->
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/tether.js"></script>
+    <script src="scripts/bootstrap.js"></script>
+    <script src="scripts/pace.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.0.0/lodash.min.js"></script>
+    <script src="scripts/components/jquery-fullscreen/jquery.fullscreen-min.js"></script>
+    <script src="scripts/jquery.storageapi.min.js"></script>
+    <script src="scripts/wow.min.js"></script>
+    <script src="scripts/functions.js"></script>
+    <script src="scripts/colors.js"></script>
+    <script src="scripts/left-sidebar.js"></script>
+    <script src="scripts/navbar.js"></script>
+    <script src="scripts/horizontal-navigation-1.js"></script>
+    <script src="scripts/horizontal-navigation-2.js"></script>
+    <script src="scripts/horizontal-navigation-3.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/notify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+    <script src="scripts/chartist.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.min.js"></script>
+    <script src="scripts/d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+    <script src="http://bower.batchthemes.com/bower_components/datamaps/dist/datamaps.all.js"></script>
+    <script src="scripts/dashboards.js"></script>
+    <script src="scripts/index.js"></script>
 </body>
 
 </html>
