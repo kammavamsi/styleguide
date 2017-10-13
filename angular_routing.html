@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Style Guide</title>
+    <title>Componentization Style Guide</title>
     <meta name="description" content="Marino, Admin theme, Dashboard theme, AngularJS Theme">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico">
@@ -27,8 +27,8 @@
 
 <body data-layout="empty-layout" data-palette="palette-0" data-direction="none">
     <nav class="navbar navbar-fixed-top navbar-1">
-        <a class="navbar-brand" href="Homepage.html" style="color: #00BCD4;font-family: 'Lobster', cursive;font-family: 'Acme', sans-serif;">Style
-                                                    <span>Guide</span>
+        <a class="navbar-brand" href="Homepage.html" style="color: #00BCD4;font-family: 'Lobster', cursive;font-family: 'Acme', sans-serif;">Componentization
+                                                    <span>Style Guide</span>
                                             </a>
         <ul class="nav navbar-nav pull-right">
             <li class="nav-item">
@@ -68,53 +68,66 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-12">
-                    <ul class="list-unstyled navigation animation-delay">
-                        <li class="horizontal-navigation-dropdown wow fadeIn">
-                            <a class="btn btn-primary" href="Homepage.html">Home</a>
-                        </li>
-                        <li class="horizontal-navigation-dropdown wow fadeIn">
-                            <a class="btn btn-primary" href="colorpallet.html">Color Pallets</a>
-                        </li>
-                        <li class="horizontal-navigation-dropdown wow fadeIn">
-                            <a class="btn btn-primary" href="fontstypo.html">Fonts & Typography</a>
-                        </li>
-                        <li class="horizontal-navigation-dropdown wow fadeIn">
-                            <a class="btn btn-primary" href="buttons.html">Buttons</a>
-                        </li>
-                        <li class="horizontal-navigation-dropdown wow fadeIn">
-                            <a class="btn btn-primary" href="iconography.html">Iconography</a>
-                        </li>
-                        <li class="horizontal-navigation-dropdown wow fadeIn">
-                            <a class="btn btn-primary" href="formelements.html">Form Elements</a>
-                        </li>
-                        <li class="horizontal-navigation-dropdown wow fadeIn">
-                            <a class="btn btn-primary" href="Alerts.html">Alerts</a>
-                        </li>
-
-                        <li class="horizontal-navigation-dropdown wow fadeIn">
-                            <a class="btn btn-primary"> UI Elements </a>
-                            <div class="horizontal-dropdown-menu">
-                                <a class="btn btn-primary sideline" href="#"> Default sidebar </a>
-                                <a class="btn btn-primary sideline" href="#"> Collapsed sidebar </a>
-                                <a class="btn btn-primary sideline" href="#"> Off canvas </a>
-                                <a class="btn btn-primary sideline" href="#"> Left sidebar over </a>
-                            </div>
-                        </li>
-                        <li class="horizontal-navigation-dropdown wow fadeIn">
-                            <a class="btn btn-primary" href="angular_introduction.html">Angular</a>
-                            <div class="horizontal-dropdown-menu">
-                                <a class="btn btn-primary sideline" href="angular_components.html"> Component </a>
-                                <a class="btn btn-primary sideline" href="angular_modules.html"> Module </a>
-                                <a class="btn btn-primary sideline" href="angular_directives.html"> Directive </a>
-                                <a class="btn btn-primary sideline" href="angular_routing.html"> Routing </a>
-                                <a class="btn btn-primary sideline" href="angular_httpclient.html"> Http Client </a>
-                                <a class="btn btn-primary sideline" href="angular_dinjection.html"> Dependency Injection </a>
-                            </div>
-                        </li>
-                        <li class="horizontal-navigation-dropdown wow fadeIn">
-                                <a class="btn btn-primary" href="crossbrowser.html">Cross Site Browsing</a>
+                        <ul class="list-unstyled navigation animation-delay">
+                                <li class="horizontal-navigation-dropdown wow fadeIn">
+                                    <a class="btn btn-primary" href="Homepage.html">Home</a>
+                                </li>
+                                <li class="horizontal-navigation-dropdown wow fadeIn">
+                                    <a class="btn btn-primary" href="colorpallet.html">Color Pallets</a>
+                                </li>
+                                <li class="horizontal-navigation-dropdown wow fadeIn">
+                                    <a class="btn btn-primary" href="fontstypo.html">Fonts & Typography</a>
+                                    
+                                </li>
+                                <li class="horizontal-navigation-dropdown wow fadeIn">
+                                    <a class="btn btn-primary" href="buttons.html">Buttons</a>
+                                </li>
+                                <li class="horizontal-navigation-dropdown wow fadeIn">
+                                    <a class="btn btn-primary">Iconography</a>
+                                    <div class="horizontal-dropdown-menu" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
+                                        <a class="btn btn-primary sideline" href="fontawesome.html">Font Awesome </a>
+                                        <a class="btn btn-primary sideline" href="lonicons.html">Lonicons</a>
+                                        <a class="btn btn-primary sideline" href="emoji.html">Emoji</a>
+                                        
+                                    </div>
+                                </li>
+                                <li class="horizontal-navigation-dropdown wow fadeIn">
+                                    <a class="btn btn-primary">Form Elements</a>
+                                    <div class="horizontal-dropdown-menu" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
+                                        <a class="btn btn-primary sideline" href="basicforms.html">Basic Forms </a>
+                                        <a class="btn btn-primary sideline" href="formvalidations.html">Form Validation</a>
+                                        <a class="btn btn-primary sideline" href="pickers.html">Pickers </a>
+                                        
+                                    </div>
+                                </li>
+                                <li class="horizontal-navigation-dropdown wow fadeIn">
+                                    <a class="btn btn-primary" href="Alerts.html">Alerts</a>
+                                </li>
+                                
+                                <li class="horizontal-navigation-dropdown wow fadeIn">
+                                <a class="btn btn-primary"> UI Elements </a>
+                                <div class="horizontal-dropdown-menu" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
+                                    <a class="btn btn-primary sideline" href="dashboards-analytics.html"> Analytics </a>
+                                        <a class="btn btn-primary sideline" href="dashboards-e-commerce.html"> e-Commerce </a>
+                                        <a class="btn btn-primary sideline" href="dashboards-finance.html"> Finance </a>
+                                        <a class="btn btn-primary sideline" href="dashboards-saas.html"> SAAS </a>
+                                </div>
                             </li>
-                    </ul>
+                            <li class="horizontal-navigation-dropdown wow fadeIn">
+                                    <a class="btn btn-primary" href="angular_introduction.html">Angular</a>
+                                    <div class="horizontal-dropdown-menu">
+                                        <a class="btn btn-primary sideline" href="angular_components.html"> Component </a>
+                                        <a class="btn btn-primary sideline" href="angular_modules.html"> Module </a>
+                                        <a class="btn btn-primary sideline" href="angular_directives.html"> Directive </a>
+                                        <a class="btn btn-primary sideline" href="angular_routing.html"> Routing </a>
+                                        <a class="btn btn-primary sideline" href="angular_httpclient.html"> Http Client </a>
+                                        <a class="btn btn-primary sideline" href="angular_dinjection.html"> Dependency Injection </a>
+                                    </div>
+                                </li>
+                                <li class="horizontal-navigation-dropdown wow fadeIn">
+                                        <a class="btn btn-primary" href="crossbrowser.html">Cross Browser</a>
+                                    </li>
+                            </ul>
 
                 </div>
             </div>
