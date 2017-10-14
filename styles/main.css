@@ -116223,7 +116223,7 @@ a,
     background-color: #e6e6e6; }
 
 [data-palette="palette-5"] code, [data-palette="palette-5"] pre, [data-palette="palette-5"] mark, [data-palette="palette-5"] kbd {
-  background-color: #d9d9d9;
+  /* background-color: #d9d9d9; */
   color: #d9534f; }
 
 [data-palette="palette-5"] i {

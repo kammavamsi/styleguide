@@ -12,17 +12,80 @@
 <![endif]-->
 <!-- global stylesheets -->
 <link rel="stylesheet" href="styles/components/bootstrap.css">
+
 <link href="https://fonts.googleapis.com/css?family=Acme|Lobster" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
-<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
-						<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/1.0.0/css/flag-icon.min.css" rel="stylesheet" type="text/css">
-							<link rel="stylesheet" href="styles/main.css">
-							<link rel="stylesheet" href="styles/colorpallet.css">
-								<link rel="stylesheet" href="styles/chartist.min.css">
-								</head>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+				<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+					<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/1.0.0/css/flag-icon.min.css" rel="stylesheet" type="text/css">
+						<link rel="stylesheet" href="styles/main.css">
+							</head>
 								<body data-layout="empty-layout" data-palette="palette-0" data-direction="none">
+									<!-- default modal -->
+							<div class="modal fade" id="default-modal" tabindex="-1" role="dialog" aria-labelledby="default-modalLabel" aria-hidden="true">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+											<h4 class="modal-title" id="default-modalLabel">Modal title</h4>
+										</div>
+										<div class="modal-body">
+											<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+											<button type="button" class="btn btn-warning">Save changes</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- default modal -->
+							<!-- small modal -->
+							<div class="modal fade" id="small-modal" tabindex="-1" role="dialog" aria-labelledby="small-modalLabel" aria-hidden="true">
+								<div class="modal-dialog modal-sm" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+											<h4 class="modal-title" id="small-modalLabel">Small modal title</h4>
+										</div>
+										<div class="modal-body">
+											<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.</p>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+											<button type="button" class="btn btn-warning">Save changes</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- small modal -->
+							<!-- large modal -->
+							<div class="modal fade" id="large-modal" tabindex="-1" role="dialog" aria-labelledby="large-modalLabel" aria-hidden="true">
+								<div class="modal-dialog modal-lg" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+											<h4 class="modal-title" id="large-modalLabel">Modal title</h4>
+										</div>
+										<div class="modal-body">
+											<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+											<button type="button" class="btn btn-warning">Save changes</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- large modal -->
+							
 									<nav class="navbar navbar-fixed-top navbar-1">
 										<a class="navbar-brand" href="Homepage.html" style="color: #00BCD4;font-family: 'Lobster', cursive;font-family: 'Acme', sans-serif;">Componentization
 												<span>Style Guide</span>
@@ -152,8 +215,6 @@
                                                                     <a class="btn btn-primary" href="crossbrowser.html">Cross Browser</a>
                                                                 </li>
 														</ul>
-
-														
 													</div>
 												</div>
 											</div>
@@ -162,339 +223,42 @@
 				<div id="page-wrapper">
 					<div class="row">
 						<div class="col-lg-12">
-							<h3 class="page-header"><b>Colorpallet</b></h3>
+							<h3 class="page-header"><b>Model Popup</b></h3>
 						</div>
 						<!-- /.col-lg-12 -->
 					</div>
-					<div class="row">
-						<div class="col-lg-3 col-md-6">
-							<div class="panel panel-primary">
-								<div class="panel-heading">
-									<div class="row">
-										<div class="col-xs-12">
-											<h4>Curious Blue</h4>									
-										</div>
-									</div>
-								</div>
-								<div class="panel-footer">
-									<span class="pull-left">#337ab7</span>
-									<span class="pull-right">51, 122, 183</span>
-									<div class="clearfix"></div>
-								</div>                        
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-6">
-                    <div class="panel panel-green">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                <h4>Fern</h4>    
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <a href="#">
-                            <div class="panel-footer">
-                                <span class="pull-left">#5cb85c</span>
-                                <span class="pull-right">92, 184, 92</span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-yellow">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <h4>Casablanca</h4>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <a href="#">
-                            <div class="panel-footer">
-                                <span class="pull-left">#f0ad4e</span>
-                                <span class="pull-right">240, 173, 78</span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-red">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <h4>Valencia</h4>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <a href="#">
-                            <div class="panel-footer">
-                                <span class="pull-left">#d9534f</span>
-                                <span class="pull-right">217, 83, 79</span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-				
-				<div class="col-lg-3 col-md-6">
-                    <div class="panel sunflower">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-12">
-									<h4>SunFlower</h4>
-									
-                                </div>
-
-                            </div>
-                        </div>
-                        
-                            <div class="panel-footer">
-                                <span class="pull-left">#fcbb42</span>
-                                <span class="pull-right">252, 187, 66</span>
-                                <div class="clearfix"></div>
-                            </div>
-                        
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="panel grapefruit">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-12">
-									<h4>GrapeFruit</h4>
-									
-                                </div>
-
-                            </div>
-                        </div>
-                        
-                            <div class="panel-footer">
-                                <span class="pull-left">#ed5565</span>
-                                <span class="pull-right">237, 85, 101</span>
-                                <div class="clearfix"></div>
-                            </div>
-                        
-                    </div>
-                </div>
-				<div class="col-lg-3 col-md-6">
-                    <div class="panel mint">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-12">
-									<h4>Mint</h4>
-									
-                                </div>
-
-                            </div>
-                        </div>
-                        
-                            <div class="panel-footer">
-                                <span class="pull-left">#48cfad</span>
-                                <span class="pull-right">72, 207, 173</span>
-                                <div class="clearfix"></div>
-                            </div>
-                        
-                    </div>
-                </div>
-				<div class="col-lg-3 col-md-6">
-                    <div class="panel grass">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-12">
-									<h4>Grass</h4>
-									
-                                </div>
-
-                            </div>
-                        </div>
-                        
-                            <div class="panel-footer">
-                                <span class="pull-left">#A0D468</span>
-                                <span class="pull-right">160, 212, 104</span>
-                                <div class="clearfix"></div>
-                            </div>
-                        
-                    </div>
-                </div>
-				
-				<div class="col-lg-3 col-md-6">
-                    <div class="panel aqua">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-12">
-									<h4>Aqua</h4>
-									
-                                </div>
-
-                            </div>
-                        </div>
-                        
-                            <div class="panel-footer">
-                                <span class="pull-left">#3bafda</span>
-                                <span class="pull-right">59, 175, 218</span>
-                                <div class="clearfix"></div>
-                            </div>
-                        
-                    </div>
-                </div>
-				
-				<div class="col-lg-3 col-md-6">
-                    <div class="panel lavender">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-12">
-									<h4>Lavender</h4>
-									
-                                </div>
-
-                            </div>
-                        </div>
-                        
-                            <div class="panel-footer">
-                                <span class="pull-left">#ac92ec</span>
-                                <span class="pull-right">172, 146, 236</span>
-                                <div class="clearfix"></div>
-                            </div>
-                        
-                    </div>
-                </div>
-				<div class="col-lg-3 col-md-6">
-                    <div class="panel pinkrose">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-12">
-									<h4>PinkRose</h4>
-									
-                                </div>
-
-                            </div>
-                        </div>
-                        
-                            <div class="panel-footer">
-                                <span class="pull-left">#d770ad</span>
-                                <span class="pull-right">215, 112, 173</span>
-                                <div class="clearfix"></div>
-                            </div>
-                        
-                    </div>
-                </div>
-				<div class="col-lg-3 col-md-6">
-                    <div class="panel bluegeans">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-12">
-									<h4>BlueGeans</h4>
-									
-                                </div>
-
-                            </div>
-                        </div>
-                        
-                            <div class="panel-footer">
-                                <span class="pull-left">#5d9cec</span>
-                                <span class="pull-right">93, 156, 236</span>
-                                <div class="clearfix"></div>
-                            </div>
-                        
-                    </div>
-                </div>
-				<div class="col-lg-3 col-md-6">
-                    <div class="panel bittersweet">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-12">
-									<h4>Bittersweet</h4>
-									
-                                </div>
-
-                            </div>
-                        </div>
-                        
-                            <div class="panel-footer">
-                                <span class="pull-left">#fc6e51</span>
-                                <span class="pull-right">252, 110, 81</span>
-                                <div class="clearfix"></div>
-                            </div>
-                        
-                    </div>
-                </div>
-				
-				
-				<div class="col-lg-3 col-md-6">
-                    <div class="panel mediumgray">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-12">
-									<h4>Medium Gray</h4>
-									
-                                </div>
-
-                            </div>
-                        </div>
-                        
-                            <div class="panel-footer">
-                                <span class="pull-left">#aab2bd</span>
-                                <span class="pull-right">170, 178, 189</span>
-                                <div class="clearfix"></div>
-                            </div>
-                        
-                    </div>
-                </div>
-				<div class="col-lg-3 col-md-6">
-                    <div class="panel darkgray">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-12">
-									<h4>Dark Gray</h4>
-									
-                                </div>
-
-                            </div>
-                        </div>
-                        
-                            <div class="panel-footer">
-                                <span class="pull-left">#434a54</span>
-                                <span class="pull-right">67, 74, 84</span>
-                                <div class="clearfix"></div>
-                            </div>
-                        
-                    </div>
-                </div>
-				
-					</div>
-				</div>	
-												
-												<!-- global scripts -->
-												
+																												
+																												<div class="row m-b-40">
+																													<div class="col-xs-12">
+																														<button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#default-modal"> Show default modal </button>
+																													</div>
+																												</div>
+																												<div class="row m-b-40">
+																													<div class="col-xs-12">
+																														<button class="btn btn-warning" data-toggle="modal" data-target="#small-modal"> Show small modal </button>
+																													</div>
+																												</div>
+																												<div class="row">
+																													<div class="col-xs-12">
+																														<button class="btn btn-danger" data-toggle="modal" data-target="#large-modal"> Show large modal </button>
+																													</div>
+																												</div>
 												<script src="scripts/jquery.js"></script>
-												<script src="bower_components/tether/dist/js/tether.js"></script>
-												<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-												<script src="bower_components/PACE/pace.js"></script>
-												<script src="scripts/lodash.min.js"></script>
-												<script src="scripts/components/jquery-fullscreen/jquery.fullscreen-min.js"></script>
-												<script src="bower_components/jquery-storage-api/jquery.storageapi.min.js"></script>
-												<script src="bower_components/wow/dist/wow.min.js"></script>
-												<script src="scripts/functions.js"></script>
-												<script src="scripts/colors.js"></script>
-												<script src="scripts/left-sidebar.js"></script>
-												<script src="scripts/navbar.js"></script>
-												<script src="scripts/horizontal-navigation-1.js"></script>
-												<script src="scripts/horizontal-navigation-2.js"></script>
-												<script src="scripts/horizontal-navigation-3.js"></script>
-												<script src="scripts/main.js"></script>
-												<script src="bower_components/notifyjs/dist/notify.js"></script>
-												<script src="scripts/Chart.min.js"></script>
-												<script src="scripts/chartist.min.js"></script>
-												<script src="scripts/jquery.easypiechart.min.js"></script>
-												<script src="bower_components/d3/d3.js"></script>
-												<script src="scripts/topojson.min.js"></script>
-												<script src="scripts/datamaps.all.js"></script>
-												<script src="scripts/dashboards.js"></script>
-												<script src="scripts/index.js"></script>
-											</body>
+																									<script src="bower_components/tether/dist/js/tether.js"></script>
+																									<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+																									<script src="bower_components/PACE/pace.js"></script>
+																									<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.0.0/lodash.min.js"></script>
+																									<script src="scripts/components/jquery-fullscreen/jquery.fullscreen-min.js"></script>
+																									<script src="bower_components/jquery-storage-api/jquery.storageapi.min.js"></script>
+																									<script src="bower_components/wow/dist/wow.min.js"></script>
+																									<script src="scripts/functions.js"></script>
+																									<script src="scripts/colors.js"></script>
+																									<script src="scripts/left-sidebar.js"></script>
+																									<script src="scripts/navbar.js"></script>
+																									<script src="scripts/horizontal-navigation-1.js"></script>
+																									<script src="scripts/horizontal-navigation-2.js"></script>
+																									<script src="scripts/horizontal-navigation-3.js"></script>
+																									<script src="scripts/main.js"></script>
+																									<script src="scripts/ui-elements-modals.js"></script>
+																								</body>
 										</html>

@@ -22,7 +22,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/1.0.0/css/flag-icon.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/colorpallet.css">
-    <link rel="stylesheet" href="bower_components/chartist/dist/chartist.min.css">
+    <link rel="stylesheet" href="styles/chartist.min.css">
 </head>
 
 <body data-layout="empty-layout" data-palette="palette-0" data-direction="none">
@@ -30,7 +30,17 @@
         <a class="navbar-brand" href="Homepage.html" style="color: #00BCD4;font-family: 'Lobster', cursive;font-family: 'Acme', sans-serif;">Componentization
                                                     <span>Style Guide</span>
                                             </a>
-                <ul class="nav navbar-nav pull-right toggle-fullscreen-mode">
+        <ul class="nav navbar-nav pull-right">
+            <li class="nav-item">
+                <a href="#">
+                                                        <i class="zmdi zmdi-power" style="margin-top:10px;"></i>				
+                                                    </a>
+            </li>
+        </ul>
+
+
+
+        <ul class="nav navbar-nav pull-right toggle-fullscreen-mode">
             <li class="nav-item">
                 <a class="nav-link" data-click="toggle-fullscreen-mode">
                                                         <i class="zmdi zmdi-fullscreen"></i>
@@ -58,67 +68,86 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-12">
-                        <ul class="list-unstyled navigation animation-delay">
-                                <li class="horizontal-navigation-dropdown wow fadeIn">
-                                    <a class="btn btn-primary" href="Homepage.html">Home</a>
-                                </li>
-                                <li class="horizontal-navigation-dropdown wow fadeIn">
-                                    <a class="btn btn-primary" href="colorpallet.html">Color Pallets</a>
-                                </li>
-                                <li class="horizontal-navigation-dropdown wow fadeIn">
-                                    <a class="btn btn-primary" href="fontstypo.html">Fonts & Typography</a>
-                                    
-                                </li>
-                                <li class="horizontal-navigation-dropdown wow fadeIn">
-                                    <a class="btn btn-primary" href="buttons.html">Buttons</a>
-                                </li>
-                                <li class="horizontal-navigation-dropdown wow fadeIn">
-                                    <a class="btn btn-primary">Iconography</a>
-                                    <div class="horizontal-dropdown-menu" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
-                                        <a class="btn btn-primary sideline" href="fontawesome.html">Font Awesome </a>
-                                        <a class="btn btn-primary sideline" href="lonicons.html">Lonicons</a>
-                                        <a class="btn btn-primary sideline" href="emoji.html">Emoji</a>
-                                        
-                                    </div>
-                                </li>
-                                <li class="horizontal-navigation-dropdown wow fadeIn">
-                                    <a class="btn btn-primary">Form Elements</a>
-                                    <div class="horizontal-dropdown-menu" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
-                                        <a class="btn btn-primary sideline" href="basicforms.html">Basic Forms </a>
-                                        <a class="btn btn-primary sideline" href="formvalidations.html">Form Validation</a>
-                                        <a class="btn btn-primary sideline" href="pickers.html">Pickers </a>
-                                        
-                                    </div>
-                                </li>
-                                <li class="horizontal-navigation-dropdown wow fadeIn">
-                                    <a class="btn btn-primary" href="Alerts.html">Alerts</a>
-                                </li>
-                                
-                                <li class="horizontal-navigation-dropdown wow fadeIn">
-                                <a class="btn btn-primary"> UI Elements </a>
-                                <div class="horizontal-dropdown-menu" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
-                                    <a class="btn btn-primary sideline" href="dashboards-analytics.html"> Analytics </a>
-                                        <a class="btn btn-primary sideline" href="dashboards-e-commerce.html"> e-Commerce </a>
-                                        <a class="btn btn-primary sideline" href="dashboards-finance.html"> Finance </a>
-                                        <a class="btn btn-primary sideline" href="dashboards-saas.html"> SAAS </a>
-                                </div>
-                            </li>
-                            <li class="horizontal-navigation-dropdown wow fadeIn">
-                                    <a class="btn btn-primary" href="angular_introduction.html">Angular</a>
-                                    <div class="horizontal-dropdown-menu">
-                                        <a class="btn btn-primary sideline" href="angular_components.html"> Component </a>
-                                        <a class="btn btn-primary sideline" href="angular_modules.html"> Module </a>
-                                        <a class="btn btn-primary sideline" href="angular_directives.html"> Directive </a>
-                                        <a class="btn btn-primary sideline" href="angular_routing.html"> Routing </a>
-                                        <a class="btn btn-primary sideline" href="angular_httpclient.html"> Http Client </a>
-                                        <a class="btn btn-primary sideline" href="angular_dinjection.html"> Dependency Injection </a>
-                                    </div>
-                                </li>
-                                <li class="horizontal-navigation-dropdown wow fadeIn">
-                                        <a class="btn btn-primary" href="crossbrowser.html">Cross Browser</a>
-                                    </li>
-                            </ul>
-
+                       <ul class="list-unstyled navigation animation-delay">
+															<li class="horizontal-navigation-dropdown wow fadeIn">
+																<a class="btn btn-primary" href="Homepage.html">Home</a>
+															</li>
+															<li class="horizontal-navigation-dropdown wow fadeIn">
+																<a class="btn btn-primary" href="colorpallet.html">Color Pallets</a>
+															</li>
+															<li class="horizontal-navigation-dropdown wow fadeIn">
+																<a class="btn btn-primary">Fonts & Typography</a>
+																<div class="horizontal-dropdown-menu" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
+																	<a class="btn btn-primary sideline" href="fonts.html"> Fonts </a>
+																	<a class="btn btn-primary sideline" href="typography.html"> Typography </a>
+																	
+																</div>
+															</li>
+															
+															<li class="horizontal-navigation-dropdown wow fadeIn">
+																	<a class="btn btn-primary"> UI Elememnts </a>
+																	<div class="horizontal-dropdown-menu horizontal-dropdown-menu-lg" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
+																		
+																		<a class="btn btn-primary sideline" href="ui-elements-images.html"> Images </a>
+																		<a class="btn btn-primary sideline" href="ui-elements-overlays.html"> Overlays </a>
+																		<a class="btn btn-primary sideline" href="ui-elements-lists.html"> Lists </a>
+																		<a class="btn btn-primary sideline" href="ui-elements-labels.html"> Labels </a>
+																		<a class="btn btn-primary sideline" href="ui-elements-progress-bars.html"> Progress Bars </a>
+																		<a class="btn btn-primary sideline" href="ui-elements-carousel.html"> Carousel </a>
+																		<a class="btn btn-primary sideline" href="ui-elements-tabs.html"> Tabs </a>
+																		<a class="btn btn-primary sideline" href="ui-elements-grid.html"> Grid </a>
+																		<a class="btn btn-primary sideline" href="ui-elements-animations.html"> Animations </a>
+																		<a class="btn btn-primary sideline" href="ui-elements-google-maps.html"> Google Maps </a>
+																		<a class="btn btn-primary sideline" href="ui-elements-cards.html"> Cards </a>
+																		<a class="btn btn-primary sideline" href="ui-elements-dropdowns.html"> Dropdowns </a>
+																		<a class="btn btn-primary sideline" href="ui-elements-drag-and-drop.html"> Drag and drop </a>
+																		<a class="btn btn-primary sideline" href="ui-elements-modals.html"> Modals </a>
+																		<a class="btn btn-primary sideline" href="ui-elements-tooltip.html">ToolTips </a>
+																		<a class="btn btn-primary sideline" href="ui-elements-pagination.html">Paginations </a>
+																	</div>
+																</li>
+																
+															<li class="horizontal-navigation-dropdown wow fadeIn">
+																<a class="btn btn-primary" href="buttons.html">Buttons</a>
+															</li>
+															<li class="horizontal-navigation-dropdown wow fadeIn">
+																<a class="btn btn-primary">Iconography</a>
+																<div class="horizontal-dropdown-menu" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
+																	<a class="btn btn-primary sideline" href="fontawesome.html">Font Awesome </a>
+																	<a class="btn btn-primary sideline" href="lonicons.html">Lonicons</a>
+																	<a class="btn btn-primary sideline" href="emoji.html">Emoji</a>
+																	
+																</div>
+															</li>
+															<li class="horizontal-navigation-dropdown wow fadeIn">
+																<a class="btn btn-primary">Form Elements</a>
+																<div class="horizontal-dropdown-menu" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
+																	<a class="btn btn-primary sideline" href="basicforms.html">Basic Forms </a>
+																	<a class="btn btn-primary sideline" href="formvalidations.html">Form Validation</a>
+																	<a class="btn btn-primary sideline" href="pickers.html">Pickers </a>
+																	
+																</div>
+															</li>
+															<li class="horizontal-navigation-dropdown wow fadeIn">
+																<a class="btn btn-primary" href="Alerts.html">Alerts</a>
+															</li>
+																
+																
+                                                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                                                                <a class="btn btn-primary" href="angular_introduction.html">Angular</a>
+                                                                <div class="horizontal-dropdown-menu">
+                                                                    <a class="btn btn-primary sideline" href="angular_components.html"> Component </a>
+                                                                    <a class="btn btn-primary sideline" href="angular_modules.html"> Module </a>
+                                                                    <a class="btn btn-primary sideline" href="angular_directives.html"> Directive </a>
+                                                                    <a class="btn btn-primary sideline" href="angular_routing.html"> Routing </a>
+                                                                    <a class="btn btn-primary sideline" href="angular_httpclient.html"> Http Client </a>
+                                                                    <a class="btn btn-primary sideline" href="angular_dinjection.html"> Dependency Injection </a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="horizontal-navigation-dropdown wow fadeIn">
+                                                                    <a class="btn btn-primary" href="crossbrowser.html">Cross Browser</a>
+                                                                </li>
+														</ul>
                 </div>
             </div>
         </div>
@@ -170,13 +199,13 @@
 
     <!-- global scripts -->
     <script src="scripts/jquery.js"></script>
-    <script src="scripts/tether.js"></script>
-    <script src="scripts/bootstrap.js"></script>
-    <script src="scripts/pace.js"></script>
+    <script src="bower_components/tether/dist/js/tether.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/PACE/pace.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.0.0/lodash.min.js"></script>
     <script src="scripts/components/jquery-fullscreen/jquery.fullscreen-min.js"></script>
-    <script src="scripts/jquery.storageapi.min.js"></script>
-    <script src="scripts/wow.min.js"></script>
+    <script src="bower_components/jquery-storage-api/jquery.storageapi.min.js"></script>
+    <script src="bower_components/wow/dist/wow.min.js"></script>
     <script src="scripts/functions.js"></script>
     <script src="scripts/colors.js"></script>
     <script src="scripts/left-sidebar.js"></script>
@@ -185,11 +214,11 @@
     <script src="scripts/horizontal-navigation-2.js"></script>
     <script src="scripts/horizontal-navigation-3.js"></script>
     <script src="scripts/main.js"></script>
-    <script src="scripts/notify.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
-    <script src="scripts/chartist.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.min.js"></script>
-    <script src="scripts/d3.js"></script>
+    <script src="bower_components/notifyjs/dist/notify.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script> -->
+    <!-- <script src="scripts/chartist.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.min.js"></script> -->
+    <script src="bower_components/d3/d3.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
     <script src="http://bower.batchthemes.com/bower_components/datamaps/dist/datamaps.all.js"></script>
     <script src="scripts/dashboards.js"></script>
