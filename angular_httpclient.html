@@ -129,7 +129,9 @@
         <!-- row end -->
         <div class="row">
             <div class="col-lg-12">
-                <p>In order to start making HTTP calls from our Angular app we need to import the angular/http module and register for HTTP services. It supports both XHR and JSONP requests exposed through the HttpModule and JsonpModule respectively. In this section we will be focusing only on the HttpModule.</p>
+                <p>In order to start making HTTP calls from our Angular app we need to import the angular/http module and register
+                    for HTTP services. It supports both XHR and JSONP requests exposed through the HttpModule and JsonpModule
+                    respectively. In this section we will be focusing only on the HttpModule.</p>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -137,7 +139,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h3 class="page-header">
-                        Setting up angular/http
+                    Setting up angular/http
                 </h3>
             </div>
             <!-- /.col-lg-12 -->
@@ -145,9 +147,10 @@
         <!-- row end -->
         <div class="row">
             <div class="col-lg-12">
-                <p>In order to use the various HTTP services we need to include HttpModule in the imports for the root NgModule. This will allow us to access HTTP services from anywhere in the application.</p>
+                <p>In order to use the various HTTP services we need to include HttpModule in the imports for the root NgModule.
+                    This will allow us to access HTTP services from anywhere in the application.</p>
                 <div class="codeblock">
-                        <code>
+                    <code>
                                             <span>...</span>
                                             <span>import { AppComponent } from './app.component'</span>
                                             <span>import { HttpModule } from '@angular/http';</span>
@@ -166,7 +169,7 @@
                                                 <span>})</span>
                                                 <span>export class AppModule {}</span>
                                     </code>
-                    </div>
+                </div>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -182,9 +185,10 @@
         <!-- row end -->
         <div class="row">
             <div class="col-lg-12">
-                <p>To make HTTP requests we will use the Http service. In this example we are creating a SearchService to interact with the Spotify API.</p>
+                <p>To make HTTP requests we will use the Http service. In this example we are creating a SearchService to interact
+                    with the Spotify API.</p>
                 <div class="codeblock">
-                <code>
+                    <code>
                     <span>import { Http } from '@angular/http';</span>
                     <span>import { Injectable } from '@angular/core';</span>
                     <span>import { Observable } from 'rxjs/Observable';</span>
@@ -203,7 +207,9 @@
                             <span>}</span>
                                             </code>
                 </div>
-                <p>Here we are making an HTTP GET request which is exposed to us as an observable. You will notice the .map operator chained to .get. The Http service provides us with the raw response as a string. In order to consume the fetched data we have to convert it to JSON.</p>
+                <p>Here we are making an HTTP GET request which is exposed to us as an observable. You will notice the .map
+                    operator chained to .get. The Http service provides us with the raw response as a string. In order to
+                    consume the fetched data we have to convert it to JSON.</p>
                 <p>In addition to Http.get(), there are also Http.post(), Http.put(), Http.delete(), etc. They all return observables.</p>
             </div>
             <!-- /.col-lg-12 -->
