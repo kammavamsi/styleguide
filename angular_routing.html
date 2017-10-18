@@ -230,7 +230,7 @@
                     sample shows how we import this module in an app.routes.ts file.</p>
                 <p>app/app.routes.ts</p>
                 <div class="codeblock">
-                        <code>
+                    <code>
                                             <span>...</span>
                                             <span>import { RouterModule, Routes } from '@angular/router';</span>
                                             <span>const routes: Routes = [</span>
@@ -239,10 +239,10 @@
                                             <span>];</span>
                                             <span>export const routing = RouterModule.forRoot(routes);</span>
                                     </code>
-                    </div>
-                    <p>We then import our routing configuration in the root of our application.</p>     
-                    <p>app/app.module.ts</p>
-                    <div class="codeblock">
+                </div>
+                <p>We then import our routing configuration in the root of our application.</p>
+                <p>app/app.module.ts</p>
+                <div class="codeblock">
                     <code>
                                         <span>...</span>
                                         <span>import { routing } from './app.routes';</span>
@@ -262,10 +262,99 @@
                                                 <span>}</span>
                                 </code>
                 </div>
+
             </div>
             <!-- /.col-lg-12 -->
         </div>
         <!-- end of row -->
+        <div class="row">
+            <h4>Configuring a primary router outlet</h4>
+            <p>Once the router has a URL match, it will try to display the corresponding matching components. for that it ill look in the template for a router-outlet component:</p>
+            <div class="codeblock">
+            <code>
+                                        <span>@Component({</span>
+                                            <span></span>selector:'app',</span>
+                                            <span></span>template: `</span>
+                                            <span></span>&lt;main&gt;</span>
+                                            <span>&lt;router-outlet&gt;&lt;/router-outlet&gt;</span>            
+                                            <span>&lt;/main&gt; </span>
+                                            <span>`&lt;/span&gt;
+                                                    <span>})&lt;/span&gt;
+                                                            <span>export class App {</span>
+                                                                <span>...</span>
+                                                                <span>}</span>
+                                </code>
+            </div>
+            <p>Router outlet is a dynamic component that the router uses to display in this case either the Home or AllLessons components. There is nothing special about these components, these could be any component.</p>
+            <h4>How to prevent 404 not found in the new router?</h4>
+            <p>In order to use the new HTLM5 strategy, you need to setup your server so that any unmatched request gets directed to index.html, so that for example /lessons gets as result index.html and not 404 Not found.</p>
+            <p>The exact configuration will depend on which server technology is being used. Let's give an example, let's say we are using Node for the server and Express as the backend web framework.</p>
+            <p>To fix the 404 issue we would have to configure the following middleware as the last in the middleware chain:</p>
+            <div class="codeblock">
+                <code>
+                                    <span>function redirectRouterLessonUnmatched(req,res) {</span>
+                                        <span></span>res.sendFile("index.html", { root: './index.html' });</span>
+                                        <span>}</span>
+                                    
+                                        <span>app.use(redirectRouterLessonUnmatched);</span>
+                            </code>
+            </div>
+            <p>This would give us a good start in using the new HTML5 mode of the router, without this the router usability is compromised. Another common source of issues is, how to configure a default or a fallback route, this is probably something that all applications need.</p>
+            <h5>Home and Fallback routes - why order matters</h5>
+            <p>The new component router supports the notions of empty paths and wildcards, meaning that we can configure an index route and a fallback route like this:</p>
+            <div class="codeblock">
+            <code>
+                                 <span>   export const routeConfig:Routes = [</span>
+                                 <span> ... ,</span>
+                                 <span> {</span>
+                                    <span> path: "",</span>
+                                    <span> component: Home</span>
+                                    <span> },</span>
+                                    <span> {</span>
+                                        <span> path: "**",</span>
+                                        <span> component: PageNotFoundComponent</span>
+                                        <span> }</span>
+                                        <span> ];</span>
+                            </code>
+            </div>
+            <p>We can see that the empty path configuration would map the URL / to the component Home, and all other paths to PageNotFoundComponent. But there is a catch in this configuration as well.</p>
+            <h4>Router Navigation with the routerLink directive</h4>
+            <p>As we have included RouterModule in our app, we can use the routerLink directive to define router navigation links in our template. There are a couple of ways of doing this:</p>
+            <div class="codeblock">
+                <code>
+                        <span>&lt;ul class="top-menu"&gt;</span>
+                        <span>&nbsp; &lt;li&gt;</span>
+                        <span>&nbsp; &lt;a routerLink="">Home&lt;/a&gt;</span>
+                        <span>&nbsp; &lt;/li&gt;</span>
+                        <span>&nbsp; &lt;li&gt;</span>
+                        <span>&nbsp; &lt;a routerLink="courses"&gt;Courses&lt;/a&gt;</span>
+                        <span>&nbsp; &lt;/li&gt;</span>
+                        <span>&nbsp;  &lt;li&gt;</span>
+                        <span>&nbsp; &lt;a [routerLink]="['lessons']"&gt;Lessons&lt;/a&gt;</span>
+                        <span>&nbsp;  &lt;/li&gt;</span>
+                        <span>&lt;/ul&gt;</span>
+                </code>
+            </div>
+            <p>We can either hardcode a string directly in the template, like its the case of the home route or the courses route. But we can also pass it an expression. If so we need to pass it an array containing the multiple URL path parts that we want to navigate to: in this case we want to navigate to the /lessons path.</p>
+            <h4>Programmatic router navigation</h4>
+            <p>Another way of doing router navigation is to use the router programmatic API to do so. For that we just have to inject the router into our component, and make use of either the navigate or navigateByUrl navigation methods:</p>
+            <div class="codeblock">
+                <code>
+                                    <span>constructor(private router:Router) {</span>
+                                        <br/>
+                                        <span>}</span>
+                                        <br/>
+                                        <span>openCourse(course) {</span>
+                                            <span>&nbsp;&nbsp;    this.router.navigateByUrl(`/courses/${course.id}`);</span>
+                                            <span>}</span>
+                                        <br/>
+                                        <span>showCoursePlayList(course) {</span>
+                                            <span>&nbsp;this.router.navigate(['/courses',course.id]);</span>
+                                            <span>}</span>
+                            </code>
+            </div>
+            <p>One of the things that we usually want to do when navigating between two routes is to pass navigation parameters to the target route.</p>
+        </div>
     </div>
 
     <!-- global scripts -->

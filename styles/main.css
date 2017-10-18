@@ -117410,4 +117410,16 @@ margin-left: 20px;
 code span{
   display:block;
 }
+
+.code{
+  font-size: 16px;
+  color:white;
+  padding:5px;
+}
+
+.highlight{
+  background: #002b36;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
 /*end Of Angular documnetation CSS*/

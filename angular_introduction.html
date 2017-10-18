@@ -284,6 +284,78 @@
                 </ul>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Getting Started With Angular 2 and TypeScript</h2>
+                <p>The best way to get started learning Angular 2 and TypeScript is to use the Angular CLI to bootstrap a new project.</p>
+                <P>The Angular CLI is great because it includes everything you need to start writing your Angular 2 application right away: A front-end build pipeline to transpile your TypeScript into JavaScript that can run in the browser, lots of generators to scaffold your app, a web development server that automatically reflects your changes in the browser as you make them and much more.</P>
+                <p>So start by installing the Angular CLI using npm (you’ll need to install node.js and npm in your development machine before you can continue). In your terminal of choice type:</p>
+                <div class="highlight" style="height:35px;">
+                    <p class="code">npm install -g @angular/cli</p>
+                </div>
+                <p>Now you are ready to use the Angular CLI to create a new project. The command that you use to access the Angular CLI is ng. To create a new app type the following:</p>
+                <div class="highlight" style="height:35px;">
+                        <p class="code">ng new angular-get-started --style scss</p>
+                    </div>
+                    <p>This will create a new Angular 2 project from scratch and set it up so that you can use SASS as CSS preprocessor. If you go inside the angular-get-started folder that should have just been created you’ll find a folder structure that will look more or less like this:</p>
+                    <img src="assets/images/angular/structure.png" />
+                    <p>You can test that everything works as it should by running the development server. Type the following command:</p>
+                    <div class="highlight" style="height:35px;">
+                            <p class="code">ng serve --open</p>
+                        </div>
+                        <p>This should start the development server, open a browser and load your app. You can stop the server any time by typing CTRL-C a couple of times in the terminal</p>
+                        <h4>Index.html The Entry Point for Your App</h4>
+                        <p>The index.html is the entry point to your application:</p>
+                        <ul>
+                            <li>It links to your styles and javascript files</li>
+                            <li>It provides the HTML markup for your application with the custom &lt;app-root&gt; element.</li>
+                        </ul>
+                        <p>If you take a sneak peak at the index.html file in your project you’ll see the following</p>
+                        <img src="assets/images/angular/index.png" />
+                        <p>You may be wondering… Hmm… where are the styles and javascript files? All I can see is a custom element app-root. You’ll be happy to know that you don’t have any sight problems as the styles and JavaScript files are indeed not there… yet. The reason why that is the case is that the Angular CLI relies on Webpack to inject these files when they are needed.</p>
+                        <h4>Bootstrapping Your App</h4>
+                        <p>In AngularJS we used the ng-app directive to point Angular 2 to the starting point of your application. In Angular 2 we use a bootstrapper. You can find the bootstrapping logic in the src/main.ts module:</p>
+                        <img src="assets/images/angular/module.png" />
+                        <p>In this file we import the platformBrowserDynamic object from the '@angular/platform-browser-dynamic' module and call its bootstrapModule function with the AppModule as argument.</p>
+                        <p>There’s two interesting things to note here:</p>
+                        <ul>
+                            <li>The '@angular/platform-browser-dynamic' bootstrapper hints at the fact that Angular 2 is platform agnostic. That is, you can run it in the browser, but you can also run it on a web worker or in the server using different bootstrappers.</li>
+                            <li>Notice how we import modules in a different way, Angular 2 modules are imported by name, and application components are imported using relative paths.</li>
+                        </ul>
+                        <p>Calling the bootstrapModule function with the AppModule as argument tells Angular that this module is the main module for your application.</p>
+                        <p>Angular 2 modules and the new NgModule decorator let us declare in one place all the dependencies and components of our application without the need to do it on a per-component basis (like we used to do in previous versions):</p>
+                        <img src="assets/images/angular/module2.png" />
+                        <p>The NgModule decorator takes an object with the following information:</p>
+                        <ul>
+                            <li>an imports array where you declare your module dependencies, for instance, browser, forms, routing or http. The BrowserModule used above contains all the dependencies necessary to run Angular 2 on a browser.</li>
+                            <li>a declarations array where you declare the components and directives that belong to the current module.</li>
+                            <li>a bootstrap array that identifies the root component that Angular 2 should use to bootstrap your application.</li>
+                        </ul>
+                        <p>In this example we import an AppComponent component from the app.component.ts module and set it as the root of our application.</p>
+                        <p>The AppComponent looks like this:</p>
+                        <img src="assets/images/angular/component.png" />
+                        <p>It has an AppComponent class that is decorated by some metadata in the form a  TypeScript decorator @Component which binds the class to its template, its styles and the app-root selector</p>
+                        <p>This metadata tells Angular 2 that whenever you see an &lt;app-root&gt; html element you should render the template in templateUrl, with the styles in stylesUrls and in the context of the AppComponent class.</p>
+                        <p>If we take a sneak peek at the template app.component.html, you’ll see the following: </p>
+                        <img src="assets/images/angular/template.png" />
+                        <p>The title bit (which we call interpolation syntax) tells Angular 2 to display the content of the component title variable when rendering the component. Indeed, if you run ng serve you can see how the browser renders the text app works! inside an h1 element.</p>
+                        <p>If you take a look back at the AppComponent definition and at your project structure you’ll realize that the Angular CLI follows a convention when creating components:</p>
+                        <ul>
+                            <li>All files for a given component are placed within the same folder named like the component itself (in this case app)</li>
+                            <li>These files are named with app.component and have different extensions based on their function:
+                            <ul>
+                                <li>app.component.ts for the component itself</li>
+                                <li>app.component.html for the template</li>
+                                <li>app.component.scss for the styles</li>
+                            </ul>
+                        </li>
+                        </ul>
+                        <p>Now let’s do a quick test to see how we can bind the AppComponent class members to the template. Let’s change the title property value from app works! to Star Wars PPlz!!!!!. If you now save the file, your browser should automagically refresh itself and you should be able to see the Star Wars PPlz!!! as the title of your app (If you closed your browser just open it again and if you stopped the development server then remember to run ng serve --open to start it again and see your changes).</p>
+                        
+            </div>
+
+        </div>
     </div>
 
     <!-- global scripts -->
