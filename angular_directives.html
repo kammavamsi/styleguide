@@ -178,6 +178,73 @@
                     details.</p>
                 <p>For example, Angular has built-in attribute directives such as ngClass and ngStyle that work on any component
                     or element.</p>
+                <h4>Build a simple attribute directive</h4>
+                <p>An attribute directive minimally requires building a controller class annotated with @Directive, which specifies the selector that identifies the attribute. The controller class implements the desired directive behavior.</p>
+                <p>This page demonstrates building a simple myHighlight attribute directive to set an element's background color when the user hovers over that element. You can apply it like this:</p>
+                <div class="codeblock">
+                    <code>
+                        <span>&lt;p myHighlight&gt;Highlight me!&lt;/p&gt;</span>
+                    </code>
+                </div>
+                <h4>Write the directive code</h4>
+                <p>Follow the setup instructions for creating a new local project named attribute-directives.<br/>
+                        
+                        Create the following source file in the indicated folder:</p>
+                <div class="codeblock">
+                    <code>
+                            <span>import { Directive, ElementRef, Input } from '@angular/core';</span>
+                            <br />
+                            <span>@Directive({ selector: '[myHighlight]' })</span>
+                            <span>export class HighlightDirective {</span>
+                                <span>&nbsp; constructor(el: ElementRef) {</span>
+                                    <span>&nbsp; &nbsp; el.ativeElement.style.backgroundColor = 'yellow';</span>
+                                    <span>&nbsp; }</span>
+                                    <span>}</span>
+                    </code>
+                </div>
+                <p>The import statement specifies symbols from the Angular core:</p>
+                <ul>
+                    <li>Directive provides the functionality of the @Directive decorator.</li>
+                    <li>ElementRef injects into the directive's constructor so the code can access the DOM element.</li>
+                    <li>Input allows data to flow from the binding expression into the directive.</li>
+                </ul>
+                <p>Next, the @Directive decorator function contains the directive metadata in a configuration object as an argument.</p>
+                <p>@Directive requires a CSS selector to identify the HTML in the template that is associated with the directive. The CSS selector for an attribute is the attribute name in square brackets. Here, the directive's selector is [myHighlight]. Angular locates all elements in the template that have an attribute named myHighlight.</p>
+                <p>After the @Directive metadata comes the directive's controller class, called HighlightDirective, which contains the logic for the directive. Exporting HighlightDirective makes it accessible to other components.</p>
+                <p>Angular creates a new instance of the directive's controller class for each matching element, injecting an Angular ElementRef into the constructor. ElementRef is a service that grants direct access to the DOM element through its nativeElement property.</p>
+                <h5>Apply the attribute directive</h5>
+                <p>To use the new HighlightDirective, create a template that applies the directive as an attribute to a paragraph (&lt;p&gt;) element. In Angular terms, the &lt;p&gt; element is the attribute host.</p>
+                <p>Put the template in its own template html file that looks like this:</p>
+                <div class="codeblock">
+                    <code>
+                            &lt;h1&gt;My First Attribute Directive&lt;/h1&gt;
+                            &lt;p myHighlight&gt;Highlight me!&lt;/p&gt;
+                    </code>
+                </div>
+
+                <p>Now reference this template in the Component</p>
+                <p>Next, add an import statement to fetch the Highlight directive and add that class to the declarations NgModule metadata. This way Angular recognizes the directive when it encounters myHighlight in the template.</p>
+                <div class="codeblock">
+                    <code>
+                            <span>import { NgModule } from '@angular/core';</span>
+                            <span>import { BrowserModule } from '@angular/platform-browser';</span>
+                             <br />
+                             <span>import { AppComponent } from './app.component';</span>
+                             <span>import { HighlightDirective } from './highlight.directive';</span>
+                             <br />
+                             <span>@NgModule({</span>
+                                <span>&nbsp; imports: [ BrowserModule ],</span>
+                                <span>&nbsp; declarations: [</span>
+                                <span>&nbsp; &nbsp; AppComponent,</span>
+                                <span>&nbsp; &nbsp; HighlightDirective</span>
+                                <span>&nbsp; ],</span>
+                              <span>&nbsp; bootstrap: [ AppComponent ]</span>
+                              <span>  &nbsp; })</span>
+                            <span>export class AppModule { }</span>
+                    </code>
+                </div>
+                <p>Now when the app runs, the myHighlight directive highlights the paragraph text.</p>
+                <img src="assets/images/angular/attribute_Directive.png" />
             </div>
         </div>
         <div class="row">
@@ -187,18 +254,92 @@
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <p>Structural Directives are a way of handling how a component or element renders through the use of the template
-                    tag. This allows us to run some code that decides what the final rendered output will be. Angular has
-                    a few built-in structural directives such as ngIf, ngFor, and ngSwitch.</p>
+                <p>Structural directives are responsible for HTML layout. They shape or reshape the DOM's structure, typically by adding, removing, or manipulating elements.</p>
                 <p>
-                    <b>
-                        <i>Note:</i>
-                    </b> For those who are unfamiliar with the template tag, it is an HTML element with a few special properties.
-                    Content nested in a template tag is not rendered on page load and is something that is meant to be loaded
-                    through code at runtime.</p>
-                <p>Structural directives have their own special syntax in the template that works as syntactic sugar.</p>
+                        As with other directives, you apply a structural directive to a host element. The directive then does whatever it's supposed to do with that host element and its descendents.</p>
+                <p>Structural directives are easy to recognize. An asterisk (*) precedes the directive attribute name as in this example.</p>
+                <div class="codeblock">
+                    <code>
+                            &lt;div *ngIf="hero" &gt;{{hero.name}}&lt;/div&gt;
+                    </code>
+                </div>
+                <p>No brackets. No parentheses. Just *ngIf set to a string.</p>
+                <p> the asterisk (*) is a convenience notation and the string is a microsyntax rather than the usual template expression. Angular desugars this notation into a marked-up &lt;ng-template&gt; that surrounds the host element and its descendents. Each structural directive does something different with that template.</p>
+                <p>Three of the common, built-in structural directives—NgIf, NgFor, and NgSwitch...—are described in the Template Syntax guide </p>
+                <div class="codeblock">
+                    <code>
+                            &lt;div *ngIf="hero" &gt;{{hero.name}}&lt;/div&gt;
+                            <br />
+                            &lt;ul&gt; <br />
+                            &nbsp; &lt;li *ngFor="let hero of heroes"&gt;{{hero.name}}&lt;/li&gt;<br />
+                            &lt;/ul&gt;
+                            <br />
+                            &lt;div [ngSwitch]="hero?.emotion"&gt;<br />
+                            &nbsp; &lt;happy-hero    *ngSwitchCase="'happy'"    [hero]="hero"&gt;&lt;/happy-hero&gt;<br />
+                            &nbsp; &lt;sad-hero      *ngSwitchCase="'sad'"      [hero]="hero"&gt;&lt;/sad-hero&gt;<br />
+                            &nbsp; &lt;confused-hero *ngSwitchCase="'confused'" [hero]="hero"&gt;&lt;/confused-hero&gt;<br />
+                            &nbsp; &lt;unknown-hero  *ngSwitchDefault           [hero]="hero"&gt;&lt;/unknown-hero&gt;<br />
+                            &lt;/div&gt;
+                    </code>
+                </div>
+                <h4>NgIf case study</h4>
+                <p>NgIf is the simplest structural directive and the easiest to understand. It takes a boolean expression and makes an entire chunk of the DOM appear or disappear.</p>
+                <div class="codeblock">
+                    <code>
+                            &lt;p *ngIf="true"&gt;<br />
+                                    Expression is true and ngIf is true.<br />
+                                    Expression is true and ngIf is true.<br />
+                                    This paragraph is in the DOM.
+                                    &lt;&lt;/p&gt;<br />
+                                    &lt;p *ngIf="false"&gt;<br />
+                                    Expression is false and ngIf is false.<br />
+                                    This paragraph is not in the DOM.<br />
+                                    &lt;/p&gt;<br />
+                    </code>
+                </div>
+                <p>The ngIf directive doesn't hide elements with CSS. It adds and removes them physically from the DOM. Confirm that fact using browser developer tools to inspect the DOM.</p>
+                <img src="assets/images/angular/element-not-in-dom.png" />
+                <p>The top paragraph is in the DOM. The bottom, disused paragraph is not; in its place is a comment about "bindings" </p>
+                <p>When the condition is false, NgIf removes its host element from the DOM, detaches it from DOM events (the attachments that it made), detaches the component from Angular change detection, and destroys it. The component and DOM nodes can be garbage-collected and free up memory.</p>
+                <h4>NgFor case study</h4>
+                <p>Angular transforms the *ngFor in similar fashion from asterisk (*) syntax through template attribute to &lt;ng-template&gt; element</p>
+                <p>Here's a full-featured application of NgFor, written all three ways:</p>
+                <div class="codeblock">
+                    <code>
+                            &lt;div *ngFor="let hero of heroes; let i=index; let odd=odd; trackBy: trackById" [class.odd]="odd"&gt;<br />
+                                &nbsp;    ({{i}}) {{hero.name}}<br />
+                                &lt;/div&gt;<br />
+                                <br />
+                                &lt;div template="ngFor let hero of heroes; let i=index; let odd=odd; trackBy: trackById" [class.odd]="odd"&gt;<br />
+                                &nbsp;  ({{i}}) {{hero.name}}<br />
+                                    &lt;/div&gt;<br />
+                                    <br />
+                                    &lt;ng-template ngFor let-hero [ngForOf]="heroes" let-i="index" let-odd="odd" [ngForTrackBy]="trackById"&gt;<br />
+                                    &nbsp; &lt;div [class.odd]="odd">({{i}}) {{hero.name}}&lt;/div&gt;<br />
+                                    &lt;/ng-template&gt;
+                    </code>
+                </div>
+                <p>This is manifestly more complicated than ngIf and rightly so. The NgFor directive has more features, both required and optional, than the NgIf shown in this guide. At minimum NgFor needs a looping variable (let hero) and a list (heroes).</p>
+                <p>You enable these features in the string assigned to ngFor, which you write in Angular's microsyntax.</p>
+                <h4>NgSwitch case study</h4>
+                <p>The Angular NgSwitch is actually a set of cooperating directives: NgSwitch, NgSwitchCase, and NgSwitchDefault.</p>
+                <p>Here's an example.</p>
+                <div class="codeblock">
+                    <code>
+                            &lt;div [ngSwitch]="hero?.emotion"&gt;<br />
+                            &nbsp;  &nbsp;  &lt;happy-hero    *ngSwitchCase="'happy'"    [hero]="hero"&gt;&lt;/happy-hero&gt;<br />
+                            &nbsp;  &nbsp;  &lt;sad-hero      *ngSwitchCase="'sad'"      [hero]="hero"&gt;&lt;/sad-hero&gt;<br />
+                            &nbsp;  &nbsp;  &lt;confused-hero *ngSwitchCase="'confused'" [hero]="hero"&gt;&lt;/confused-hero&gt;<br />
+                            &nbsp;  &nbsp;  &lt;unknown-hero  *ngSwitchDefault           [hero]="hero"&gt;&lt;/unknown-hero&gt;<br />
+                            &lt;/div&gt;
+                    </code>
+                </div>
+                <p>The switch value assigned to NgSwitch (hero.emotion) determines which (if any) of the switch cases are displayed.</p>
+                <p>NgSwitch itself is not a structural directive. It's an attribute directive that controls the behavior of the other two switch directives. That's why you write [ngSwitch], never *ngSwitch.</p>
+                <p>NgSwitchCase and NgSwitchDefault are structural directives. You attach them to elements using the asterisk (*) prefix notation. An NgSwitchCase displays its host element when its value matches the switch value. The NgSwitchDefault displays its host element when no sibling NgSwitchCase matches the switch value.</p>
             </div>
         </div>
+        
     </div>
 
     <!-- global scripts -->

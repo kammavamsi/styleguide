@@ -215,6 +215,105 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- row end -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h4>Making a request for JSON data</h4>
+                <p>The most common type of request applications make to a backend is to request JSON data. For example, suppose
+                    you have an API endpoint that lists items, /api/items, which returns a JSON object of the form:</p>
+                <div class="codeblock">
+                    <code>
+                            <span>{</span>
+                            <span>&nbsp; "results": [</span>
+                            <span>&nbsp; &nbsp; "Item 1",</span>
+                                <span>&nbsp; &nbsp; "Item 2",</span>
+                                <span>&nbsp; ]</span>
+                            <span>}</span>
+                    </code>
+                </div>
+                <p>The get() method on HttpClient makes accessing this data straightforward</p>
+                <div class="codeblock">
+                    <code>
+                        <span>@Component(...)</span>
+                    <span> export class MyComponent implements OnInit {</span>
+                                <br />
+                            <span>   &nbsp; results: string[];</span>
+                             <br />
+                            <span>&nbsp; // Inject HttpClient into your component or service.</span>
+                        <span>&nbsp; constructor(private http: HttpClient) {}</span>
+                              <br />
+                            <span> &nbsp; ngOnInit(): void {</span>
+                            <span>  &nbsp; &nbsp; &nbsp; // Make the HTTP request:</span>
+                        <span> &nbsp; &nbsp; this.http.get('/api/items').subscribe(data => {</span>
+                        <span>     &nbsp; &nbsp;  // Read the result field from the JSON response.</span>
+                    <span>   &nbsp; &nbsp;  this.results = data['results'];</span>
+                <span>   &nbsp; &nbsp; });</span>
+                        <span>  &nbsp; }</span>
+        <span> }</span>
+                    </code>
+                </div>
+                <h4>Typechecking the response</h4>
+                <p>In the above example, the data['results'] field access stands out because you use bracket notation to access the results field. If you tried to write data.results, TypeScript would correctly complain that the Object coming back from HTTP does not have a results property. That's because while HttpClient parsed the JSON response into an Object, it doesn't know what shape that object is.</p>
+                <p>You can, however, tell HttpClient what type the response will be, which is recommended. To do so, first you define an interface with the correct shape:</p>
+                <div class="codeblock">
+                    <code>
+                            <span>&nbsp; interface ItemsResponse {</span>
+                                <span>&nbsp; &nbsp; &nbsp;   results: string[];</span>
+                                <span>&nbsp; }</span>
+                    </code>
+                </div>
+                <p>Then, when you make the HttpClient.get call, pass a type parameter:</p>
+                <div class="codeblock">
+                    <code>
+                          <span>  http.get&lt;ItemsResponse&gt;('/api/items').subscribe(data => {</span>
+                          <span>&nbsp; &nbsp; // data is now an instance of type ItemsResponse, so you can do this:</span>
+                                <span>&nbsp; &nbsp; this.results = data.results;</span>
+                                <span>});</span>
+                    </code>
+                </div>
+
+                <h4>Making a POST request</h4>
+                <p>One common operation is to POST data to a server; for example when submitting a form. The code for sending a POST request is very similar to the code for GET:</p>
+                <div class="codeblock">
+                    <code>
+                            <span> const body = {name: 'Brad'};</span>
+                            <br />
+                                    <span> http</span>
+                                            <span>>&nbsp;  .post('/api/developers/add', body)</span>
+                                                    <span>>&nbsp; >&nbsp;  // See below - subscribe() is still necessary when using post().</span>
+                                                            <span>>&nbsp;  .subscribe(...);</span>
+                    </code>
+                </div>
+                <p>Note the subscribe() method. All Observables returned from HttpClient are cold, which is to say that they are blueprints for making requests. Nothing will happen until you call subscribe(), and every such call will make a separate request.</p>
+                <h5>Configuring other parts of the request</h5>
+                <p>Besides the URL and a possible request body, there are other aspects of an outgoing request which you may wish to configure. All of these are available via an options object, which you pass to the request.</p>
+                <h5>Headers</h5>
+                <p>One common task is adding an Authorization header to outgoing requests. Here's how you do that:</p>
+                <div class="codeblock">
+                        <code>
+                                <span> const body = {name: 'Brad'};</span>
+                                <br />
+                                <span> http</span>
+                                <span>&nbsp; .post('/api/items/add', body,{</span>
+                                <span>&nbsp; &nbsp; headers: new HttpHeaders().set('Authorization', 'my-auth-token'), })</span>
+                                <span>&nbsp; .subscribe();</span>
+                        </code>
+                    </div>
+                    <p>The HttpHeaders class is immutable, so every set() returns a new instance and applies the changes.</p>
+                    <h5>URL Parameters</h5>
+                    <p>Adding URL parameters works in the same way. To send a request with the id parameter set to 3, you would do:</p>
+                    <div class="codeblock">
+                            <code>
+                                    <span> const body = {name: 'Brad'};</span>
+                                    <br />
+                                    <span> http</span>
+                                    <span>&nbsp; .post('/api/items/add', body,{</span>
+                                    <span>&nbsp; &nbsp; params: new HttpParams().set('id', '3'), })</span>
+                                    <span>&nbsp; .subscribe();</span>
+                            </code>
+                    </div>
+                    <p>In this way, you send the POST request to the URL /api/items/add?id=3.</p>
+            </div>
+        </div>
     </div>
 
     <!-- global scripts -->

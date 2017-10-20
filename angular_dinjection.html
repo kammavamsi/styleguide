@@ -150,73 +150,254 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <p>Dependency Injection (DI) was a core feature in Angular 1.x, and that has not changed in Angular 2. DI is
-                    a programming concept that predates Angular. The purpose of DI is to simplify dependency management in
-                    software components. By reducing the amount of information a component needs to know about its dependencies,
-                    unit testing can be made easier and code is more likely to be flexible.</p>
-                <p>Angular 2 improves on Angular 1.x's DI model by unifying Angular 1.x's two injection systems. Tooling issues
-                    with respect to static analysis, minification and namespace collisions have also been fixed in Angular
-                    2.</p>
-                <p>Angular's DI system is (mostly) controlled through @NgModule. Specifically the providers and declarations
-                    array. (declarations is where we put components, pipes and directives; providers is where we put services)</p>
-                <p>For example:</p>
+                <p>Dependency injection is an important application design pattern. Angular has its own dependency injection framework, and you really can't build an Angular application without it. It's used so widely that almost everyone just calls it DI.</p>
+                <p>This page covers what DI is, why it's so useful, and how to use it in an Angular app.</p>
+                
+                <h4>Why dependency injection?</h4>
+                <p>To understand why dependency injection is so important, consider an example without it. Imagine writing the following code:</p>
                 <div class="codeblock">
                     <code>
-                                <span>import { Injectable, NgModule } from '@angular/core';</span>
-                                
-                                        <span>@Component({</span>
-                                                <span>// ...</span>
-                                                        <span>})</span>
-                                                                <span>class ChatWidget {</span>
-                                                                        <span>constructor(private authService: AuthService, private authWidget: AuthWidget,</span>
-                                    <span>private chatSocket: ChatSocket) {}</span>
-                                            <span>}</span>
-                                
-                                                    <span>  @NgModule({</span>
-                                                            <span>declarations: [ ChatWidget ]</span>
-                                                                    <span>})</span>
-                                                                            <span>export class AppModule {</span>
-                                                                                    <span>};</span>
+                            <span>export class Car {</span>
+                                <br />
+                                <span>&nbsp; public engine: Engine;</span>
+                                <span>&nbsp;  public tires: Tires;</span>
+                                <span>&nbsp; public description = 'No DI';</span>
+                                <br />
+                                <span>&nbsp; constructor() {</span>
+                                    <span>&nbsp; &nbsp;    this.engine = new Engine();</span>
+                                    <span>&nbsp; &nbsp;    this.tires = new Tires();</span>
+                                    <span>&nbsp; }</span>
+                                <br />
+                                <span> &nbsp; // Method using the engine and tires</span>
+                                <span>&nbsp; drive() {</span>
+                                    <span>&nbsp; return `${this.description} car with ` +</span>
+                                    <span>&nbsp; &nbsp;   `${this.engine.cylinders} cylinders and ${this.tires.make} tires.`;</span>
+                                    <span>&nbsp; }</span>
+                               }</span>
                         </code>
                 </div>
-                <p>In the above example the AppModule is told about the ChatWidget class. Another way of saying this is that
-                    Angular has been provided a ChatWidget.</p>
-                <p>That seems pretty straightforward, but astute readers will be wondering how Angular knows how to build ChatWidget.
-                    What if ChatWidget was a string, or a plain function?</p>
-                <p>Angular assumes that it's being given a class.</p>
-                <p>What about AuthService, AuthWidget and ChatSocket? How is ChatWidget getting those?</p>
-                <p>It's not, at least not yet. Angular does not know about them yet. That can be changed easily enough:</p>
+                <p>The Car class creates everything it needs inside its constructor. What's the problem? The problem is that the Car class is brittle, inflexible, and hard to test.</p>
+                <p>This Car needs an engine and tires. Instead of asking for them, the Car constructor instantiates its own copies from the very specific classes Engine and Tires.</p>
+                <p>What if the Engine class evolves and its constructor requires a parameter? That would break the Car class and it would stay broken until you rewrote it along the lines of this.engine = new Engine(theNewParameter). The Engine constructor parameters weren't even a consideration when you first wrote Car. You may not anticipate them even now. But you'll have to start caring because when the definition of Engine changes, the Car class must change. That makes Car brittle.</p>
+                <p>What if you want to put a different brand of tires on your Car? Too bad. You're locked into whatever brand the Tires class creates. That makes the Car class inflexible.</p>
+                <p>Right now each new car gets its own engine. It can't share an engine with other cars. While that makes sense for an automobile engine, surely you can think of other dependencies that should be shared, such as the onboard wireless connection to the manufacturer's service center. This Car lacks the flexibility to share services that have been created previously for other consumers.</p>
+                <p>When you write tests for Car you're at the mercy of its hidden dependencies. Is it even possible to create a new Engine in a test environment? What does Engine depend upon? What does that dependency depend on? Will a new instance of Engine make an asynchronous call to the server? You certainly don't want that going on during tests.</p>
+                <p>What if the Car should flash a warning signal when tire pressure is low? How do you confirm that it actually does flash a warning if you can't swap in low-pressure tires during the test?</p>
+                <p>You have no control over the car's hidden dependencies. When you can't control the dependencies, a class becomes difficult to test.</p>
+                <p>How can you make Car more robust, flexible, and testable?</p>
+                <p>That's super easy. Change the Car constructor to a version with DI:</p>
                 <div class="codeblock">
                     <code>
-                                    <span>import { Injectable, NgModule } from '@angular/core';</span>
-                                    
-                                    <span>@Component({</span>
-                                        <span>// ...</span>
-                                        <span>})</span>
-                                        <span>class ChatWidget {</span>
-                                            <span>constructor(private authService: AuthService, private authWidget: AuthWidget,</span>
-                                            <span>private chatSocket: ChatSocket) {}</span>
-                                            <span>}</span>
-                                    
-                                            <span>@Component({</span>
-                                                <span>// ...</span>
-                                                <span>})</span>
-                                                <span>class AuthWidget {}</span>
-                                    
-                                                <span>@Injectable()</span>
-                                                <span>class AuthService {}</span>
-                                    
-                                                <span>@Injectable()</span>
-                                                <span>class ChatSocket {}</span>
-                                    
-                                                <span>@NgModule({</span>
-                                                    <span>declarations[ ChatWidget, AuthWidget ]</span>
-                                                    <span>providers: [ AuthService, ChatSocket ],</span>
-                                                    <span>})</span>
+                           <span> public description = 'DI';</span>
+                            <br />
+                        <span>constructor(public engine: Engine, public tires: Tires) { }</span>
                             </code>
                 </div>
-                <p>Okay, this is starting to look a little bit more complete. Although it's still unclear how ChatWidget is
-                    being told about its dependencies. Perhaps that is related to those odd @Injectable statements.</p>
+                <p>See what happened? The definition of the dependencies are now in the constructor. The Car class no longer creates an engine or tires. It just consumes them.</p>
+                <p>Now you can create a car by passing the engine and tires to the constructor.</p>
+                <div class="codeblock">
+                        <code>
+                               <span> // Simple car with 4 cylinders and Flintstone tires.</span>
+                                <br />
+                            <span>let car = new Car(new Engine(), new Tires());</span>
+                                </code>
+                    </div>
+                    <p>How cool is that? The definition of the engine and tire dependencies are decoupled from the Car class. You can pass in any kind of engine or tires you like, as long as they conform to the general API requirements of an engine or tires.</p>
+                    <p>Now, if someone extends the Engine class, that is not Car's problem.</p>
+                    <p>The consumer of Car has the problem. The consumer must update the car creation code to something like this:</p>
+                    <div class="codeblock">
+                            <code>
+                                <span>class Engine2 {</span>
+                                <span> &nbsp; constructor(public cylinders: number) { }</span>
+                                <span>}</span>
+                                <span>// Super car with 12 cylinders and Flintstone tires.</span>
+                                <span>let bigCylinders = 12;</span>
+                                <span>let car = new Car(new Engine2(bigCylinders), new Tires());</span>
+                             </code>
+                        </div>
+                        <p>The critical point is this: the Car class did not have to change. You'll take care of the consumer's problem shortly.</p>
+                        <p>The Car class is much easier to test now because you are in complete control of its dependencies. You can pass mocks to the constructor that do exactly what you want them to do during each test:</p>
+                        <div class="codeblock">
+                            <code>
+                                <span>class MockEngine extends Engine { cylinders = 8; }</span>
+                                <span>class MockTires extends Tires { make = 'YokoGoodStone'; }</span>
+                                <br />
+                                <span>// Test car with 8 cylinders and YokoGoodStone tires.</span>
+                                <span>let car = new Car(new MockEngine(), new MockTires());</span>
+                            </code>
+                        </div>
+                        <p>It's a coding pattern in which a class receives its dependencies from external sources rather than creating them itself.</p>
+                        <h4>Angular dependency injection</h4>
+                        <p>Angular ships with its own dependency injection framework. This framework can also be used as a standalone module by other applications and frameworks.</p>
+                        <p>To see what it can do when building components in Angular, start with a simplified version of the HeroesComponent that from the The Tour of Heroes</p>
+                        <p>code for heroes.component.ts</p>
+                        <div class="codeblock">
+                            <code>
+                                    <span>import { Component } &nbsp;&nbsp; from '@angular/core';</span>
+                                    <br />
+                                    <span>@Component({</span>
+                                    <span>&nbsp;selector: 'my-heroes',</span>
+                                    <span>&nbsp;template: `</span>
+                                    <span>&nbsp;
+                                        &lt;h2&gt;Heroes&lt;/h2&gt;
+                                    </span>
+                                    <span>&nbsp;
+                                            &lt;hero-list&gt;&lt;/hero-list&gt;
+                                    </span>
+                                    <span>&nbsp;`</span>
+                                    <span>})</span>
+                                    <span>export class HeroesComponent { }</span>
+                            </code>
+                        </div>
+                        <p>code for hero-list.component.ts</p>
+                        <div class="codeblock">
+                                <code>
+                                        <span>import { Component }&nbsp;&nbsp;   from '@angular/core';</span>
+                                        <br />
+                                        <span>import { HEROES }  &nbsp;&nbsp;    from './mock-heroes';</span>
+                                        <br />
+                                        <span>@Component({</span>
+                                        <span>&nbsp;selector: 'hero-list',</span>
+                                        <span>&nbsp;template: `</span>
+                                        <span>
+                                                &lt;div *ngFor="let hero of heroes"&gt;</span>
+                                                        <span> {{hero.id}} - {{hero.name}}</span>
+                                                                <span>&lt;/div&gt;</span>
+                                        
+                                        <span>&nbsp;`</span>
+                                        <span>})</span>
+                                        <span>export class HeroListComponent {</span>
+                                            <span>&nbsp;  heroes = HEROES;</span>
+                                            <span>}</span>
+                                </code>
+                        </div>
+                        <p>code for hero.ts</p>
+                        <div class="codeblock">
+                            <code>
+                                    <span>export class Hero {</span>
+                                    <span>&nbsp;id: number;</span>
+                                    <span>&nbsp;name: string;</span>
+                                    <span>&nbsp; isSecret = false;</span>
+                                    <span>}</span>
+                            </code>
+                        </div>
+                        <p>code for /mock-heroes.ts</p>
+                        <div>
+                            <code>
+                                    <span>import { Hero } from './hero';</span>
+                                    <br />
+                                    <span>export const HEROES: Hero[] = [</span>
+                                    <span>&nbsp; { id: 11, isSecret: false, name: 'Mr. Nice' },</span>
+                                    <span>&nbsp;{ id: 12, isSecret: false, name: 'Narco' },</span>
+                                    <span>&nbsp;{ id: 13, isSecret: false, name: 'Bombasto' },</span>
+                                    <span>&nbsp; { id: 14, isSecret: false, name: 'Celeritas' },</span>
+                                    <span>&nbsp;{ id: 15, isSecret: false, name: 'Magneta' },</span>
+                                    <span>&nbsp; { id: 16, isSecret: false, name: 'RubberMan' },</span>
+                                    <span>&nbsp;{ id: 17, isSecret: false, name: 'Dynama' },</span>
+                                    <span>&nbsp;{ id: 18, isSecret: true,  name: 'Dr IQ' },</span>
+                                    <span>&nbsp;{ id: 19, isSecret: true,  name: 'Magma' },</span>
+                                    <span>&nbsp; { id: 20, isSecret: true,  name: 'Tornado' }</span>
+                                    <span>];</span>
+                            </code>
+                        </div>
+                        <p>The HeroesComponent is the root component of the Heroes feature area. It governs all the child components of this area. This stripped down version has only one child, HeroListComponent, which displays a list of heroes.</p>
+                        <p>Right now HeroListComponent gets heroes from HEROES, an in-memory collection defined in another file. That may suffice in the early stages of development, but it's far from ideal. As soon as you try to test this component or want to get your heroes data from a remote server, you'll have to change the implementation of heroes and fix every other use of the HEROES mock data.</p>
+                        <p>It's better to make a service that hides how the app gets hero data.</p>
+                        <p>The following HeroService exposes a getHeroes method that returns the same mock data as before, but none of its consumers need to know that.</p>
+                        <div class="codeblock">
+                            <code>
+                                <span>import { Injectable } from '@angular/core';</span>
+                                <br />
+                                <span>import { HEROES } from './mock-heroes';</span>
+                                <br />
+                                <span>@Injectable()</span>
+                                <span>export class HeroService {</span>
+                                <span> &nbsp; getHeroes() { return HEROES; }</span>
+                                <span>}</span>
+                            </code>
+                        </div>
+                        <p>You do have to configure the injector by registering the providers that create the services the application requires. </p>
+                        <p>You can either register a provider within an NgModule or in application components.</p>
+                        <h4>Registering providers in an NgModule</h4>
+                        <p>Here's the AppModule that registers two providers, UserService and an APP_CONFIG provider, in its providers array.</p>
+                        <div class="codeblock">
+                            <code>
+                                <span>@NgModule({</span>
+                                <span> &nbsp; imports: [</span>
+                                <span> &nbsp; &nbsp; BrowserModule</span>
+                                <span> &nbsp; ],</span>
+                                <span> &nbsp; declarations: [</span>
+                                <span> &nbsp; &nbsp; AppComponent,</span>
+                                <span> &nbsp; &nbsp; CarComponent,</span>
+                                <span> &nbsp; &nbsp; HeroesComponent,</span>
+                                <span>/* . . . */</span>
+                                <span> &nbsp; ],</span>
+                                <span> &nbsp; providers: [</span>
+                                <span> &nbsp; &nbsp; UserService,</span>
+                                <span> &nbsp; &nbsp; { provide: APP_CONFIG, useValue: HERO_DI_CONFIG }</span>
+                                <span>&nbsp; ],</span>
+                                <span> &nbsp; bootstrap: [ AppComponent ]</span>
+                                <span>})</span>
+                                <span>export class AppModule { }</span>
+                            </code>
+                        </div>
+                        <p>Because the HeroService is used only within the HeroesComponent and its subcomponents, the top-level HeroesComponent is the ideal place to register it.</p>
+                        <h4>Registering providers in a component</h4>
+                        <p>Here's a revised HeroesComponent that registers the HeroService in its providers array.</p>
+                        <div>
+                            <code>
+                                <span>import&nbsp; { Component }&nbsp; &nbsp; from '@angular/core';</span>
+                                <br />
+                                <span>import&nbsp; { HeroService } &nbsp; &nbsp; from './hero.service';</span>
+                                <br />
+                                <span>@Component({</span>
+                                <span> &nbsp; selector: 'my-heroes',</span>
+                                <span> &nbsp; providers: [HeroService],</span>
+                                <span> &nbsp; template: `</span>
+                                <span> &nbsp; &lt;h2&gt;Heroes&lt;/h2&gt;</span>
+                                <span> &nbsp; &lt;hero-list&gt;&lt;/hero-list&gt;</span>
+                                <span> &nbsp; `</span>
+                                <span> })</span>
+                                <span>export class HeroesComponent {&nbsp; }</span>
+                            </code>
+                        </div>
+                        <h4>Preparing the HeroListComponent for injection</h4>
+                        <p>The HeroListComponent should get heroes from the injected HeroService. Per the dependency injection pattern, the component must ask for the service in its constructor</p>
+                        <div>
+                            <code>
+                                <span>import { Component } from '@angular/core';</span>
+                                <br />
+                                <span>import { Hero } from './hero';</span>
+                                <span>import { HeroService } from './hero.service';</span>
+                                <br />
+                                <span>@Component({</span>
+                                <span> &nbsp;selector: 'hero-list',</span>
+                                <span>&nbsp;template: `</span>
+                                <span> &nbsp;&lt;div *ngFor="let hero of heroes"&gt;</span>
+                                <span> &nbsp;&nbsp; {{hero.id}} - {{hero.name}}</span>
+                                <span> &nbsp;&lt;/div&gt;</span>
+                                <span> &nbsp;`</span>
+                                <span>})</span>
+                                <span> export class HeroListComponent {</span>
+                                <span>&nbsp;heroes: Hero[];</span>
+                                <br />
+                                <span> &nbsp;constructor(heroService: HeroService) {</span>
+                                <span> &nbsp;&nbsp; this.heroes = heroService.getHeroes();</span>
+                                <span> &nbsp;}</span>
+                                <span> }</span>
+                            </code>
+                        </div>
+                        <h4>Focus on the constructor</h4>
+                        <p>Adding a parameter to the constructor isn't all that's happening here.</p>
+                        <div class="codeblock">
+                            <code>
+                                    <span>constructor(heroService: HeroService) {</span>
+                                        <span>&nbsp;&nbsp;   this.heroes = heroService.getHeroes();</span>
+                                        <span> }</span>
+                            </code>
+                        </div>
+                        <p>Note that the constructor parameter has the type HeroService, and that the HeroListComponent class has an @Component decorator (scroll up to confirm that fact). Also recall that the parent component (HeroesComponent) has providers information for HeroService</p>
+                        <p>The constructor parameter type, the @Component decorator, and the parent's providers information combine to tell the Angular injector to inject an instance of HeroService whenever it creates a new HeroListComponent.</p>
             </div>
             <!-- /.col-lg-12 -->
         </div>

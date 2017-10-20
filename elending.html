@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico">
     <!--[if IE]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
     <!-- global stylesheets -->
     <link rel="stylesheet" href="styles/components/bootstrap.css">
     <link href="https://fonts.googleapis.com/css?family=Acme|Lobster" rel="stylesheet">
@@ -30,7 +30,6 @@
         <a class="navbar-brand" href="Homepage.html" style="color: #00BCD4;font-family: 'Lobster', cursive;font-family: 'Acme', sans-serif;">Componentization
             <span>Style Guide</span>
         </a>
-        
         <ul class="nav navbar-nav pull-right toggle-search">
             <li class="nav-item">
                 <a class="nav-link" data-click="toggle-search">
@@ -44,10 +43,7 @@
                 <input class="form-control" type="text" placeholder="Search">
             </form>
         </div>
-
     </nav>
-
-
     <div class="horizontal-navigation horizontal-navigation-3">
         <div class="container-fluid">
             <div class="row">
@@ -140,112 +136,67 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="page-header">
-                    <b>Component</b>
-                </h2>
-            </div>
-            <!-- /.col-lg-12 -->
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <p>The core concept of any Angular application is the component. In effect, the whole application can be modeled
-                    as a tree of these components.</p>
-                <p>This is how the Angular team defines a component:</p>
-                <div class="blockquote">
-                    <p>A component controls a patch of screen real estate that we could call a view, and declares reusable UI
-                        building blocks for an application.</p>
-                </div>
-                <p>Basically, a component is anything that is visible to the end user and which can be reused many times within
-                    an application.</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
                 <h3 class="page-header">
-                    <b>Creating Components</b>
-                    </h2>
+                    <b>e-Lending</b>
+                </h3>
             </div>
             <!-- /.col-lg-12 -->
         </div>
         <div class="row">
-            <div class="col-lg-12">
-                <p>We define a component's application logic inside a class. To this we attach @Component, a TypeScript decorator,
-                    which allows you to modify a class or function definition and adds metadata to properties and function
-                    arguments.
-                </p>
-                <ul>
-                    <li>selector is the element property that we use to tell Angular to create and insert an instance of this
-                        component
-                    </li>
-                    <li>template is a form of HTML that tells Angular what needs to be to rendered in the DOM.</li>
-                </ul>
-                <p>The Component below will interpolate the value of name variable into the template between the double braces
-                    {{name}}, what get rendered in the view is &lt;p&gt;Hello World&lt;/p&gt;</p>
-                <div class="codeblock">
-                    <code><span>import { Component } from '@angular/core';</span>
-                        <span>@Component({</span>
-                        <span>&nbsp;selector: 'msg-hello',</span>
-                        <span>template: `&lt;p>Hello, {{name}}!&lt/p&gt;`,</span>
-                        <span>})</span>
-                        <span>export class HelloComponent {</span>
-                        <span>name: string;</span>
-                        <span></span>
-                        <span>constructor() {</span>
-                        <span>this.name = 'World';</span>
-                        <span>}</span>
-                        <span>}</span>
-                        </code>
-                </div>
-                <p>We need to import the Component decarator from @angular/core before we can make use of it. To use this component
-                    we simply add &lt;msg-hello&gt;&lt;/msg-hello&gt; to the HTML file or another template, and Angular will
-                    insert an instance of the HelloComponent view between those tags.&lt;/p&gt;
+            <div class="col-lg-3">
+                <img src="assets/images/e-lending/fa-comment-o.png" />
+                <span style="padding:10px;">fa-comment-o</span>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <h4>Showing component properties with interpolation</h4>
-                    <p>The easiest way to display a component property is to bind the property name through interpolation. With interpolation, you put the property name in the view template, enclosed in double curly braces: {{myHero}}.</p>
-                    <p>Then modify the app.component.ts file by changing the template and the body of the component.</p>
-                            
-                    <p>When you're done, it should look like this:</p>
-                    <div class="codeblock">
-                        <code>
-                                <span>import { Component } from '@angular/core';</span>
-                                
-                                <span>@Component({</span>
-                                    <span>selector: 'my-app',</span>
-                                    <span>template: `&lt;/span&gt;
-                                            <span>&nbsp; &lt;h1&gt;{{title}}&lt;/h1&gt;</span>
-                                            <span>&nbsp; &lt;h2&gt;My favorite hero is: {{myHero}}&lt;/h2&gt;</span>
-                                            <span>`</span>
-                                            <span> })</span>
-                                            <span>export class AppComponent {</span>
-                                                <span>title = 'Tour of Heroes';</span>
-                                                <span> myHero = 'Windstorm';</span>
-                                                <span>}</span>
-                        </code>
-                    </div>
-                    <p>You added two properties to the formerly empty component: title and myHero.</p>
-                    <p>Angular automatically pulls the value of the title and myHero properties from the component and inserts those values into the browser. Angular updates the display when these properties change.</p>
-                    <p>The CSS selector in the @Component decorator specifies an element named &lt;my-app&gt;. That element is a placeholder in the body of your index.html file:</p>
-                    <div class="codeblock">
-                        <code>
-                                <span>&lt;body&gt;</span>
-                            <span>&nbsp; &nbsp;    &lt;my-app&gt;loading...&lt;/my-app&gt;</span>
-                                <span>&lt;/body&gt;</span>
-                        </code>
-                    </div>
-                    <p>When you bootstrap with the AppComponent class (in main.ts), Angular looks for a &lt;my-app&gt; in the index.html, finds it, instantiates an instance of AppComponent, and renders it inside the &lt;my-app&gt; tag.</p>
-                    <p>Now run the app. It should display the title and hero name:</p>
-                    <img src="assets/images/angular/title-and-hero.png" />
-                </div>
-
+            <div class="col-lg-3">
+                <img src="assets/images/e-lending/fa-exclamation-circle.png" width="20" height="20"/>
+                <span style="padding:10px;">fa-exclamation-circle</span>
             </div>
-
+            <div class="col-lg-3">
+                <img src="assets/images/e-lending/fa-file-text-o.png" width="20" height="20" />
+                <span style="padding:10px;">fa-file-text-o</span>
+            </div>
+            <div class="col-lg-3">
+                <img src="assets/images/e-lending/fa-folder-open-o.png" width="20" height="20" />
+                <span style="padding:10px;">fa-folder-open-o</span>
+            </div>
+            <!-- /.col-lg-12 -->
         </div>
-
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="assets/images/e-lending/fa-pencil-square-o.png" width="20" height="20"/>
+                <span style="padding:10px;">fa-pencil-square-o</span>
+            </div>
+            <div class="col-lg-3">
+                <img src="assets/images/e-lending/fa-print.png" width="20" height="20"/>
+                <span style="padding:10px;">fa-print</span>
+            </div>
+            <div class="col-lg-3">
+                <img src="assets/images/e-lending/fa-sort.png" />
+                <span style="padding:10px;">fa-sort</span>
+            </div>
+            <div class="col-lg-3">
+                <img src="assets/images/e-lending/fa-sort-dec.png" />
+                <span style="padding:10px;">fa-sort-dec</span>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="assets/images/e-lending/fa-upload.png" width="20" height="20" />
+                <span style="padding:10px;">fa-upload</span>
+            </div>
+            <div class="col-lg-3">
+                <img src="assets/images/e-lending/Folder Icon.png" width="20" height="20"/>
+                <span style="padding:10px;">Folder Icon</span>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
     </div>
 
+
+
     <!-- global scripts -->
+
     <script src="scripts/jquery.js"></script>
     <script src="scripts/tether.js"></script>
     <script src="scripts/bootstrap.js"></script>
@@ -262,15 +213,7 @@
     <script src="scripts/horizontal-navigation-2.js"></script>
     <script src="scripts/horizontal-navigation-3.js"></script>
     <script src="scripts/main.js"></script>
-    <script src="scripts/notify.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
-    <script src="scripts/chartist.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.min.js"></script>
-    <script src="scripts/d3.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
-    <script src="http://bower.batchthemes.com/bower_components/datamaps/dist/datamaps.all.js"></script>
-    <script src="scripts/dashboards.js"></script>
-    <script src="scripts/index.js"></script>
+    <script src="scripts/elending.js"></script>
 </body>
 
 </html>
