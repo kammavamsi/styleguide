@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Componentization Style Guide</title>
+    <meta name="description" content="Marino, Admin theme, Dashboard theme, AngularJS Theme">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!--[if IE]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- global stylesheets -->
+    <link rel="stylesheet" href="styles/components/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css?family=Acme|Lobster" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic,900,900italic"
+        rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/1.0.0/css/flag-icon.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/colorpallet.css">
+    <link rel="stylesheet" href="styles/chartist.min.css">
+</head>
+
+<body data-layout="empty-layout" data-palette="palette-0" data-direction="none">
+    <nav class="navbar navbar-fixed-top navbar-1">
+        <a class="navbar-brand" href="Homepage.html" style="color: #00BCD4;font-family: 'Lobster', cursive;font-family: 'Acme', sans-serif;">Componentization
+            <span>Style Guide</span>
+        </a>
+
+        <ul class="nav navbar-nav pull-right toggle-search">
+            <li class="nav-item">
+                <a class="nav-link" data-click="toggle-search">
+                    <i class="zmdi zmdi-search"></i>
+                </a>
+            </li>
+        </ul>
+
+        <div class="navbar-drawer pull-right hidden-lg-down">
+            <form class="form-inline navbar-form">
+                <input class="form-control" type="text" placeholder="Search">
+            </form>
+        </div>
+
+    </nav>
+
+
+    <div class="horizontal-navigation horizontal-navigation-3">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul class="list-unstyled navigation animation-delay">
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="Homepage.html">Home</a>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="colorpallet.html">Color Pallets</a>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary">Fonts & Typography</a>
+                            <div class="horizontal-dropdown-menu" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
+                                <a class="btn btn-primary sideline" href="fonts.html"> Fonts </a>
+                                <a class="btn btn-primary sideline" href="typography.html"> Typography </a>
+
+                            </div>
+                        </li>
+
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary"> UI Elememnts </a>
+                            <div class="horizontal-dropdown-menu horizontal-dropdown-menu-lg" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
+
+                                <a class="btn btn-primary sideline" href="ui-elements-images.html"> Images </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-overlays.html"> Overlays </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-lists.html"> Lists </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-labels.html"> Labels </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-progress-bars.html"> Progress Bars </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-carousel.html"> Carousel </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-tabs.html"> Tabs </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-grid.html"> Grid </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-animations.html"> Animations </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-google-maps.html"> Google Maps </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-cards.html"> Cards </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-dropdowns.html"> Dropdowns </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-drag-and-drop.html"> Drag and drop </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-modals.html"> Modals </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-tooltip.html">ToolTips </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-pagination.html">Paginations </a>
+                            </div>
+                        </li>
+
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="buttons.html">Buttons</a>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary">Iconography</a>
+                            <div class="horizontal-dropdown-menu" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
+                                <a class="btn btn-primary sideline" href="fontawesome.html">Font Awesome </a>
+                                <a class="btn btn-primary sideline" href="lonicons.html">Lonicons</a>
+                                <a class="btn btn-primary sideline" href="elending.html">e-Lending</a>
+
+                            </div>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary">Form Elements</a>
+                            <div class="horizontal-dropdown-menu" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
+                                <a class="btn btn-primary sideline" href="basicforms.html">Basic Forms </a>
+                                <a class="btn btn-primary sideline" href="formvalidations.html">Form Validation</a>
+                                <a class="btn btn-primary sideline" href="pickers.html">Pickers </a>
+
+                            </div>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="Alerts.html">Alerts</a>
+                        </li>
+
+
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="angular_introduction.html">Angular</a>
+                            <div class="horizontal-dropdown-menu">
+                                <a class="btn btn-primary sideline" href="angular_components.html"> Component </a>
+                                <a class="btn btn-primary sideline" href="angular_modules.html"> Module </a>
+                                <a class="btn btn-primary sideline" href="angular_directives.html"> Directive </a>
+                                <a class="btn btn-primary sideline" href="angular_routing.html"> Routing </a>
+                                <a class="btn btn-primary sideline" href="angular_httpclient.html"> Http Client </a>
+                                <a class="btn btn-primary sideline" href="angular_dinjection.html"> Dependency Injection </a>
+                            </div>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="crossbrowser.html">Cross Browser</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">
+                    <b>Angular Dependency Injection</b>
+                </h2>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Dependency injection is an important application design pattern. Angular has its own dependency injection framework, and you really can't build an Angular application without it. It's used so widely that almost everyone just calls it DI.</p>
+                <p>This page covers what DI is, why it's so useful, and how to use it in an Angular app.</p>
+                
+                <h4>Why dependency injection?</h4>
+                <p>To understand why dependency injection is so important, consider an example without it. Imagine writing the following code:</p>
+                <div class="codeblock">
+                    <code>
+                            <span>export class Car {</span>
+                                <br />
+                                <span>&nbsp; public engine: Engine;</span>
+                                <span>&nbsp;  public tires: Tires;</span>
+                                <span>&nbsp; public description = 'No DI';</span>
+                                <br />
+                                <span>&nbsp; constructor() {</span>
+                                    <span>&nbsp; &nbsp;    this.engine = new Engine();</span>
+                                    <span>&nbsp; &nbsp;    this.tires = new Tires();</span>
+                                    <span>&nbsp; }</span>
+                                <br />
+                                <span> &nbsp; // Method using the engine and tires</span>
+                                <span>&nbsp; drive() {</span>
+                                    <span>&nbsp; return `${this.description} car with ` +</span>
+                                    <span>&nbsp; &nbsp;   `${this.engine.cylinders} cylinders and ${this.tires.make} tires.`;</span>
+                                    <span>&nbsp; }</span>
+                               }</span>
+                        </code>
+                </div>
+                <p>The Car class creates everything it needs inside its constructor. What's the problem? The problem is that the Car class is brittle, inflexible, and hard to test.</p>
+                <p>This Car needs an engine and tires. Instead of asking for them, the Car constructor instantiates its own copies from the very specific classes Engine and Tires.</p>
+                <p>What if the Engine class evolves and its constructor requires a parameter? That would break the Car class and it would stay broken until you rewrote it along the lines of this.engine = new Engine(theNewParameter). The Engine constructor parameters weren't even a consideration when you first wrote Car. You may not anticipate them even now. But you'll have to start caring because when the definition of Engine changes, the Car class must change. That makes Car brittle.</p>
+                <p>What if you want to put a different brand of tires on your Car? Too bad. You're locked into whatever brand the Tires class creates. That makes the Car class inflexible.</p>
+                <p>Right now each new car gets its own engine. It can't share an engine with other cars. While that makes sense for an automobile engine, surely you can think of other dependencies that should be shared, such as the onboard wireless connection to the manufacturer's service center. This Car lacks the flexibility to share services that have been created previously for other consumers.</p>
+                <p>When you write tests for Car you're at the mercy of its hidden dependencies. Is it even possible to create a new Engine in a test environment? What does Engine depend upon? What does that dependency depend on? Will a new instance of Engine make an asynchronous call to the server? You certainly don't want that going on during tests.</p>
+                <p>What if the Car should flash a warning signal when tire pressure is low? How do you confirm that it actually does flash a warning if you can't swap in low-pressure tires during the test?</p>
+                <p>You have no control over the car's hidden dependencies. When you can't control the dependencies, a class becomes difficult to test.</p>
+                <p>How can you make Car more robust, flexible, and testable?</p>
+                <p>That's super easy. Change the Car constructor to a version with DI:</p>
+                <div class="codeblock">
+                    <code>
+                           <span> public description = 'DI';</span>
+                            <br />
+                        <span>constructor(public engine: Engine, public tires: Tires) { }</span>
+                            </code>
+                </div>
+                <p>See what happened? The definition of the dependencies are now in the constructor. The Car class no longer creates an engine or tires. It just consumes them.</p>
+                <p>Now you can create a car by passing the engine and tires to the constructor.</p>
+                <div class="codeblock">
+                        <code>
+                               <span> // Simple car with 4 cylinders and Flintstone tires.</span>
+                                <br />
+                            <span>let car = new Car(new Engine(), new Tires());</span>
+                                </code>
+                    </div>
+                    <p>How cool is that? The definition of the engine and tire dependencies are decoupled from the Car class. You can pass in any kind of engine or tires you like, as long as they conform to the general API requirements of an engine or tires.</p>
+                    <p>Now, if someone extends the Engine class, that is not Car's problem.</p>
+                    <p>The consumer of Car has the problem. The consumer must update the car creation code to something like this:</p>
+                    <div class="codeblock">
+                            <code>
+                                <span>class Engine2 {</span>
+                                <span> &nbsp; constructor(public cylinders: number) { }</span>
+                                <span>}</span>
+                                <span>// Super car with 12 cylinders and Flintstone tires.</span>
+                                <span>let bigCylinders = 12;</span>
+                                <span>let car = new Car(new Engine2(bigCylinders), new Tires());</span>
+                             </code>
+                        </div>
+                        <p>The critical point is this: the Car class did not have to change. You'll take care of the consumer's problem shortly.</p>
+                        <p>The Car class is much easier to test now because you are in complete control of its dependencies. You can pass mocks to the constructor that do exactly what you want them to do during each test:</p>
+                        <div class="codeblock">
+                            <code>
+                                <span>class MockEngine extends Engine { cylinders = 8; }</span>
+                                <span>class MockTires extends Tires { make = 'YokoGoodStone'; }</span>
+                                <br />
+                                <span>// Test car with 8 cylinders and YokoGoodStone tires.</span>
+                                <span>let car = new Car(new MockEngine(), new MockTires());</span>
+                            </code>
+                        </div>
+                        <p>It's a coding pattern in which a class receives its dependencies from external sources rather than creating them itself.</p>
+                        <h4>Angular dependency injection</h4>
+                        <p>Angular ships with its own dependency injection framework. This framework can also be used as a standalone module by other applications and frameworks.</p>
+                        <p>To see what it can do when building components in Angular, start with a simplified version of the HeroesComponent that from the The Tour of Heroes</p>
+                        <p>code for heroes.component.ts</p>
+                        <div class="codeblock">
+                            <code>
+                                    <span>import { Component } &nbsp;&nbsp; from '@angular/core';</span>
+                                    <br />
+                                    <span>@Component({</span>
+                                    <span>&nbsp;selector: 'my-heroes',</span>
+                                    <span>&nbsp;template: `</span>
+                                    <span>&nbsp;
+                                        &lt;h2&gt;Heroes&lt;/h2&gt;
+                                    </span>
+                                    <span>&nbsp;
+                                            &lt;hero-list&gt;&lt;/hero-list&gt;
+                                    </span>
+                                    <span>&nbsp;`</span>
+                                    <span>})</span>
+                                    <span>export class HeroesComponent { }</span>
+                            </code>
+                        </div>
+                        <p>code for hero-list.component.ts</p>
+                        <div class="codeblock">
+                                <code>
+                                        <span>import { Component }&nbsp;&nbsp;   from '@angular/core';</span>
+                                        <br />
+                                        <span>import { HEROES }  &nbsp;&nbsp;    from './mock-heroes';</span>
+                                        <br />
+                                        <span>@Component({</span>
+                                        <span>&nbsp;selector: 'hero-list',</span>
+                                        <span>&nbsp;template: `</span>
+                                        <span>
+                                                &lt;div *ngFor="let hero of heroes"&gt;</span>
+                                                        <span> {{hero.id}} - {{hero.name}}</span>
+                                                                <span>&lt;/div&gt;</span>
+                                        
+                                        <span>&nbsp;`</span>
+                                        <span>})</span>
+                                        <span>export class HeroListComponent {</span>
+                                            <span>&nbsp;  heroes = HEROES;</span>
+                                            <span>}</span>
+                                </code>
+                        </div>
+                        <p>code for hero.ts</p>
+                        <div class="codeblock">
+                            <code>
+                                    <span>export class Hero {</span>
+                                    <span>&nbsp;id: number;</span>
+                                    <span>&nbsp;name: string;</span>
+                                    <span>&nbsp; isSecret = false;</span>
+                                    <span>}</span>
+                            </code>
+                        </div>
+                        <p>code for /mock-heroes.ts</p>
+                        <div>
+                            <code>
+                                    <span>import { Hero } from './hero';</span>
+                                    <br />
+                                    <span>export const HEROES: Hero[] = [</span>
+                                    <span>&nbsp; { id: 11, isSecret: false, name: 'Mr. Nice' },</span>
+                                    <span>&nbsp;{ id: 12, isSecret: false, name: 'Narco' },</span>
+                                    <span>&nbsp;{ id: 13, isSecret: false, name: 'Bombasto' },</span>
+                                    <span>&nbsp; { id: 14, isSecret: false, name: 'Celeritas' },</span>
+                                    <span>&nbsp;{ id: 15, isSecret: false, name: 'Magneta' },</span>
+                                    <span>&nbsp; { id: 16, isSecret: false, name: 'RubberMan' },</span>
+                                    <span>&nbsp;{ id: 17, isSecret: false, name: 'Dynama' },</span>
+                                    <span>&nbsp;{ id: 18, isSecret: true,  name: 'Dr IQ' },</span>
+                                    <span>&nbsp;{ id: 19, isSecret: true,  name: 'Magma' },</span>
+                                    <span>&nbsp; { id: 20, isSecret: true,  name: 'Tornado' }</span>
+                                    <span>];</span>
+                            </code>
+                        </div>
+                        <p>The HeroesComponent is the root component of the Heroes feature area. It governs all the child components of this area. This stripped down version has only one child, HeroListComponent, which displays a list of heroes.</p>
+                        <p>Right now HeroListComponent gets heroes from HEROES, an in-memory collection defined in another file. That may suffice in the early stages of development, but it's far from ideal. As soon as you try to test this component or want to get your heroes data from a remote server, you'll have to change the implementation of heroes and fix every other use of the HEROES mock data.</p>
+                        <p>It's better to make a service that hides how the app gets hero data.</p>
+                        <p>The following HeroService exposes a getHeroes method that returns the same mock data as before, but none of its consumers need to know that.</p>
+                        <div class="codeblock">
+                            <code>
+                                <span>import { Injectable } from '@angular/core';</span>
+                                <br />
+                                <span>import { HEROES } from './mock-heroes';</span>
+                                <br />
+                                <span>@Injectable()</span>
+                                <span>export class HeroService {</span>
+                                <span> &nbsp; getHeroes() { return HEROES; }</span>
+                                <span>}</span>
+                            </code>
+                        </div>
+                        <p>You do have to configure the injector by registering the providers that create the services the application requires. </p>
+                        <p>You can either register a provider within an NgModule or in application components.</p>
+                        <h4>Registering providers in an NgModule</h4>
+                        <p>Here's the AppModule that registers two providers, UserService and an APP_CONFIG provider, in its providers array.</p>
+                        <div class="codeblock">
+                            <code>
+                                <span>@NgModule({</span>
+                                <span> &nbsp; imports: [</span>
+                                <span> &nbsp; &nbsp; BrowserModule</span>
+                                <span> &nbsp; ],</span>
+                                <span> &nbsp; declarations: [</span>
+                                <span> &nbsp; &nbsp; AppComponent,</span>
+                                <span> &nbsp; &nbsp; CarComponent,</span>
+                                <span> &nbsp; &nbsp; HeroesComponent,</span>
+                                <span>/* . . . */</span>
+                                <span> &nbsp; ],</span>
+                                <span> &nbsp; providers: [</span>
+                                <span> &nbsp; &nbsp; UserService,</span>
+                                <span> &nbsp; &nbsp; { provide: APP_CONFIG, useValue: HERO_DI_CONFIG }</span>
+                                <span>&nbsp; ],</span>
+                                <span> &nbsp; bootstrap: [ AppComponent ]</span>
+                                <span>})</span>
+                                <span>export class AppModule { }</span>
+                            </code>
+                        </div>
+                        <p>Because the HeroService is used only within the HeroesComponent and its subcomponents, the top-level HeroesComponent is the ideal place to register it.</p>
+                        <h4>Registering providers in a component</h4>
+                        <p>Here's a revised HeroesComponent that registers the HeroService in its providers array.</p>
+                        <div>
+                            <code>
+                                <span>import&nbsp; { Component }&nbsp; &nbsp; from '@angular/core';</span>
+                                <br />
+                                <span>import&nbsp; { HeroService } &nbsp; &nbsp; from './hero.service';</span>
+                                <br />
+                                <span>@Component({</span>
+                                <span> &nbsp; selector: 'my-heroes',</span>
+                                <span> &nbsp; providers: [HeroService],</span>
+                                <span> &nbsp; template: `</span>
+                                <span> &nbsp; &lt;h2&gt;Heroes&lt;/h2&gt;</span>
+                                <span> &nbsp; &lt;hero-list&gt;&lt;/hero-list&gt;</span>
+                                <span> &nbsp; `</span>
+                                <span> })</span>
+                                <span>export class HeroesComponent {&nbsp; }</span>
+                            </code>
+                        </div>
+                        <h4>Preparing the HeroListComponent for injection</h4>
+                        <p>The HeroListComponent should get heroes from the injected HeroService. Per the dependency injection pattern, the component must ask for the service in its constructor</p>
+                        <div>
+                            <code>
+                                <span>import { Component } from '@angular/core';</span>
+                                <br />
+                                <span>import { Hero } from './hero';</span>
+                                <span>import { HeroService } from './hero.service';</span>
+                                <br />
+                                <span>@Component({</span>
+                                <span> &nbsp;selector: 'hero-list',</span>
+                                <span>&nbsp;template: `</span>
+                                <span> &nbsp;&lt;div *ngFor="let hero of heroes"&gt;</span>
+                                <span> &nbsp;&nbsp; {{hero.id}} - {{hero.name}}</span>
+                                <span> &nbsp;&lt;/div&gt;</span>
+                                <span> &nbsp;`</span>
+                                <span>})</span>
+                                <span> export class HeroListComponent {</span>
+                                <span>&nbsp;heroes: Hero[];</span>
+                                <br />
+                                <span> &nbsp;constructor(heroService: HeroService) {</span>
+                                <span> &nbsp;&nbsp; this.heroes = heroService.getHeroes();</span>
+                                <span> &nbsp;}</span>
+                                <span> }</span>
+                            </code>
+                        </div>
+                        <h4>Focus on the constructor</h4>
+                        <p>Adding a parameter to the constructor isn't all that's happening here.</p>
+                        <div class="codeblock">
+                            <code>
+                                    <span>constructor(heroService: HeroService) {</span>
+                                        <span>&nbsp;&nbsp;   this.heroes = heroService.getHeroes();</span>
+                                        <span> }</span>
+                            </code>
+                        </div>
+                        <p>Note that the constructor parameter has the type HeroService, and that the HeroListComponent class has an @Component decorator (scroll up to confirm that fact). Also recall that the parent component (HeroesComponent) has providers information for HeroService</p>
+                        <p>The constructor parameter type, the @Component decorator, and the parent's providers information combine to tell the Angular injector to inject an instance of HeroService whenever it creates a new HeroListComponent.</p>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+    </div>
+
+    <!-- global scripts -->
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/tether.js"></script>
+    <script src="scripts/bootstrap.js"></script>
+    <script src="scripts/pace.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.0.0/lodash.min.js"></script>
+    <script src="scripts/components/jquery-fullscreen/jquery.fullscreen-min.js"></script>
+    <script src="scripts/jquery.storageapi.min.js"></script>
+    <script src="scripts/wow.min.js"></script>
+    <script src="scripts/functions.js"></script>
+    <script src="scripts/colors.js"></script>
+    <script src="scripts/left-sidebar.js"></script>
+    <script src="scripts/navbar.js"></script>
+    <script src="scripts/horizontal-navigation-1.js"></script>
+    <script src="scripts/horizontal-navigation-2.js"></script>
+    <script src="scripts/horizontal-navigation-3.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/notify.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script> -->
+    <!-- <script src="scripts/chartist.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.min.js"></script> -->
+    <script src="scripts/d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+    <script src="http://bower.batchthemes.com/bower_components/datamaps/dist/datamaps.all.js"></script>
+    <script src="scripts/dashboards.js"></script>
+    <script src="scripts/index.js"></script>
+</body>
+
+</html>

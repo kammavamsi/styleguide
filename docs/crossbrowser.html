@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Componentization Style Guide</title>
+    <meta name="description" content="Marino, Admin theme, Dashboard theme, AngularJS Theme">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!--[if IE]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- global stylesheets -->
+    <link rel="stylesheet" href="styles/components/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css?family=Acme|Lobster" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic,900,900italic"
+        rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/1.0.0/css/flag-icon.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/colorpallet.css">
+    <link rel="stylesheet" href="styles/chartist.min.css">
+</head>
+
+<body data-layout="empty-layout" data-palette="palette-0" data-direction="none">
+    <nav class="navbar navbar-fixed-top navbar-1">
+        <a class="navbar-brand" href="Homepage.html" style="color: #00BCD4;font-family: 'Lobster', cursive;font-family: 'Acme', sans-serif;">Componentization
+            <span>Style Guide</span>
+        </a>
+        <ul class="nav navbar-nav pull-right toggle-search">
+            <li class="nav-item">
+                <a class="nav-link" data-click="toggle-search">
+                    <i class="zmdi zmdi-search"></i>
+                </a>
+            </li>
+        </ul>
+
+        <div class="navbar-drawer pull-right hidden-lg-down">
+            <form class="form-inline navbar-form">
+                <input class="form-control" type="text" placeholder="Search">
+            </form>
+        </div>
+
+    </nav>
+
+
+    <div class="horizontal-navigation horizontal-navigation-3">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul class="list-unstyled navigation animation-delay">
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="Homepage.html">Home</a>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="colorpallet.html">Color Pallets</a>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary">Fonts & Typography</a>
+                            <div class="horizontal-dropdown-menu" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
+                                <a class="btn btn-primary sideline" href="fonts.html"> Fonts </a>
+                                <a class="btn btn-primary sideline" href="typography.html"> Typography </a>
+
+                            </div>
+                        </li>
+
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary"> UI Elememnts </a>
+                            <div class="horizontal-dropdown-menu horizontal-dropdown-menu-lg" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
+
+                                <a class="btn btn-primary sideline" href="ui-elements-images.html"> Images </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-overlays.html"> Overlays </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-lists.html"> Lists </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-labels.html"> Labels </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-progress-bars.html"> Progress Bars </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-carousel.html"> Carousel </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-tabs.html"> Tabs </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-grid.html"> Grid </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-animations.html"> Animations </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-google-maps.html"> Google Maps </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-cards.html"> Cards </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-dropdowns.html"> Dropdowns </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-drag-and-drop.html"> Drag and drop </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-modals.html"> Modals </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-tooltip.html">ToolTips </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-pagination.html">Paginations </a>
+                            </div>
+                        </li>
+
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="buttons.html">Buttons</a>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary">Iconography</a>
+                            <div class="horizontal-dropdown-menu" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
+                                <a class="btn btn-primary sideline" href="fontawesome.html">Font Awesome </a>
+                                <a class="btn btn-primary sideline" href="lonicons.html">Lonicons</a>
+                                <a class="btn btn-primary sideline" href="elending.html">e-Lending</a>
+
+                            </div>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary">Form Elements</a>
+                            <div class="horizontal-dropdown-menu" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
+                                <a class="btn btn-primary sideline" href="basicforms.html">Basic Forms </a>
+                                <a class="btn btn-primary sideline" href="formvalidations.html">Form Validation</a>
+                                <a class="btn btn-primary sideline" href="pickers.html">Pickers </a>
+
+                            </div>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="Alerts.html">Alerts</a>
+                        </li>
+
+
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="angular_introduction.html">Angular</a>
+                            <div class="horizontal-dropdown-menu">
+                                <a class="btn btn-primary sideline" href="angular_components.html"> Component </a>
+                                <a class="btn btn-primary sideline" href="angular_modules.html"> Module </a>
+                                <a class="btn btn-primary sideline" href="angular_directives.html"> Directive </a>
+                                <a class="btn btn-primary sideline" href="angular_routing.html"> Routing </a>
+                                <a class="btn btn-primary sideline" href="angular_httpclient.html"> Http Client </a>
+                                <a class="btn btn-primary sideline" href="angular_dinjection.html"> Dependency Injection </a>
+                            </div>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="crossbrowser.html">Cross Browser</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">
+                    <b>Cross Browser</b>
+                </h2>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>
+                    <b>Cross-browser</b> means web application works with all versions of all browsers. To claim cross-browser
+                    compatibility, the website is nowadays expected to support browsers such as Mozilla Firefox,Google Chrome,
+                    Opera, and Safari in addition to Internet Explorer and Netscape. Here are the basic tips to make your
+                    website cross browser compatible.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header"> The Principles Of Cross-Browser CSS Coding</h3>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>It is arguable that there is no goal in web design more satisfying than getting a beautiful and intuitive design to look exactly the same in every currently-used browser. Unfortunately, that goal is generally agreed to be almost impossible to attain. Some have even gone on record as stating that perfect, cross-browser compatibility is not necessary. </p>
+                <p>While I agree that creating a consistent experience for every user in every browser (putting aside mobile platforms for the moment) is never going to happen for every project, I believe a near-exact cross-browser experience is attainable in many cases. As developers, our goal should not just be to get it working in every browser; our goal should be to get it working in every browser with a minimal amount of code, allowing future website maintenance to run smoothly.</p>
+
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h4>Understand the CSS Box Model</h4>
+                <p>This is one of the first things you should be thoroughly familiar with if you want to be able to achieve cross-browser layouts with very few hacks and workarounds. Fortunately, the box model is not a difficult thing to grasp, and generally works the same in all browsers, except in circumstances related to certain versions of Internet Explorer (more on this later).</p>
+                <p>The CSS box model is responsible for calculating:</p>
+                <ul>
+                    <li>How much space a block-level element takes up</li>
+                    <li>Whether or not borders and/or margins overlap, or collapse</li>
+                    <li>A box’s dimensions</li>
+                    <li>To some extent, a box’s position relative to other content on the page</li>
+                </ul>
+                <p>The CSS box model has the following basic rules:</p>
+                <ul>
+                    <li>Block-level elements are essentially rectangular (as are all elements, really)</li>
+                    <li>The dimensions of a block element are calculated by width, height, padding, borders, and margins</li>
+                    <li>If no height is specified, a block element will be as high as the content it contains, plus padding (unless there are floats, for which see below)</li>
+                    <li>If no width is specified, a non-floated box will expand to fit the width of its parent minus padding (more on this later)</li>
+                </ul>
+                <p>Some important things to keep in mind for dealing with block-level elements:</p>
+                <ul>
+                    <li>If a box has its width set to “100%”, it shouldn’t have any margins, padding, or borders, otherwise it will overflow its parent</li>
+                    <li>Vertically-adjacent margins can cause some complex collapsing issues that may cause layout problems</li>
+                    <li>Elements positioned relatively or absolutely will behave differently, the details of which are extensive and beyond the scope of this article</li>
+                    <li>The rules and principles above are stated under the assumption that the page holding the block-level elements is rendered in standards mode </li>
+                </ul>
+                <img src="assets/images/css-box-model.png" />
+                <p>The box model as its displayed using Firebug in Firefox</p>
+                <h4>Understand the Difference Between Block and Inline </h4>
+                <p>For experienced developers, this is another no-brainer. It is, however, another crucial area that, when fully understood, will cause the light bulb to appear, many headaches will be avoided, and you’ll feel much more confident in creating cross-browser layouts.    </p>
+                <p>The image below illustrates the difference between block and inline elements:</p>
+                <img src="assets/images/block-inline.png" />
+                <p>Here are some basic rules that differentiate block elements from inline:</p>
+                <ul>
+                    <li>Block elements will, by default, naturally expand horizontally to fill their parent container, so there’s no need to set a width of “100%”</li>
+                    <li>Block elements will, by default, begin at the leftmost edge of the parent box, below any previous block elements (unless floats or positioned elements are utilized; see below)</li>
+                    <li>Inline elements will ignore width and height settings</li>
+                    <li>Inline elements flow with text, and are subject to typographical properties such as white-space, font-size, and letter-spacing</li>
+                    <li>Inline elements can be aligned using the vertical-align property, but block elements cannot</li>
+                    <li>Inline elements will have some natural space below them in order to accommodate text elements that drop below the line (like the letter “g”)</li>
+                    <li>An inline element will become a block element if it is floated</li>
+                </ul>
+                <h4>Understand Floating and Clearing Link</h4>
+                <p>For multi-column layouts that are relatively easy to maintain, the best method is to use floats. Having a solid understanding of how floats work is, therefore, another important factor in achieving a cross-browser experience.</p>
+                <p>A floated element can be floated either left or right, with the result that the floated element will shift in the specified direction until it reaches the edge of its parent container, or the edge of another floated element. All non-floated, inline content that appears below the floated element will flow along the side of the element that is opposite to the float direction.</p>
+                <img src="assets/images/float-css.png"/>
+                <p>Here are some important things to keep in mind when floating and clearing elements:</p>
+                <ul>
+                    <li>Floated elements are removed from the flow of other block-level, non-floated elements; so in other words, if you float a box left, a trailing paragraph (block level) that’s not floated will appear behind the float in the stack, and any text inside the paragraph (inline level) will flow around the float</li>
+                    <li>To get content to flow around a floated element, it must be either inline or else floated in the same direction</li>
+                    <li>A floated element without a declared width will shrink to the width of its content, so it’s generally best to have a set width on a float</li>
+                    <li>If a block element contains floated children, it will “collapse”, requiring a fix</li>
+                    <li>An element that’s “cleared” will avoid flowing around floated elements above them in the document</li>
+                    <li>An element that’s both cleared and floated will only clear itself of elements that come before, not after</li>
+                </ul>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h4>Use Internet Explorer First (Or Don’t) </h4>
+                <p>Please note that Smashing Magazine’s team strongly advises against developing websites in Internet Explorer first. In our opinion, sites should be developed in “modern” web-browsers, with standards first and then be tweaked for buggy versions of Internet Explorer. The advice below does not reflect the opinion of the Smashing Editorial team. Agree or disagree? Comment on this article!</p>
+                <p>Most of what I’ve discussed so far has to do with CSS coding and layout principles. This principle is more related to habits and preferences of most designers. Although we might hate to use IE6 and IE7 in our everyday internet activities, when it comes time to build a client project from scratch, one of the best things you can do is test your layout in those browsers early in development. You might even want to open up a standalone version of IE6 or IE7 and just start your development in that browser.</p>
+                <p>Of course, you won’t have access to tools like Firebug, but generally for CSS (especially early in development) you won’t need Firebug. It’s much easier to get a layout working first in IE6 and IE7, then fix for other browsers, than to do it the other way around. Waiting until late in the development process to open up IE6 and/or IE7 will likely cause some, if not all, of the following problems:</p>
+                <ul>
+                    <li>Multiple hacks will be required, needing separate stylesheets for different versions of IE, making the code bloated and less maintainable and making the website slower</li>
+                    <li>The layout in some spots may have to be reworked, multiplying development time</li>
+                    <li>Testing time will increase, sometimes exponentially, leaving less time for more important tasks</li>
+                    <li>The layout in other browsers will not be the same as in IE6 and IE7</li>
+                </ul>
+                <p>I wouldn’t expect developers to use Internet Explorer this aggressively for personal projects, web apps, or other non-client work. But for corporate clients whose user base is primarily on Internet Explorer, this tip could prevent a lot of headaches while getting things to work properly, and will definitely make a cross-browser experience much more likely.</p>
+                <p>Sometimes viewing IE’s problems as “annoying bugs” can create unnecessary negativity, and can hinder development time and future maintenance. Dealing with IE is a fact of life for designers and developers, so just view its problems as you would any CSS issue — and build from there.</p>
+                <h4>Understand Internet Explorer’s Most Common Problems</h4>
+                <p>If you’re going to start with IE in your development, or at the very least check your layout in IE early on, then you should understand what things Internet Explorer (usually versions 6 & 7) has problems with, or what its limitations are.</p>
+                <p>A detailed discussion of every possible problem that can occur in Internet Explorer, and a list of all of its CSS compatibility issues is certainly beyond this article. But there are some fairly significant inconsistencies and issues that come up in relation to IE that all CSS developers should be aware of. Here is a rundown of the most common problems you’ll need to deal with:</p>
+                <ul>
+                    <li>IE6 will become problematic if floats are overused, causing (paradoxically) disappearing content or duplicate text</li>
+                    <li>IE6 will double the margin on floated elements on the side that is the same direction as the float; setting display: inline will often fix this</li>
+                    <li>In IE6 and IE7, if an element doesn’t have layout, it can cause a number of problems, including backgrounds not showing up, margins collapsing improperly, and more</li>
+                    <li>IE6 does not support min- and max-based CSS properties like min-height, or max-width</li>
+                    <li>IE6 does not support fixed positioning of background images</li>
+                    <li>IE6 and IE7 do not support many alternate values for the display property (e.g. inline-table, table-cell, table-row, etc.)</li>
+                    <li>You cannot use the :hover pseudo-class on any element in IE6 except an anchor (<a>)</li>
+                    <li>Certain versions of IE have little support for certain CSS selectors (e.g. attribute selectors, child selectors, etc.)</li>
+                    <li>IE versions 6-8 have little support for CSS3, but there are some workarounds</li>
+                </ul>
+                <p>There are many more bugs, issues, and inconsistencies that can arise in Internet Explorer, but these are probably the most common and most important ones to keep in mind when trying to create a cross-browser experience. I encourage all developers to do further research on many of the issues I’ve mentioned above in order to have a more accurate understanding of what problems these issues can cause, and how to handle them.</p>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h4>Some Things Will Never Look the Same Link</h4>
+                <p>As already mentioned, creating the exact same experience visually and functionally in every browser is possible, but unlikely. You can get the layout and positioning of elements close to pixel-perfect, but there are some things that are out of the developer’s control.</p>
+                <h5>FORMS WILL OFTEN LOOK DIFFERENT</h5>
+                <p>Discussing all the differences and quirks that occur with form elements across the different browsers and platforms could be an article in itself, so I won’t go into extensive details here. A simple visual demonstration, however, should suffice to get the point across.</p>
+                <p>Take a look at the image below, which displays the <select> elements on the Facebook home page, as shown in 5 different browser versions (screenshots taken from Adobe’s Browserlab):</p>
+                    <img src="assets/images/forms-browsers.png" />
+                <p> &lt;select&gt;elements appear differently in different browsers</p>
+                <p>Some form elements can be controlled visually. For example, if the client requires that the submit button looks the same in every browser, that’s no problem, you can just use an image, instead of the default &lt;input type="submit"&gt;, which, similar to &lt;select&gt; elements, will look different in different browsers.</p>
+                <p>But other form elements, like radio buttons, textarea fields, and the aforementioned <select> elements, are impossible to style in a cross-browser fashion without complicating matters using JavaScript plugins (which some developers feel harm the user experience).</p>
+                
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h4>TYPOGRAPHY WILL ALWAYS LOOK DIFFERENT</h4>
+                <p>Another area in which we can’t expect pixel-perfect designs is with regards to fonts, particularly fonts on body copy. Different methods have sprung up to help with custom fonts in headers, and the recently launched Google Font API will contribute to this. But body copy will probably always look different in different browsers.</p>
+                <p>With typography, we not only face the problem of font availability on different machines, but in some cases even when the font is available on two different machines, the type will look different. Windows ClearType, for example, is available on IE7, but not on IE6, causing the same font to look different on two different versions of IE.</p>
+                <p>The graphic below displays screenshots from A List Apart on IE6 and IE7. The grainy text in IE6 is more evident on the heading than in the body copy, but all text displays a marked difference between the two browsers (unless of course the text is an image):</p>
+                <img src="assets/images/cleartype-ie.png" />
+                <p>A List Apart’s typography compared in IE6 and IE7</p>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h4>Use a CSS Reset</h4>
+                <p>Ever since I started using a CSS reset for my projects, my ability to create a cross-browser experience has greatly increased. It’s true that most resets will add unnecessary code to your CSS, but you can always go through and remove any selectors that you know will not be a factor (for example, if you don’t plan to use the <blockquote> tag, then you can remove reference to it, and repeat this for any other unused tags).</p>
+                    <p>Many of the margin- and padding-related differences that occur across different browsers become more normalized (even in troublesome HTML forms) when a CSS reset is implemented. Because the reset causes all elements to start from a zero base, you gain more control over the spacing and alignment of elements because all browsers will begin from the same basic settings.</p>
+                    <img src="assets/images/reset-wd.png" />
+                    <p>A CSS reset as shown in Firefox’s developer toolbar</p>
+                    <p>Besides the benefits of producing a cross-browser experience, a reset will also be beneficial because you won’t use as many hacks, your code will be less bloated, and you’ll be much more likely to create maintainable code. I recommend Eric Meyer’s CSS reset, which I’ve been using for quite some time now.</p>
+
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h4>Use SitePoint’s CSS Reference Link</h4>
+                <p>If you’re having trouble getting a particular CSS property to display correctly across all browsers, look up the property in the SitePoint CSS Reference to see if it has any compatibility limitations. SitePoint’s reference (which is also available as a hard copy, though not as up to date), includes a useful compatibility chart that displays browser support for every standard CSS property.</p>
+                <img src="assets/images/sitepoint-chart.png" />
+                <p>SitePoint’s Compatibility Charts for CSS Properties</p>
+                <p>Each compatibility chart is accompanied by a fairly detailed description of the bugs that occur in different browsers, and users are permitted to add comments to document new bugs that come up and to provide further explanations on complex CSS issues.
+                        Using this as a guide, you can narrow down the possibilities, and can usually determine whether or not a CSS issue is due to a browser bug, or due to your own misapplication or misunderstanding of the CSS property in question.</p>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header"> Define Valid Doctype</h2>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Your doctype tells the browser what rules you’ll be using in your code. If you don’t specify, the browser
+                    has to guess, and different browsers will guess differently. When you design in “strict mode,” Internet
+                    Explorer 6 and above will show behavior much closer to that of Firefox, Safari and other modern browsers.</p>
+                <div class="codeblock">
+                    <code>
+                                    <span>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;</span>
+                                    
+                            </code>
+                </div>
+                <p>Otherwise, Internet Explorer runs in a “quirks mode” where it attempts to emulate the behavior of older browsers.</p>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header"> CSS Reset</h2>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>By default, Different browsers behave as per their default css rules. You need to explicitly define css to
+                    make same behavior for different browsers. I like Eric’s CSS reset:</p>
+                <p>http://meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/</p>
+                <p>http://meyerweb.com/eric/tools/css/reset/index.html</p>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header"> Conditional Comments</h2>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Try to use conditional comments instead of CSS hacks.</p>
+                <p>With conditional comments you can link to separate style sheets for different browsers.</p>
+                <div class="codeblock">
+                    <code>
+                                                        <span>&lt;link type="text/css" href="style.css" /&gt;</span>
+                                                        <span>&lt;!--[If IE]></span>
+                                                        <span>&lt;link type="text/css" href="IEHacks.css" /&gt;</span>
+                                                        <span>&lt;![endif]--&gt;</span>
+                                                        <span>&lt;!--[if !IE]&gt;</span>
+                                                        <span>&lt;link type="text/css" href="NonIEHacks.css" /&gt;</span>
+                                                        <span>&lt;![endif]--&gt;</span>
+                                                    </code>
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Try to use javascript library like jQuery, YahooUI, MooTools, Dojo abstract away the differences in the DOM,
+                    AJAX and JavaScript.</p>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Try to use javascript library like jQuery, YahooUI, MooTools, Dojo abstract away the differences in the DOM,
+                    AJAX and JavaScript.</p>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>You can use Css Frameworks like BluePrint, 960 Grid. These are mostly cross browser compatible.</p>
+                <p>See following to know which css framework is suitable for you.</p>
+                <p>http://net.tutsplus.com/tutorials/html-css-techniques/which-css-grid-framework-should-you-use-for-web-design/</p>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">Validate</h2>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>The W3C Validation Service validates multiple versions of XHTML and HTML, outputting many useful errors and
+                    warnings to help users create a perfect website.</p>
+                <p>W3C Validator: http://validator.w3.org/</p>
+                <p>W3C Css Validator: http://jigsaw.w3.org/css-validator/</p>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header"> Testing</h2>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>I would suggest you to start with firefox and then move to IE. Use Firebug, a firefox addon and
+                    <b>IE Developer Toolbar</b> for IE to set layout. To test website on different browser, there are some online
+                    and offline utilities like browsershots, IETester, browsercam.
+                </p>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+
+
+    </div>
+
+    <!-- global scripts -->
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/tether.js"></script>
+    <script src="scripts/bootstrap.js"></script>
+    <script src="scripts/pace.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.0.0/lodash.min.js"></script>
+    <script src="scripts/components/jquery-fullscreen/jquery.fullscreen-min.js"></script>
+    <script src="scripts/jquery.storageapi.min.js"></script>
+    <script src="scripts/wow.min.js"></script>
+    <script src="scripts/functions.js"></script>
+    <script src="scripts/colors.js"></script>
+    <script src="scripts/left-sidebar.js"></script>
+    <script src="scripts/navbar.js"></script>
+    <script src="scripts/horizontal-navigation-1.js"></script>
+    <script src="scripts/horizontal-navigation-2.js"></script>
+    <script src="scripts/horizontal-navigation-3.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/notify.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script> -->
+    <!-- <script src="scripts/chartist.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.min.js"></script> -->
+    <script src="scripts/d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+    <script src="http://bower.batchthemes.com/bower_components/datamaps/dist/datamaps.all.js"></script>
+    <script src="scripts/dashboards.js"></script>
+    <script src="scripts/index.js"></script>
+</body>
+
+</html>

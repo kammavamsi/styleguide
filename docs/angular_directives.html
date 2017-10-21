@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Componentization Style Guide</title>
+    <meta name="description" content="Marino, Admin theme, Dashboard theme, AngularJS Theme">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!--[if IE]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- global stylesheets -->
+    <link rel="stylesheet" href="styles/components/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css?family=Acme|Lobster" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic,900,900italic"
+        rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/1.0.0/css/flag-icon.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/colorpallet.css">
+    <link rel="stylesheet" href="styles/chartist.min.css">
+</head>
+
+<body data-layout="empty-layout" data-palette="palette-0" data-direction="none">
+    <nav class="navbar navbar-fixed-top navbar-1">
+        <a class="navbar-brand" href="Homepage.html" style="color: #00BCD4;font-family: 'Lobster', cursive;font-family: 'Acme', sans-serif;">Componentization
+            <span>Style Guide</span>
+        </a>
+        <ul class="nav navbar-nav pull-right toggle-search">
+            <li class="nav-item">
+                <a class="nav-link" data-click="toggle-search">
+                    <i class="zmdi zmdi-search"></i>
+                </a>
+            </li>
+        </ul>
+
+        <div class="navbar-drawer pull-right hidden-lg-down">
+            <form class="form-inline navbar-form">
+                <input class="form-control" type="text" placeholder="Search">
+            </form>
+        </div>
+
+    </nav>
+
+
+    <div class="horizontal-navigation horizontal-navigation-3">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul class="list-unstyled navigation animation-delay">
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="Homepage.html">Home</a>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="colorpallet.html">Color Pallets</a>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary">Fonts & Typography</a>
+                            <div class="horizontal-dropdown-menu" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
+                                <a class="btn btn-primary sideline" href="fonts.html"> Fonts </a>
+                                <a class="btn btn-primary sideline" href="typography.html"> Typography </a>
+
+                            </div>
+                        </li>
+
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary"> UI Elememnts </a>
+                            <div class="horizontal-dropdown-menu horizontal-dropdown-menu-lg" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
+
+                                <a class="btn btn-primary sideline" href="ui-elements-images.html"> Images </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-overlays.html"> Overlays </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-lists.html"> Lists </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-labels.html"> Labels </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-progress-bars.html"> Progress Bars </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-carousel.html"> Carousel </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-tabs.html"> Tabs </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-grid.html"> Grid </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-animations.html"> Animations </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-google-maps.html"> Google Maps </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-cards.html"> Cards </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-dropdowns.html"> Dropdowns </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-drag-and-drop.html"> Drag and drop </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-modals.html"> Modals </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-tooltip.html">ToolTips </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-pagination.html">Paginations </a>
+                            </div>
+                        </li>
+
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="buttons.html">Buttons</a>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary">Iconography</a>
+                            <div class="horizontal-dropdown-menu" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
+                                <a class="btn btn-primary sideline" href="fontawesome.html">Font Awesome </a>
+                                <a class="btn btn-primary sideline" href="lonicons.html">Lonicons</a>
+                                <a class="btn btn-primary sideline" href="elending.html">e-Lending</a>
+
+                            </div>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary">Form Elements</a>
+                            <div class="horizontal-dropdown-menu" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
+                                <a class="btn btn-primary sideline" href="basicforms.html">Basic Forms </a>
+                                <a class="btn btn-primary sideline" href="formvalidations.html">Form Validation</a>
+                                <a class="btn btn-primary sideline" href="pickers.html">Pickers </a>
+
+                            </div>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="Alerts.html">Alerts</a>
+                        </li>
+
+
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="angular_introduction.html">Angular</a>
+                            <div class="horizontal-dropdown-menu">
+                                <a class="btn btn-primary sideline" href="angular_components.html"> Component </a>
+                                <a class="btn btn-primary sideline" href="angular_modules.html"> Module </a>
+                                <a class="btn btn-primary sideline" href="angular_directives.html"> Directive </a>
+                                <a class="btn btn-primary sideline" href="angular_routing.html"> Routing </a>
+                                <a class="btn btn-primary sideline" href="angular_httpclient.html"> Http Client </a>
+                                <a class="btn btn-primary sideline" href="angular_dinjection.html"> Dependency Injection </a>
+                            </div>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="crossbrowser.html">Cross Browser</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">
+                    <b>Angular Directives</b>
+                </h2>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>A Directive modifies the DOM to change apperance, behavior or layout of DOM elements. Directives are one
+                    of the core building blocks Angular uses to build applications. In fact, Angular components are in large
+                    part directives with templates.</p>
+                <p>From an Angular 1.x perspective, Angular 2 components have assumed a lot of the roles directives used to.
+                    The majority of issues that involve templates and dependency injection rules will be done through components,
+                    and issues that involve modifying generic behaviour is done through directives.</p>
+                <p>There are three main types of directives in Angular:</p>
+                <ul>
+                    <li>
+                        <b>Component</b> - directive with a template.</li>
+                    <li>
+                        <b>Attribute directives</b> - directives that change the behavior of a component or element but don't
+                        affect the template</li>
+                    <li>
+                        <b>Structural directives</b> - directives that change the behavior of a component or element by affecting
+                        how the template is rendered</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">Attribute Directives</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Attribute directives are a way of changing the appearance or behavior of a component or a native DOM element.
+                    Ideally, a directive should work in a way that is component agnostic and not bound to implementation
+                    details.</p>
+                <p>For example, Angular has built-in attribute directives such as ngClass and ngStyle that work on any component
+                    or element.</p>
+                <h4>Build a simple attribute directive</h4>
+                <p>An attribute directive minimally requires building a controller class annotated with @Directive, which specifies the selector that identifies the attribute. The controller class implements the desired directive behavior.</p>
+                <p>This page demonstrates building a simple myHighlight attribute directive to set an element's background color when the user hovers over that element. You can apply it like this:</p>
+                <div class="codeblock">
+                    <code>
+                        <span>&lt;p myHighlight&gt;Highlight me!&lt;/p&gt;</span>
+                    </code>
+                </div>
+                <h4>Write the directive code</h4>
+                <p>Follow the setup instructions for creating a new local project named attribute-directives.<br/>
+                        
+                        Create the following source file in the indicated folder:</p>
+                <div class="codeblock">
+                    <code>
+                            <span>import { Directive, ElementRef, Input } from '@angular/core';</span>
+                            <br />
+                            <span>@Directive({ selector: '[myHighlight]' })</span>
+                            <span>export class HighlightDirective {</span>
+                                <span>&nbsp; constructor(el: ElementRef) {</span>
+                                    <span>&nbsp; &nbsp; el.ativeElement.style.backgroundColor = 'yellow';</span>
+                                    <span>&nbsp; }</span>
+                                    <span>}</span>
+                    </code>
+                </div>
+                <p>The import statement specifies symbols from the Angular core:</p>
+                <ul>
+                    <li>Directive provides the functionality of the @Directive decorator.</li>
+                    <li>ElementRef injects into the directive's constructor so the code can access the DOM element.</li>
+                    <li>Input allows data to flow from the binding expression into the directive.</li>
+                </ul>
+                <p>Next, the @Directive decorator function contains the directive metadata in a configuration object as an argument.</p>
+                <p>@Directive requires a CSS selector to identify the HTML in the template that is associated with the directive. The CSS selector for an attribute is the attribute name in square brackets. Here, the directive's selector is [myHighlight]. Angular locates all elements in the template that have an attribute named myHighlight.</p>
+                <p>After the @Directive metadata comes the directive's controller class, called HighlightDirective, which contains the logic for the directive. Exporting HighlightDirective makes it accessible to other components.</p>
+                <p>Angular creates a new instance of the directive's controller class for each matching element, injecting an Angular ElementRef into the constructor. ElementRef is a service that grants direct access to the DOM element through its nativeElement property.</p>
+                <h5>Apply the attribute directive</h5>
+                <p>To use the new HighlightDirective, create a template that applies the directive as an attribute to a paragraph (&lt;p&gt;) element. In Angular terms, the &lt;p&gt; element is the attribute host.</p>
+                <p>Put the template in its own template html file that looks like this:</p>
+                <div class="codeblock">
+                    <code>
+                            &lt;h1&gt;My First Attribute Directive&lt;/h1&gt;
+                            &lt;p myHighlight&gt;Highlight me!&lt;/p&gt;
+                    </code>
+                </div>
+
+                <p>Now reference this template in the Component</p>
+                <p>Next, add an import statement to fetch the Highlight directive and add that class to the declarations NgModule metadata. This way Angular recognizes the directive when it encounters myHighlight in the template.</p>
+                <div class="codeblock">
+                    <code>
+                            <span>import { NgModule } from '@angular/core';</span>
+                            <span>import { BrowserModule } from '@angular/platform-browser';</span>
+                             <br />
+                             <span>import { AppComponent } from './app.component';</span>
+                             <span>import { HighlightDirective } from './highlight.directive';</span>
+                             <br />
+                             <span>@NgModule({</span>
+                                <span>&nbsp; imports: [ BrowserModule ],</span>
+                                <span>&nbsp; declarations: [</span>
+                                <span>&nbsp; &nbsp; AppComponent,</span>
+                                <span>&nbsp; &nbsp; HighlightDirective</span>
+                                <span>&nbsp; ],</span>
+                              <span>&nbsp; bootstrap: [ AppComponent ]</span>
+                              <span>  &nbsp; })</span>
+                            <span>export class AppModule { }</span>
+                    </code>
+                </div>
+                <p>Now when the app runs, the myHighlight directive highlights the paragraph text.</p>
+                <img src="assets/images/angular/attribute_Directive.png" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">Structural Directives</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Structural directives are responsible for HTML layout. They shape or reshape the DOM's structure, typically by adding, removing, or manipulating elements.</p>
+                <p>
+                        As with other directives, you apply a structural directive to a host element. The directive then does whatever it's supposed to do with that host element and its descendents.</p>
+                <p>Structural directives are easy to recognize. An asterisk (*) precedes the directive attribute name as in this example.</p>
+                <div class="codeblock">
+                    <code>
+                            &lt;div *ngIf="hero" &gt;{{hero.name}}&lt;/div&gt;
+                    </code>
+                </div>
+                <p>No brackets. No parentheses. Just *ngIf set to a string.</p>
+                <p> the asterisk (*) is a convenience notation and the string is a microsyntax rather than the usual template expression. Angular desugars this notation into a marked-up &lt;ng-template&gt; that surrounds the host element and its descendents. Each structural directive does something different with that template.</p>
+                <p>Three of the common, built-in structural directives—NgIf, NgFor, and NgSwitch...—are described in the Template Syntax guide </p>
+                <div class="codeblock">
+                    <code>
+                            &lt;div *ngIf="hero" &gt;{{hero.name}}&lt;/div&gt;
+                            <br />
+                            &lt;ul&gt; <br />
+                            &nbsp; &lt;li *ngFor="let hero of heroes"&gt;{{hero.name}}&lt;/li&gt;<br />
+                            &lt;/ul&gt;
+                            <br />
+                            &lt;div [ngSwitch]="hero?.emotion"&gt;<br />
+                            &nbsp; &lt;happy-hero    *ngSwitchCase="'happy'"    [hero]="hero"&gt;&lt;/happy-hero&gt;<br />
+                            &nbsp; &lt;sad-hero      *ngSwitchCase="'sad'"      [hero]="hero"&gt;&lt;/sad-hero&gt;<br />
+                            &nbsp; &lt;confused-hero *ngSwitchCase="'confused'" [hero]="hero"&gt;&lt;/confused-hero&gt;<br />
+                            &nbsp; &lt;unknown-hero  *ngSwitchDefault           [hero]="hero"&gt;&lt;/unknown-hero&gt;<br />
+                            &lt;/div&gt;
+                    </code>
+                </div>
+                <h4>NgIf case study</h4>
+                <p>NgIf is the simplest structural directive and the easiest to understand. It takes a boolean expression and makes an entire chunk of the DOM appear or disappear.</p>
+                <div class="codeblock">
+                    <code>
+                            &lt;p *ngIf="true"&gt;<br />
+                                    Expression is true and ngIf is true.<br />
+                                    Expression is true and ngIf is true.<br />
+                                    This paragraph is in the DOM.
+                                    &lt;&lt;/p&gt;<br />
+                                    &lt;p *ngIf="false"&gt;<br />
+                                    Expression is false and ngIf is false.<br />
+                                    This paragraph is not in the DOM.<br />
+                                    &lt;/p&gt;<br />
+                    </code>
+                </div>
+                <p>The ngIf directive doesn't hide elements with CSS. It adds and removes them physically from the DOM. Confirm that fact using browser developer tools to inspect the DOM.</p>
+                <img src="assets/images/angular/element-not-in-dom.png" />
+                <p>The top paragraph is in the DOM. The bottom, disused paragraph is not; in its place is a comment about "bindings" </p>
+                <p>When the condition is false, NgIf removes its host element from the DOM, detaches it from DOM events (the attachments that it made), detaches the component from Angular change detection, and destroys it. The component and DOM nodes can be garbage-collected and free up memory.</p>
+                <h4>NgFor case study</h4>
+                <p>Angular transforms the *ngFor in similar fashion from asterisk (*) syntax through template attribute to &lt;ng-template&gt; element</p>
+                <p>Here's a full-featured application of NgFor, written all three ways:</p>
+                <div class="codeblock">
+                    <code>
+                            &lt;div *ngFor="let hero of heroes; let i=index; let odd=odd; trackBy: trackById" [class.odd]="odd"&gt;<br />
+                                &nbsp;    ({{i}}) {{hero.name}}<br />
+                                &lt;/div&gt;<br />
+                                <br />
+                                &lt;div template="ngFor let hero of heroes; let i=index; let odd=odd; trackBy: trackById" [class.odd]="odd"&gt;<br />
+                                &nbsp;  ({{i}}) {{hero.name}}<br />
+                                    &lt;/div&gt;<br />
+                                    <br />
+                                    &lt;ng-template ngFor let-hero [ngForOf]="heroes" let-i="index" let-odd="odd" [ngForTrackBy]="trackById"&gt;<br />
+                                    &nbsp; &lt;div [class.odd]="odd">({{i}}) {{hero.name}}&lt;/div&gt;<br />
+                                    &lt;/ng-template&gt;
+                    </code>
+                </div>
+                <p>This is manifestly more complicated than ngIf and rightly so. The NgFor directive has more features, both required and optional, than the NgIf shown in this guide. At minimum NgFor needs a looping variable (let hero) and a list (heroes).</p>
+                <p>You enable these features in the string assigned to ngFor, which you write in Angular's microsyntax.</p>
+                <h4>NgSwitch case study</h4>
+                <p>The Angular NgSwitch is actually a set of cooperating directives: NgSwitch, NgSwitchCase, and NgSwitchDefault.</p>
+                <p>Here's an example.</p>
+                <div class="codeblock">
+                    <code>
+                            &lt;div [ngSwitch]="hero?.emotion"&gt;<br />
+                            &nbsp;  &nbsp;  &lt;happy-hero    *ngSwitchCase="'happy'"    [hero]="hero"&gt;&lt;/happy-hero&gt;<br />
+                            &nbsp;  &nbsp;  &lt;sad-hero      *ngSwitchCase="'sad'"      [hero]="hero"&gt;&lt;/sad-hero&gt;<br />
+                            &nbsp;  &nbsp;  &lt;confused-hero *ngSwitchCase="'confused'" [hero]="hero"&gt;&lt;/confused-hero&gt;<br />
+                            &nbsp;  &nbsp;  &lt;unknown-hero  *ngSwitchDefault           [hero]="hero"&gt;&lt;/unknown-hero&gt;<br />
+                            &lt;/div&gt;
+                    </code>
+                </div>
+                <p>The switch value assigned to NgSwitch (hero.emotion) determines which (if any) of the switch cases are displayed.</p>
+                <p>NgSwitch itself is not a structural directive. It's an attribute directive that controls the behavior of the other two switch directives. That's why you write [ngSwitch], never *ngSwitch.</p>
+                <p>NgSwitchCase and NgSwitchDefault are structural directives. You attach them to elements using the asterisk (*) prefix notation. An NgSwitchCase displays its host element when its value matches the switch value. The NgSwitchDefault displays its host element when no sibling NgSwitchCase matches the switch value.</p>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- global scripts -->
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/tether.js"></script>
+    <script src="scripts/bootstrap.js"></script>
+    <script src="scripts/pace.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.0.0/lodash.min.js"></script>
+    <script src="scripts/components/jquery-fullscreen/jquery.fullscreen-min.js"></script>
+    <script src="scripts/jquery.storageapi.min.js"></script>
+    <script src="scripts/wow.min.js"></script>
+    <script src="scripts/functions.js"></script>
+    <script src="scripts/colors.js"></script>
+    <script src="scripts/left-sidebar.js"></script>
+    <script src="scripts/navbar.js"></script>
+    <script src="scripts/horizontal-navigation-1.js"></script>
+    <script src="scripts/horizontal-navigation-2.js"></script>
+    <script src="scripts/horizontal-navigation-3.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/notify.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script> -->
+    <!-- <script src="scripts/chartist.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.min.js"></script> -->
+    <script src="scripts/d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+    <script src="http://bower.batchthemes.com/bower_components/datamaps/dist/datamaps.all.js"></script>
+    <script src="scripts/dashboards.js"></script>
+    <script src="scripts/index.js"></script>
+</body>
+
+</html>

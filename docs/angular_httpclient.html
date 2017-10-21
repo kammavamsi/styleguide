@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Componentization Style Guide</title>
+    <meta name="description" content="Marino, Admin theme, Dashboard theme, AngularJS Theme">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!--[if IE]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- global stylesheets -->
+    <link rel="stylesheet" href="styles/components/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css?family=Acme|Lobster" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic,900,900italic"
+        rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/1.0.0/css/flag-icon.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/colorpallet.css">
+    <link rel="stylesheet" href="styles/chartist.min.css">
+</head>
+
+<body data-layout="empty-layout" data-palette="palette-0" data-direction="none">
+    <nav class="navbar navbar-fixed-top navbar-1">
+        <a class="navbar-brand" href="Homepage.html" style="color: #00BCD4;font-family: 'Lobster', cursive;font-family: 'Acme', sans-serif;">Componentization
+            <span>Style Guide</span>
+        </a>
+        <ul class="nav navbar-nav pull-right toggle-search">
+            <li class="nav-item">
+                <a class="nav-link" data-click="toggle-search">
+                    <i class="zmdi zmdi-search"></i>
+                </a>
+            </li>
+        </ul>
+
+        <div class="navbar-drawer pull-right hidden-lg-down">
+            <form class="form-inline navbar-form">
+                <input class="form-control" type="text" placeholder="Search">
+            </form>
+        </div>
+
+    </nav>
+
+
+    <div class="horizontal-navigation horizontal-navigation-3">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul class="list-unstyled navigation animation-delay">
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="Homepage.html">Home</a>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="colorpallet.html">Color Pallets</a>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="fontstypo.html">Fonts & Typography</a>
+
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="buttons.html">Buttons</a>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary">Iconography</a>
+                            <div class="horizontal-dropdown-menu" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
+                                <a class="btn btn-primary sideline" href="fontawesome.html">Font Awesome </a>
+                                <a class="btn btn-primary sideline" href="lonicons.html">Lonicons</a>
+                                <a class="btn btn-primary sideline" href="elending.html">e-Lending</a>
+
+                            </div>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary">Form Elements</a>
+                            <div class="horizontal-dropdown-menu" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
+                                <a class="btn btn-primary sideline" href="basicforms.html">Basic Forms </a>
+                                <a class="btn btn-primary sideline" href="formvalidations.html">Form Validation</a>
+                                <a class="btn btn-primary sideline" href="pickers.html">Pickers </a>
+
+                            </div>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="Alerts.html">Alerts</a>
+                        </li>
+
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary"> UI Elements </a>
+                            <div class="horizontal-dropdown-menu" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
+                                <a class="btn btn-primary sideline" href="dashboards-analytics.html"> Analytics </a>
+                                <a class="btn btn-primary sideline" href="dashboards-e-commerce.html"> e-Commerce </a>
+                                <a class="btn btn-primary sideline" href="dashboards-finance.html"> Finance </a>
+                                <a class="btn btn-primary sideline" href="dashboards-saas.html"> SAAS </a>
+                            </div>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="angular_introduction.html">Angular</a>
+                            <div class="horizontal-dropdown-menu">
+                                <a class="btn btn-primary sideline" href="angular_components.html"> Component </a>
+                                <a class="btn btn-primary sideline" href="angular_modules.html"> Module </a>
+                                <a class="btn btn-primary sideline" href="angular_directives.html"> Directive </a>
+                                <a class="btn btn-primary sideline" href="angular_routing.html"> Routing </a>
+                                <a class="btn btn-primary sideline" href="angular_httpclient.html"> Http Client </a>
+                                <a class="btn btn-primary sideline" href="angular_dinjection.html"> Dependency Injection </a>
+                            </div>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="crossbrowser.html">Cross Browser</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">
+                    <b>Angular Http Client</b>
+                </h2>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- row end -->
+        <div class="row">
+            <div class="col-lg-12">
+                <p>In order to start making HTTP calls from our Angular app we need to import the angular/http module and register
+                    for HTTP services. It supports both XHR and JSONP requests exposed through the HttpModule and JsonpModule
+                    respectively. In this section we will be focusing only on the HttpModule.</p>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- row end -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">
+                    Setting up angular/http
+                </h3>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- row end -->
+        <div class="row">
+            <div class="col-lg-12">
+                <p>In order to use the various HTTP services we need to include HttpModule in the imports for the root NgModule.
+                    This will allow us to access HTTP services from anywhere in the application.</p>
+                <div class="codeblock">
+                    <code>
+                                            <span>...</span>
+                                            <span>import { AppComponent } from './app.component'</span>
+                                            <span>import { HttpModule } from '@angular/http';</span>
+                                            <span>@NgModule({</span>
+                                                <span>   imports: [</span>
+                                                <span> BrowserModule,</span>
+                                                <span> HttpModule</span>
+                                                <span>],</span>
+                                                <span>providers: [SearchService],</span>
+                                                <span>declarations: [</span>
+                                                <span> AppComponent,</span>
+                                                <span>ComponentOne,</span>
+                                                <span>ComponentTwo</span>
+                                                <span>],</span>
+                                                <span>bootstrap: [ AppComponent ]</span>
+                                                <span>})</span>
+                                                <span>export class AppModule {}</span>
+                                    </code>
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- row end -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">
+                    Making HTTP Requests
+                </h2>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- row end -->
+        <div class="row">
+            <div class="col-lg-12">
+                <p>To make HTTP requests we will use the Http service. In this example we are creating a SearchService to interact
+                    with the Spotify API.</p>
+                <div class="codeblock">
+                    <code>
+                    <span>import { Http } from '@angular/http';</span>
+                    <span>import { Injectable } from '@angular/core';</span>
+                    <span>import { Observable } from 'rxjs/Observable';</span>
+                    <span>import 'rxjs/add/operator/map';</span>
+                        
+                    <span>@Injectable()</span>
+                    <span>export class SearchService {</span>
+                        
+                        <span>constructor(private http: Http) {}</span>
+                        
+                        <span>search(term: string) {</span>
+                            <span>return this.http</span>
+                            <span>.get('https://api.spotify.com/v1/search?q=' + term + '&type=artist')</span>
+                            <span>.map(response => response.json());</span>
+                            <span>}</span>
+                            <span>}</span>
+                                            </code>
+                </div>
+                <p>Here we are making an HTTP GET request which is exposed to us as an observable. You will notice the .map
+                    operator chained to .get. The Http service provides us with the raw response as a string. In order to
+                    consume the fetched data we have to convert it to JSON.</p>
+                <p>In addition to Http.get(), there are also Http.post(), Http.put(), Http.delete(), etc. They all return observables.</p>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- row end -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h4>Making a request for JSON data</h4>
+                <p>The most common type of request applications make to a backend is to request JSON data. For example, suppose
+                    you have an API endpoint that lists items, /api/items, which returns a JSON object of the form:</p>
+                <div class="codeblock">
+                    <code>
+                            <span>{</span>
+                            <span>&nbsp; "results": [</span>
+                            <span>&nbsp; &nbsp; "Item 1",</span>
+                                <span>&nbsp; &nbsp; "Item 2",</span>
+                                <span>&nbsp; ]</span>
+                            <span>}</span>
+                    </code>
+                </div>
+                <p>The get() method on HttpClient makes accessing this data straightforward</p>
+                <div class="codeblock">
+                    <code>
+                        <span>@Component(...)</span>
+                    <span> export class MyComponent implements OnInit {</span>
+                                <br />
+                            <span>   &nbsp; results: string[];</span>
+                             <br />
+                            <span>&nbsp; // Inject HttpClient into your component or service.</span>
+                        <span>&nbsp; constructor(private http: HttpClient) {}</span>
+                              <br />
+                            <span> &nbsp; ngOnInit(): void {</span>
+                            <span>  &nbsp; &nbsp; &nbsp; // Make the HTTP request:</span>
+                        <span> &nbsp; &nbsp; this.http.get('/api/items').subscribe(data => {</span>
+                        <span>     &nbsp; &nbsp;  // Read the result field from the JSON response.</span>
+                    <span>   &nbsp; &nbsp;  this.results = data['results'];</span>
+                <span>   &nbsp; &nbsp; });</span>
+                        <span>  &nbsp; }</span>
+        <span> }</span>
+                    </code>
+                </div>
+                <h4>Typechecking the response</h4>
+                <p>In the above example, the data['results'] field access stands out because you use bracket notation to access the results field. If you tried to write data.results, TypeScript would correctly complain that the Object coming back from HTTP does not have a results property. That's because while HttpClient parsed the JSON response into an Object, it doesn't know what shape that object is.</p>
+                <p>You can, however, tell HttpClient what type the response will be, which is recommended. To do so, first you define an interface with the correct shape:</p>
+                <div class="codeblock">
+                    <code>
+                            <span>&nbsp; interface ItemsResponse {</span>
+                                <span>&nbsp; &nbsp; &nbsp;   results: string[];</span>
+                                <span>&nbsp; }</span>
+                    </code>
+                </div>
+                <p>Then, when you make the HttpClient.get call, pass a type parameter:</p>
+                <div class="codeblock">
+                    <code>
+                          <span>  http.get&lt;ItemsResponse&gt;('/api/items').subscribe(data => {</span>
+                          <span>&nbsp; &nbsp; // data is now an instance of type ItemsResponse, so you can do this:</span>
+                                <span>&nbsp; &nbsp; this.results = data.results;</span>
+                                <span>});</span>
+                    </code>
+                </div>
+
+                <h4>Making a POST request</h4>
+                <p>One common operation is to POST data to a server; for example when submitting a form. The code for sending a POST request is very similar to the code for GET:</p>
+                <div class="codeblock">
+                    <code>
+                            <span> const body = {name: 'Brad'};</span>
+                            <br />
+                                    <span> http</span>
+                                            <span>>&nbsp;  .post('/api/developers/add', body)</span>
+                                                    <span>>&nbsp; >&nbsp;  // See below - subscribe() is still necessary when using post().</span>
+                                                            <span>>&nbsp;  .subscribe(...);</span>
+                    </code>
+                </div>
+                <p>Note the subscribe() method. All Observables returned from HttpClient are cold, which is to say that they are blueprints for making requests. Nothing will happen until you call subscribe(), and every such call will make a separate request.</p>
+                <h5>Configuring other parts of the request</h5>
+                <p>Besides the URL and a possible request body, there are other aspects of an outgoing request which you may wish to configure. All of these are available via an options object, which you pass to the request.</p>
+                <h5>Headers</h5>
+                <p>One common task is adding an Authorization header to outgoing requests. Here's how you do that:</p>
+                <div class="codeblock">
+                        <code>
+                                <span> const body = {name: 'Brad'};</span>
+                                <br />
+                                <span> http</span>
+                                <span>&nbsp; .post('/api/items/add', body,{</span>
+                                <span>&nbsp; &nbsp; headers: new HttpHeaders().set('Authorization', 'my-auth-token'), })</span>
+                                <span>&nbsp; .subscribe();</span>
+                        </code>
+                    </div>
+                    <p>The HttpHeaders class is immutable, so every set() returns a new instance and applies the changes.</p>
+                    <h5>URL Parameters</h5>
+                    <p>Adding URL parameters works in the same way. To send a request with the id parameter set to 3, you would do:</p>
+                    <div class="codeblock">
+                            <code>
+                                    <span> const body = {name: 'Brad'};</span>
+                                    <br />
+                                    <span> http</span>
+                                    <span>&nbsp; .post('/api/items/add', body,{</span>
+                                    <span>&nbsp; &nbsp; params: new HttpParams().set('id', '3'), })</span>
+                                    <span>&nbsp; .subscribe();</span>
+                            </code>
+                    </div>
+                    <p>In this way, you send the POST request to the URL /api/items/add?id=3.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- global scripts -->
+    <!-- global scripts -->
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/tether.js"></script>
+    <script src="scripts/bootstrap.js"></script>
+    <script src="scripts/pace.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.0.0/lodash.min.js"></script>
+    <script src="scripts/components/jquery-fullscreen/jquery.fullscreen-min.js"></script>
+    <script src="scripts/jquery.storageapi.min.js"></script>
+    <script src="scripts/wow.min.js"></script>
+    <script src="scripts/functions.js"></script>
+    <script src="scripts/colors.js"></script>
+    <script src="scripts/left-sidebar.js"></script>
+    <script src="scripts/navbar.js"></script>
+    <script src="scripts/horizontal-navigation-1.js"></script>
+    <script src="scripts/horizontal-navigation-2.js"></script>
+    <script src="scripts/horizontal-navigation-3.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/notify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+    <script src="scripts/chartist.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.min.js"></script>
+    <script src="scripts/d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+    <script src="http://bower.batchthemes.com/bower_components/datamaps/dist/datamaps.all.js"></script>
+    <script src="scripts/dashboards.js"></script>
+    <script src="scripts/index.js"></script>
+</body>
+
+</html>

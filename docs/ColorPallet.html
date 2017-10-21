@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Componentization Style Guide</title>
+    <meta name="description" content="Marino, Admin theme, Dashboard theme, AngularJS Theme">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!--[if IE]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+    <!-- global stylesheets -->
+    <link rel="stylesheet" href="styles/components/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css?family=Acme|Lobster" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic,900,900italic"
+        rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/1.0.0/css/flag-icon.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/colorpallet.css">
+    <link rel="stylesheet" href="styles/chartist.min.css">
+</head>
+
+<body data-layout="empty-layout" data-palette="palette-0" data-direction="none">
+    <nav class="navbar navbar-fixed-top navbar-1">
+        <a class="navbar-brand" href="Homepage.html" style="color: #00BCD4;font-family: 'Lobster', cursive;font-family: 'Acme', sans-serif;">Componentization
+            <span>Style Guide</span>
+        </a>
+
+        <ul class="nav navbar-nav pull-right toggle-search">
+            <li class="nav-item">
+                <a class="nav-link" data-click="toggle-search">
+                    <i class="zmdi zmdi-search"></i>
+                </a>
+            </li>
+        </ul>
+
+        <div class="navbar-drawer pull-right hidden-lg-down">
+            <form class="form-inline navbar-form">
+                <input class="form-control" type="text" placeholder="Search">
+            </form>
+        </div>
+
+        <!-- <ul class="nav navbar-nav pull-right hidden-lg-down navbar-toggle-theme-selector"><li class="nav-item"><a class="nav-link" data-click="toggle-theme-selector"><i class="zmdi zmdi-settings"></i></a></li></ul> -->
+        <!-- <ul class="nav navbar-nav pull-right hidden-lg-down navbar-flags"><li class="nav-item dropdown dropdown-menu-right"><a class="nav-link dropdown-toggle no-after" data-toggle="dropdown"><span class="flag flag-icon flag-icon-gb"></span></a><div class="dropdown-menu dropdown-menu-scale from-right dropdown-menu-right"><a class="dropdown-item"><span class="flag flag-icon flag-icon-gb"></span><span class="title">English</span></a><a class="dropdown-item"><span class="flag flag-icon flag-icon-de"></span><span class="title">German</span></a><a class="dropdown-item"><span class="flag flag-icon flag-icon-es"></span><span class="title">Spanish</span></a><a class="dropdown-item"><span class="flag flag-icon flag-icon-fr"></span><span class="title">French</span></a></div></li></ul>
+										 -->
+        <!-- <ul class="nav navbar-nav pull-right hidden-lg-down navbar-notifications"><li class="nav-item"><a class="nav-link" data-click="toggle-right-sidebar"><i class="zmdi zmdi-notifications-active"></i><span class="label label-rounded label-danger label-xs">3</span></a></li></ul>
+										 -->
+        <!-- <ul class="nav navbar-nav pull-right hidden-lg-down navbar-profile"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle no-after" data-toggle="dropdown"><img class="img-circle img-fluid profile-image" src="assets/faces/m1.png"></a><div class="dropdown-menu dropdown-menu-scale from-right dropdown-menu-right"><a class="dropdown-item animated fadeIn" href="email-inbox.html"><i class="zmdi zmdi-email"></i><span class="label label-pill label-danger label-xs pull-right">New</span><span class="dropdown-text">Inbox</span></a><a class="dropdown-item animated fadeIn" href="pages-profile.html"><i class="zmdi zmdi-settings-square"></i><span class="dropdown-text">Profile</span></a><a class="dropdown-item animated fadeIn" href="pages-lock-screen.html"><i class="zmdi zmdi-alarm"></i><span class="dropdown-text">Lock screen</span></a><a class="dropdown-item animated fadeIn" href="http://localhost:9002/pages-logout.html"><i class="zmdi zmdi-power"></i><span class="dropdown-text">Logout</span></a></div></li></ul> -->
+        <!-- <ul class="nav navbar-nav pull-right hidden-lg-down navbar-profile"><li class="nav-item"><a class="nav-link direction" data-click="toggle-direction">RTL</a></li></ul> -->
+    </nav>
+    <!-- <div class="theme-selector"><p>Select theme</p><div class="select-palette"><div class="color-palette" data-click="set-palette" data-id="palette-1"><span class="color-block" style="background: #3e3e3e"></span><span class="color-block" style="background: #242424"></span><span class="color-block" style="background: #5cb85c"></span></div><div class="color-palette" data-click="set-palette" data-id="palette-2"><span class="color-block" style="background: #3c414f"></span><span class="color-block" style="background: #262932"></span><span class="color-block" style="background: #5cb85c"></span></div><div class="color-palette" data-click="set-palette" data-id="palette-3"><span class="color-block" style="background: #1a1a1a"></span><span class="color-block" style="background: #000000"></span><span class="color-block" style="background: #5cb85c"></span></div><div class="color-palette" data-click="set-palette" data-id="palette-4"><span class="color-block" style="background: #1a1a1a"></span><span class="color-block" style="background: #ffffff"></span><span class="color-block" style="background: #d9534f"></span></div><div class="color-palette" data-click="set-palette" data-id="palette-5"><span class="color-block" style="background: #3c414f"></span><span class="color-block" style="background: #ffffff"></span><span class="color-block" style="background: #d9534f"></span></div><div class="color-palette" data-click="set-palette" data-id="palette-6"><span class="color-block" style="background: #3e3e3e"></span><span class="color-block" style="background: #ffffff"></span><span class="color-block" style="background: #d9534f"></span></div><div class="color-palette" data-click="set-palette" data-id="palette-7"><span class="color-block" style="background: #0283f1"></span><span class="color-block" style="background: #0267bf"></span><span class="color-block" style="background: #f0ad4e"></span></div><div class="color-palette" data-click="set-palette" data-id="palette-8"><span class="color-block" style="background: #0275d8"></span><span class="color-block" style="background: #025aa5"></span><span class="color-block" style="background: #f0ad4e"></span></div><div class="color-palette" data-click="set-palette" data-id="palette-9"><span class="color-block" style="background: #0267bf"></span><span class="color-block" style="background: #014c8c"></span><span class="color-block" style="background: #f0ad4e"></span></div><div class="color-palette" data-click="set-palette" data-id="palette-10"><span class="color-block" style="background: #190f8a"></span><span class="color-block" style="background: #110a5c"></span><span class="color-block" style="background: #f0ad4e"></span></div><div class="color-palette" data-click="set-palette" data-id="palette-11"><span class="color-block" style="background: #2415bf"></span><span class="color-block" style="background: #1b1091"></span><span class="color-block" style="background: #f0ad4e"></span></div><div class="color-palette" data-click="set-palette" data-id="palette-12"><span class="color-block" style="background: #3929e7"></span><span class="color-block" style="background: #2516c7"></span><span class="color-block" style="background: #f0ad4e"></span></div><div class="color-palette" data-click="set-palette" data-id="palette-13"><span class="color-block" style="background: #4b0f8a"></span><span class="color-block" style="background: #320a5c"></span><span class="color-block" style="background: #f0ad4e"></span></div><div class="color-palette" data-click="set-palette" data-id="palette-14"><span class="color-block" style="background: #6815bf"></span><span class="color-block" style="background: #4f1091"></span><span class="color-block" style="background: #f0ad4e"></span></div><div class="color-palette" data-click="set-palette" data-id="palette-15"><span class="color-block" style="background: #8529e7"></span><span class="color-block" style="background: #6c16c7"></span><span class="color-block" style="background: #f0ad4e"></span></div><div class="color-palette" data-click="set-palette" data-id="palette-16"><span class="color-block" style="background: #bf156b"></span><span class="color-block" style="background: #911051"></span><span class="color-block" style="background: #f0ad4e"></span></div><div class="color-palette" data-click="set-palette" data-id="palette-17"><span class="color-block" style="background: #e72989"></span><span class="color-block" style="background: #c7166f"></span><span class="color-block" style="background: #f0ad4e"></span></div><div class="color-palette" data-click="set-palette" data-id="palette-18"><span class="color-block" style="background: #bf1e15"></span><span class="color-block" style="background: #911710"></span><span class="color-block" style="background: #f0ad4e"></span></div><div class="color-palette" data-click="set-palette" data-id="palette-19"><span class="color-block" style="background: #e73229"></span><span class="color-block" style="background: #c71f16"></span><span class="color-block" style="background: #f0ad4e"></span></div><div class="color-palette" data-click="set-palette" data-id="palette-20"><span class="color-block" style="background: #0f8a20"></span><span class="color-block" style="background: #0a5c15"></span><span class="color-block" style="background: #f0ad4e"></span></div><div class="color-palette" data-click="set-palette" data-id="palette-21"><span class="color-block" style="background: #5d8a0f"></span><span class="color-block" style="background: #3e5c0a"></span><span class="color-block" style="background: #f0ad4e"></span></div><div class="color-palette" data-click="set-palette" data-id="palette-22"><span class="color-block" style="background: #734226"></span><span class="color-block" style="background: #4d2c19"></span><span class="color-block" style="background: #f0ad4e"></span></div><div class="color-palette" data-click="set-palette" data-id="palette-23"><span class="color-block" style="background: #9f5c35"></span><span class="color-block" style="background: #794628"></span><span class="color-block" style="background: #f0ad4e"></span></div></div></div> -->
+    <div class="horizontal-navigation horizontal-navigation-3">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul class="list-unstyled navigation animation-delay">
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="Homepage.html">Home</a>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="colorpallet.html">Color Pallets</a>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary">Fonts & Typography</a>
+                            <div class="horizontal-dropdown-menu" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
+                                <a class="btn btn-primary sideline" href="fonts.html"> Fonts </a>
+                                <a class="btn btn-primary sideline" href="typography.html"> Typography </a>
+
+                            </div>
+                        </li>
+
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary"> UI Elememnts </a>
+                            <div class="horizontal-dropdown-menu horizontal-dropdown-menu-lg" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
+
+                                <a class="btn btn-primary sideline" href="ui-elements-images.html"> Images </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-overlays.html"> Overlays </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-lists.html"> Lists </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-labels.html"> Labels </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-progress-bars.html"> Progress Bars </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-carousel.html"> Carousel </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-tabs.html"> Tabs </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-grid.html"> Grid </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-animations.html"> Animations </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-google-maps.html"> Google Maps </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-cards.html"> Cards </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-dropdowns.html"> Dropdowns </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-drag-and-drop.html"> Drag and drop </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-modals.html"> Modals </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-tooltip.html">ToolTips </a>
+                                <a class="btn btn-primary sideline" href="ui-elements-pagination.html">Paginations </a>
+                            </div>
+                        </li>
+
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="buttons.html">Buttons</a>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary">Iconography</a>
+                            <div class="horizontal-dropdown-menu" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
+                                <a class="btn btn-primary sideline" href="fontawesome.html">Font Awesome </a>
+                                <a class="btn btn-primary sideline" href="lonicons.html">Lonicons</a>
+                                <a class="btn btn-primary sideline" href="elending.html">e-Lending</a>
+
+                            </div>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary">Form Elements</a>
+                            <div class="horizontal-dropdown-menu" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
+                                <a class="btn btn-primary sideline" href="basicforms.html">Basic Forms </a>
+                                <a class="btn btn-primary sideline" href="formvalidations.html">Form Validation</a>
+                                <a class="btn btn-primary sideline" href="pickers.html">Pickers </a>
+
+                            </div>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="Alerts.html">Alerts</a>
+                        </li>
+
+
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="angular_introduction.html">Angular</a>
+                            <div class="horizontal-dropdown-menu">
+                                <a class="btn btn-primary sideline" href="angular_components.html"> Component </a>
+                                <a class="btn btn-primary sideline" href="angular_modules.html"> Module </a>
+                                <a class="btn btn-primary sideline" href="angular_directives.html"> Directive </a>
+                                <a class="btn btn-primary sideline" href="angular_routing.html"> Routing </a>
+                                <a class="btn btn-primary sideline" href="angular_httpclient.html"> Http Client </a>
+                                <a class="btn btn-primary sideline" href="angular_dinjection.html"> Dependency Injection </a>
+                            </div>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="crossbrowser.html">Cross Browser</a>
+                        </li>
+                    </ul>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">
+                    <b>Colorpallet</b>
+                </h3>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4>Curious Blue</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <span class="pull-left">#337ab7</span>
+                        <span class="pull-right">51, 122, 183</span>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-green">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <h4>Fern</h4>
+                            </div>
+
+                        </div>
+                    </div>
+                    <a href="#">
+                        <div class="panel-footer">
+                            <span class="pull-left">#5cb85c</span>
+                            <span class="pull-right">92, 184, 92</span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-yellow">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <h4>Casablanca</h4>
+                            </div>
+
+                        </div>
+                    </div>
+                    <a href="#">
+                        <div class="panel-footer">
+                            <span class="pull-left">#f0ad4e</span>
+                            <span class="pull-right">240, 173, 78</span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-red">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <h4>Valencia</h4>
+                            </div>
+
+                        </div>
+                    </div>
+                    <a href="#">
+                        <div class="panel-footer">
+                            <span class="pull-left">#d9534f</span>
+                            <span class="pull-right">217, 83, 79</span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="panel sunflower">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4>SunFlower</h4>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="panel-footer">
+                        <span class="pull-left">#fcbb42</span>
+                        <span class="pull-right">252, 187, 66</span>
+                        <div class="clearfix"></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="panel grapefruit">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4>GrapeFruit</h4>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="panel-footer">
+                        <span class="pull-left">#ed5565</span>
+                        <span class="pull-right">237, 85, 101</span>
+                        <div class="clearfix"></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="panel mint">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4>Mint</h4>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="panel-footer">
+                        <span class="pull-left">#48cfad</span>
+                        <span class="pull-right">72, 207, 173</span>
+                        <div class="clearfix"></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="panel grass">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4>Grass</h4>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="panel-footer">
+                        <span class="pull-left">#A0D468</span>
+                        <span class="pull-right">160, 212, 104</span>
+                        <div class="clearfix"></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="panel aqua">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4>Aqua</h4>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="panel-footer">
+                        <span class="pull-left">#3bafda</span>
+                        <span class="pull-right">59, 175, 218</span>
+                        <div class="clearfix"></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="panel lavender">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4>Lavender</h4>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="panel-footer">
+                        <span class="pull-left">#ac92ec</span>
+                        <span class="pull-right">172, 146, 236</span>
+                        <div class="clearfix"></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="panel pinkrose">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4>PinkRose</h4>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="panel-footer">
+                        <span class="pull-left">#d770ad</span>
+                        <span class="pull-right">215, 112, 173</span>
+                        <div class="clearfix"></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="panel bluegeans">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4>BlueGeans</h4>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="panel-footer">
+                        <span class="pull-left">#5d9cec</span>
+                        <span class="pull-right">93, 156, 236</span>
+                        <div class="clearfix"></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="panel bittersweet">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4>Bittersweet</h4>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="panel-footer">
+                        <span class="pull-left">#fc6e51</span>
+                        <span class="pull-right">252, 110, 81</span>
+                        <div class="clearfix"></div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+                <div class="panel mediumgray">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4>Medium Gray</h4>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="panel-footer">
+                        <span class="pull-left">#aab2bd</span>
+                        <span class="pull-right">170, 178, 189</span>
+                        <div class="clearfix"></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="panel darkgray">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4>Dark Gray</h4>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="panel-footer">
+                        <span class="pull-left">#434a54</span>
+                        <span class="pull-right">67, 74, 84</span>
+                        <div class="clearfix"></div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- global scripts -->
+
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/tether.js"></script>
+    <script src="scripts/bootstrap.js"></script>
+    <script src="scripts/pace.js"></script>
+    <script src="scripts/lodash.min.js"></script>
+    <script src="scripts/components/jquery-fullscreen/jquery.fullscreen-min.js"></script>
+    <script src="scripts/jquery.storageapi.min.js"></script>
+    <script src="scripts/wow.min.js"></script>
+    <script src="scripts/functions.js"></script>
+    <script src="scripts/colors.js"></script>
+    <script src="scripts/left-sidebar.js"></script>
+    <script src="scripts/navbar.js"></script>
+    <script src="scripts/horizontal-navigation-1.js"></script>
+    <script src="scripts/horizontal-navigation-2.js"></script>
+    <script src="scripts/horizontal-navigation-3.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/notify.js"></script>
+    <script src="scripts/Chart.min.js"></script>
+    <script src="scripts/chartist.min.js"></script>
+    <script src="scripts/jquery.easypiechart.min.js"></script>
+    <script src="scripts/d3.js"></script>
+    <script src="scripts/topojson.min.js"></script>
+    <script src="scripts/datamaps.all.js"></script>
+    <script src="scripts/dashboards.js"></script>
+    <script src="scripts/index.js"></script>
+</body>
+
+</html>

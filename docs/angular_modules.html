@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Componentization Style Guide</title>
+    <meta name="description" content="Marino, Admin theme, Dashboard theme, AngularJS Theme">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!--[if IE]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- global stylesheets -->
+    <link rel="stylesheet" href="styles/components/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css?family=Acme|Lobster" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic,900,900italic"
+        rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/1.0.0/css/flag-icon.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/colorpallet.css">
+    <link rel="stylesheet" href="styles/chartist.min.css">
+</head>
+
+<body data-layout="empty-layout" data-palette="palette-0" data-direction="none">
+    <nav class="navbar navbar-fixed-top navbar-1">
+        <a class="navbar-brand" href="Homepage.html" style="color: #00BCD4;font-family: 'Lobster', cursive;font-family: 'Acme', sans-serif;">Componentization
+            <span>Style Guide</span>
+        </a>
+        <ul class="nav navbar-nav pull-right toggle-search">
+            <li class="nav-item">
+                <a class="nav-link" data-click="toggle-search">
+                    <i class="zmdi zmdi-search"></i>
+                </a>
+            </li>
+        </ul>
+
+        <div class="navbar-drawer pull-right hidden-lg-down">
+            <form class="form-inline navbar-form">
+                <input class="form-control" type="text" placeholder="Search">
+            </form>
+        </div>
+
+    </nav>
+
+
+    <div class="horizontal-navigation horizontal-navigation-3">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul class="list-unstyled navigation animation-delay">
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="Homepage.html">Home</a>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="colorpallet.html">Color Pallets</a>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="fontstypo.html">Fonts & Typography</a>
+
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="buttons.html">Buttons</a>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary">Iconography</a>
+                            <div class="horizontal-dropdown-menu" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
+                                <a class="btn btn-primary sideline" href="fontawesome.html">Font Awesome </a>
+                                <a class="btn btn-primary sideline" href="lonicons.html">Lonicons</a>
+                                <a class="btn btn-primary sideline" href="elending.html">e-Lending</a>
+
+                            </div>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary">Form Elements</a>
+                            <div class="horizontal-dropdown-menu" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
+                                <a class="btn btn-primary sideline" href="basicforms.html">Basic Forms </a>
+                                <a class="btn btn-primary sideline" href="formvalidations.html">Form Validation</a>
+                                <a class="btn btn-primary sideline" href="pickers.html">Pickers </a>
+
+                            </div>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="Alerts.html">Alerts</a>
+                        </li>
+
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary"> UI Elements </a>
+                            <div class="horizontal-dropdown-menu" ng-class="{'horizontal-dropdown-menu-lg': item.items.length &gt; 10}">
+                                <a class="btn btn-primary sideline" href="dashboards-analytics.html"> Analytics </a>
+                                <a class="btn btn-primary sideline" href="dashboards-e-commerce.html"> e-Commerce </a>
+                                <a class="btn btn-primary sideline" href="dashboards-finance.html"> Finance </a>
+                                <a class="btn btn-primary sideline" href="dashboards-saas.html"> SAAS </a>
+                            </div>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="angular_introduction.html">Angular</a>
+                            <div class="horizontal-dropdown-menu">
+                                <a class="btn btn-primary sideline" href="angular_components.html"> Component </a>
+                                <a class="btn btn-primary sideline" href="angular_modules.html"> Module </a>
+                                <a class="btn btn-primary sideline" href="angular_directives.html"> Directive </a>
+                                <a class="btn btn-primary sideline" href="angular_routing.html"> Routing </a>
+                                <a class="btn btn-primary sideline" href="angular_httpclient.html"> Http Client </a>
+                                <a class="btn btn-primary sideline" href="angular_dinjection.html"> Dependency Injection </a>
+                            </div>
+                        </li>
+                        <li class="horizontal-navigation-dropdown wow fadeIn">
+                            <a class="btn btn-primary" href="crossbrowser.html">Cross Browser</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">
+                    <b>Angular Module</b>
+                </h2>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!--/.row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <p>In Angular, a module is a mechanism to group components, directives, pipes and services that are related,
+                    in such a way that can be combined with other modules to create an application. An Angular application
+                    can be thought of as a puzzle where each piece (or each module) is needed to be able to see the full
+                    picture.</p>
+                <p>Another analogy to understand Angular modules is classes. In a class, we can define public or private methods.
+                    The public methods are the API that other parts of our code can use to interact with it while the private
+                    methods are implementation details that are hidden. In the same way, a module can export or hide components,
+                    directives, pipes and services. The exported elements are meant to be used by other modules, while the
+                    ones that are not exported (hidden) are just used inside the module itself and cannot be directly accessed
+                    by other modules of our application.</p>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!--/.row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">
+                    A Basic Use of Modules
+                </h3>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!--/.row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <p>To be able to define modules we have to use the decorator NgModule.</p>
+                <div class="codeblock">
+                    <code>
+                    <span>import { NgModule } from '@angular/core';</span>
+                    
+                    <span></span>@NgModule({</span>
+                        <span>imports: [ ... ],</span>
+                        <span>declarations: [ ... ],</span>
+                        <span>bootstrap: [ ... ]</span>
+                        <span>})</span>
+                        <span>export class AppModule { }</span>
+                </code>
+                </div>
+                <p>n the example above, we have turned the class AppModule into an Angular module just by using the NgModule
+                    decorator. The NgModule decorator requires at least three properties: imports, declarations and bootstrap.</p>
+                <p>The property imports expects an array of modules. Here's where we define the pieces of our puzzle (our application).
+                    The property declarations expects an array of components, directives and pipes that are part of the module.
+                    The bootstrap property is where we define the root component of our module. Even though this property
+                    is also an array, 99% of the time we are going to define only one component.+
+
+                </p>
+                <div class="blockquote">
+                    <p>There are very special circumstances where more than one component may be required to bootstrap a module
+                        but we are not going to cover those edge cases here.</p>
+                </div>
+                <p>Here's how a basic module made up of just one component would look like:</p>
+                <p>app/app.component.ts</p>
+                <div class="codeblock">
+                    <code>
+                        <span>import { Component } from '@angular/core';</span>
+                        
+                        <span></span>@Component({</span>
+                            <span>selector: 'app-root',</span>
+                            <span>template: '&lt;h1&gt;My Angular App&lt;/h1&gt;'</span>
+                            <span>})</span>
+                            <span>export class AppComponent {}</span>
+                    </code>
+                </div>
+
+                <p>app/app.module.ts</p>
+                <div class="codeblock">
+                    <code>
+                          <span>import { NgModule } from '@angular/core';</span>
+                          <span>import { BrowserModule } from '@angular/platform-browser';</span>
+
+                          <span>import { AppComponent } from './app.component';</span>
+                          
+                          <span></span>@NgModule({</span>
+                              <span>imports: [BrowserModule],</span>
+                              <span>declarations: [AppComponent],</span>
+                              <span>bootstrap: [AppComponent]</span>
+                              <span>})</span>
+                              <span>export class AppModule {}</span>
+                      </code>
+                </div>
+                <p>The file app.component.ts is just a "hello world" component, nothing interesting there. In the other hand,
+                    the file app.module.ts is following the structure that we've seen before for defining a module but in
+                    this case, we are defining the modules and components that we are going to be using.</p>
+                <p>The first thing that we notice is that our module is importing the BrowserModule as an explicit dependency.
+                    The BrowserModule is a built-in module that exports basic directives, pipes and services. Unlike previous
+                    versions of Angular, we have to explicitly import those dependencies to be able to use directives like
+                    *ngFor or *ngIf in our templates.</p>
+                <p>Given that the root (and only) component of our module is the AppComponent we have to list it in the bootstrap
+                    array. Because in the declarations property we are supposed to define all the components or pipes that
+                    make up our application, we have to define the AppComponent again there too.</p>
+                <p>Before moving on, there's an important clarification to make. There are two types of modules, root modules
+                    and feature modules.</p>
+                <p>In the same way that in a module we have one root component and many possible secondary components, in an
+                    application we only have one root module and zero or many feature modules. To be able to bootstrap our
+                    application, Angular needs to know which one is the root module. An easy way to identify a root module
+                    is by looking at the imports property of its NgModule decorator. If the module is importing the BrowserModule
+                    then it's a root module, if instead is importing the CommonModule then it is a feature module.</p>
+                <div class="blockquote">
+                    <p>As developers, we need to take care of importing the BrowserModule in the root module and instead, import
+                        the CommonModule in any other module we create for the same application. Failing to do so might result
+                        in problems when working with lazy loaded modules as we are going to see in following sections.</p>
+                </div>
+                <p>By convention, the root module should always be named AppModule.</p>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!--/.row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">
+                    Bootstrapping an Application
+                </h3>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!--/.row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <p>To bootstrap our module based application, we need to inform Angular which one is our root module to perform
+                    the compilation in the browser. This compilation in the browser is also known as "Just in Time" (JIT)
+                    compilation.</p>
+                <p>main.ts</p>
+                <div class="codeblock">
+                    <code>
+                   <span>import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';</span>
+                   <span>import { AppModule } from './app/app.module';</span>
+
+                   <span>platformBrowserDynamic().bootstrapModule(AppModule);</span>
+               </code>
+                </div>
+                <div class="blockquote">
+                    <p>It is also possible to perform the compilation as a build step of our workflow. This method is called
+                        "Ahead of Time" (AOT) compilation and will require a slightly different bootstrap process.</p>
+                </div>
+
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!--/.row -->
+    </div>
+
+    <!-- global scripts -->
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/tether.js"></script>
+    <script src="scripts/bootstrap.js"></script>
+    <script src="scripts/pace.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.0.0/lodash.min.js"></script>
+    <script src="scripts/components/jquery-fullscreen/jquery.fullscreen-min.js"></script>
+    <script src="scripts/jquery.storageapi.min.js"></script>
+    <script src="scripts/wow.min.js"></script>
+    <script src="scripts/functions.js"></script>
+    <script src="scripts/colors.js"></script>
+    <script src="scripts/left-sidebar.js"></script>
+    <script src="scripts/navbar.js"></script>
+    <script src="scripts/horizontal-navigation-1.js"></script>
+    <script src="scripts/horizontal-navigation-2.js"></script>
+    <script src="scripts/horizontal-navigation-3.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/notify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+    <script src="scripts/chartist.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.min.js"></script>
+    <script src="scripts/d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+    <script src="http://bower.batchthemes.com/bower_components/datamaps/dist/datamaps.all.js"></script>
+    <script src="scripts/dashboards.js"></script>
+    <script src="scripts/index.js"></script>
+</body>
+
+</html>
